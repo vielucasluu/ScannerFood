@@ -1,0 +1,861 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13087BB5211ADD4900D9BFD7 /* TVC_MainPageDistrict.m in Sources */ = {isa = PBXBuildFile; fileRef = 13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */; };
+		13087BB9211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */; };
+		1371EE97211C243A00598D0E /* VC_MainPageSpaceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */; };
+		1371EE9A211C244F00598D0E /* VW_DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE99211C244F00598D0E /* VW_DetailsView.m */; };
+		1371EE9D211C246500598D0E /* VW_DirectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE9C211C246500598D0E /* VW_DirectionView.m */; };
+		1371EEA0211C247700598D0E /* VW_EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE9F211C247700598D0E /* VW_EditView.m */; };
+		13F41B00211448C300A5CA1F /* VC_MainPageHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41AFE211448C300A5CA1F /* VC_MainPageHome.m */; };
+		13F41B04211448D500A5CA1F /* VC_MainPageSeach.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */; };
+		13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F41B052114497300A5CA1F /* LaunchScreen.storyboard */; };
+		13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */; };
+		13F41B1221144D9A00A5CA1F /* VC_MainPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B1121144D9A00A5CA1F /* VC_MainPageManager.m */; };
+		13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B182114502400A5CA1F /* UIColor_EXT.m */; };
+		13F41B25211484C200A5CA1F /* TC_MainPageSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B24211484C200A5CA1F /* TC_MainPageSearchCell.m */; };
+		13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD52211441CE00AEEA66 /* AppDelegate.m */; };
+		13F9AD5E211441CE00AEEA66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F9AD5D211441CE00AEEA66 /* Assets.xcassets */; };
+		13F9AD64211441CE00AEEA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD63211441CE00AEEA66 /* main.m */; };
+		13F9AD6E211441CE00AEEA66 /* ScanerFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD6D211441CE00AEEA66 /* ScanerFoodTests.m */; };
+		13F9AD79211441CE00AEEA66 /* ScanerFoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD78211441CE00AEEA66 /* ScanerFoodUITests.m */; };
+		290292E8C53FE8C98CA90667 /* libPods-ScanerFoodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DF64F5EB7497EF4765D04B /* libPods-ScanerFoodTests.a */; };
+		8B98AA5C81103F7687601FC3 /* libPods-ScanerFoodUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F307F94AD9A1EEC9DB80C9F /* libPods-ScanerFoodUITests.a */; };
+		95BFA6CC16EC4DC87F563A36 /* libPods-ScanerFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13F9AD6A211441CE00AEEA66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13F9AD46211441CE00AEEA66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13F9AD4D211441CE00AEEA66;
+			remoteInfo = ScanerFood;
+		};
+		13F9AD75211441CE00AEEA66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13F9AD46211441CE00AEEA66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13F9AD4D211441CE00AEEA66;
+			remoteInfo = ScanerFood;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13087BB3211ADD4900D9BFD7 /* TVC_MainPageDistrict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TVC_MainPageDistrict.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TVC_MainPageDistrict.h; sourceTree = SOURCE_ROOT; };
+		13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TVC_MainPageDistrict.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TVC_MainPageDistrict.m; sourceTree = SOURCE_ROOT; };
+		13087BB7211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TC_MainPageDistrictCell.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TC_MainPageDistrictCell/TC_MainPageDistrictCell.h; sourceTree = SOURCE_ROOT; };
+		13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TC_MainPageDistrictCell.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TC_MainPageDistrictCell/TC_MainPageDistrictCell.m; sourceTree = SOURCE_ROOT; };
+		1371EE95211C243900598D0E /* VC_MainPageSpaceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageSpaceDetails.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VC_MainPageSpaceDetails.h; sourceTree = SOURCE_ROOT; };
+		1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageSpaceDetails.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VC_MainPageSpaceDetails.m; sourceTree = SOURCE_ROOT; };
+		1371EE98211C244F00598D0E /* VW_DetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_DetailsView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DetailsView/VW_DetailsView.h; sourceTree = SOURCE_ROOT; };
+		1371EE99211C244F00598D0E /* VW_DetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_DetailsView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DetailsView/VW_DetailsView.m; sourceTree = SOURCE_ROOT; };
+		1371EE9B211C246500598D0E /* VW_DirectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_DirectionView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DirectionView/VW_DirectionView.h; sourceTree = SOURCE_ROOT; };
+		1371EE9C211C246500598D0E /* VW_DirectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_DirectionView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DirectionView/VW_DirectionView.m; sourceTree = SOURCE_ROOT; };
+		1371EE9E211C247700598D0E /* VW_EditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_EditView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_EditView/VW_EditView.h; sourceTree = SOURCE_ROOT; };
+		1371EE9F211C247700598D0E /* VW_EditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_EditView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_EditView/VW_EditView.m; sourceTree = SOURCE_ROOT; };
+		13F41AFE211448C300A5CA1F /* VC_MainPageHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageHome.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageHome.m; sourceTree = SOURCE_ROOT; };
+		13F41AFF211448C300A5CA1F /* VC_MainPageHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageHome.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageHome.h; sourceTree = SOURCE_ROOT; };
+		13F41B02211448D500A5CA1F /* VC_MainPageSeach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageSeach.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/VC_MainPageSeach.h; sourceTree = SOURCE_ROOT; };
+		13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageSeach.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/VC_MainPageSeach.m; sourceTree = SOURCE_ROOT; };
+		13F41B052114497300A5CA1F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13F41B0821144B1C00A5CA1F /* ApplicationNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApplicationNavigationController.h; path = Applications/ApplicationNavigationController.h; sourceTree = "<group>"; };
+		13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ApplicationNavigationController.m; path = Applications/ApplicationNavigationController.m; sourceTree = "<group>"; };
+		13F41B0B21144B4900A5CA1F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		13F41B0E21144CAC00A5CA1F /* ApplicationMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationMacros.h; sourceTree = "<group>"; };
+		13F41B1021144D9A00A5CA1F /* VC_MainPageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VC_MainPageManager.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageManager/VC_MainPageManager.h; sourceTree = SOURCE_ROOT; };
+		13F41B1121144D9A00A5CA1F /* VC_MainPageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageManager.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageManager/VC_MainPageManager.m; sourceTree = SOURCE_ROOT; };
+		13F41B182114502400A5CA1F /* UIColor_EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_EXT.m; sourceTree = "<group>"; };
+		13F41B192114502400A5CA1F /* UIColor_EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor_EXT.h; sourceTree = "<group>"; };
+		13F41B23211484C200A5CA1F /* TC_MainPageSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TC_MainPageSearchCell.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TC_MainPageSearchCell/TC_MainPageSearchCell.h; sourceTree = SOURCE_ROOT; };
+		13F41B24211484C200A5CA1F /* TC_MainPageSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TC_MainPageSearchCell.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TC_MainPageSearchCell/TC_MainPageSearchCell.m; sourceTree = SOURCE_ROOT; };
+		13F9AD4E211441CE00AEEA66 /* ScanerFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanerFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13F9AD51211441CE00AEEA66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		13F9AD52211441CE00AEEA66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		13F9AD5D211441CE00AEEA66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		13F9AD62211441CE00AEEA66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13F9AD63211441CE00AEEA66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13F9AD69211441CE00AEEA66 /* ScanerFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScanerFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13F9AD6D211441CE00AEEA66 /* ScanerFoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanerFoodTests.m; sourceTree = "<group>"; };
+		13F9AD6F211441CE00AEEA66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13F9AD74211441CE00AEEA66 /* ScanerFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScanerFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13F9AD78211441CE00AEEA66 /* ScanerFoodUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanerFoodUITests.m; sourceTree = "<group>"; };
+		13F9AD7A211441CE00AEEA66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		310346DAC741F1795F7AF99A /* Pods-ScanerFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodUITests/Pods-ScanerFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4248C0DCD1F2F2BCF8AE3AFA /* Pods-ScanerFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodTests/Pods-ScanerFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F307F94AD9A1EEC9DB80C9F /* libPods-ScanerFoodUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFoodUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A21E0E22CDEB2CD432F4282 /* Pods-ScanerFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood.release.xcconfig"; sourceTree = "<group>"; };
+		7080A48000F0B829F526AC73 /* Pods-ScanerFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodTests/Pods-ScanerFoodTests.release.xcconfig"; sourceTree = "<group>"; };
+		A74BBBD59A05E667EAE94ABB /* Pods-ScanerFoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodUITests/Pods-ScanerFoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9DF64F5EB7497EF4765D04B /* libPods-ScanerFoodTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFoodTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA92E25A453FB97F1D94F6F /* Pods-ScanerFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13F9AD4B211441CE00AEEA66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95BFA6CC16EC4DC87F563A36 /* libPods-ScanerFood.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13F9AD66211441CE00AEEA66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				290292E8C53FE8C98CA90667 /* libPods-ScanerFoodTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13F9AD71211441CE00AEEA66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B98AA5C81103F7687601FC3 /* libPods-ScanerFoodUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0366E70ACA810271B85B1839 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEA92E25A453FB97F1D94F6F /* Pods-ScanerFood.debug.xcconfig */,
+				6A21E0E22CDEB2CD432F4282 /* Pods-ScanerFood.release.xcconfig */,
+				4248C0DCD1F2F2BCF8AE3AFA /* Pods-ScanerFoodTests.debug.xcconfig */,
+				7080A48000F0B829F526AC73 /* Pods-ScanerFoodTests.release.xcconfig */,
+				A74BBBD59A05E667EAE94ABB /* Pods-ScanerFoodUITests.debug.xcconfig */,
+				310346DAC741F1795F7AF99A /* Pods-ScanerFoodUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		13087BB2211ADCEF00D9BFD7 /* TVC_MainPageDistrict */ = {
+			isa = PBXGroup;
+			children = (
+				13087BB6211AE9B400D9BFD7 /* TC_MainPageDistrictCell */,
+				13087BB3211ADD4900D9BFD7 /* TVC_MainPageDistrict.h */,
+				13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */,
+			);
+			name = TVC_MainPageDistrict;
+			sourceTree = "<group>";
+		};
+		13087BB6211AE9B400D9BFD7 /* TC_MainPageDistrictCell */ = {
+			isa = PBXGroup;
+			children = (
+				13087BB7211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.h */,
+				13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */,
+			);
+			name = TC_MainPageDistrictCell;
+			sourceTree = "<group>";
+		};
+		1371EE92211C014D00598D0E /* VW_DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				1371EE98211C244F00598D0E /* VW_DetailsView.h */,
+				1371EE99211C244F00598D0E /* VW_DetailsView.m */,
+			);
+			name = VW_DetailsView;
+			sourceTree = "<group>";
+		};
+		1371EE93211C015D00598D0E /* VW_DirectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1371EE9B211C246500598D0E /* VW_DirectionView.h */,
+				1371EE9C211C246500598D0E /* VW_DirectionView.m */,
+			);
+			name = VW_DirectionView;
+			sourceTree = "<group>";
+		};
+		1371EE94211C016A00598D0E /* VW_EditView */ = {
+			isa = PBXGroup;
+			children = (
+				1371EE9E211C247700598D0E /* VW_EditView.h */,
+				1371EE9F211C247700598D0E /* VW_EditView.m */,
+			);
+			name = VW_EditView;
+			sourceTree = "<group>";
+		};
+		13F41AFB2114489300A5CA1F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				13F41AFD211448B800A5CA1F /* VC_MainPageHome */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		13F41AFD211448B800A5CA1F /* VC_MainPageHome */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B1B21146E6800A5CA1F /* VC_MainPageSpaceDetails */,
+				13F41B01211448C600A5CA1F /* VC_MainPageSearch */,
+				13F41B0F21144D7B00A5CA1F /* VC_MainPageManager */,
+				13F41AFF211448C300A5CA1F /* VC_MainPageHome.h */,
+				13F41AFE211448C300A5CA1F /* VC_MainPageHome.m */,
+			);
+			path = VC_MainPageHome;
+			sourceTree = "<group>";
+		};
+		13F41B01211448C600A5CA1F /* VC_MainPageSearch */ = {
+			isa = PBXGroup;
+			children = (
+				13087BB2211ADCEF00D9BFD7 /* TVC_MainPageDistrict */,
+				13F41B222114849600A5CA1F /* TC_MainPageSearchCell */,
+				13F41B02211448D500A5CA1F /* VC_MainPageSeach.h */,
+				13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */,
+			);
+			name = VC_MainPageSearch;
+			sourceTree = "<group>";
+		};
+		13F41B0721144AD600A5CA1F /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				13F9AD51211441CE00AEEA66 /* AppDelegate.h */,
+				13F9AD52211441CE00AEEA66 /* AppDelegate.m */,
+				13F41B0821144B1C00A5CA1F /* ApplicationNavigationController.h */,
+				13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */,
+				13F41B0E21144CAC00A5CA1F /* ApplicationMacros.h */,
+			);
+			name = Applications;
+			sourceTree = "<group>";
+		};
+		13F41B0C21144C5100A5CA1F /* DefaultFiles */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B052114497300A5CA1F /* LaunchScreen.storyboard */,
+				13F9AD5D211441CE00AEEA66 /* Assets.xcassets */,
+				13F9AD62211441CE00AEEA66 /* Info.plist */,
+				13F9AD63211441CE00AEEA66 /* main.m */,
+			);
+			name = DefaultFiles;
+			sourceTree = "<group>";
+		};
+		13F41B0D21144C6B00A5CA1F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B0B21144B4900A5CA1F /* PrefixHeader.pch */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		13F41B0F21144D7B00A5CA1F /* VC_MainPageManager */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B1021144D9A00A5CA1F /* VC_MainPageManager.h */,
+				13F41B1121144D9A00A5CA1F /* VC_MainPageManager.m */,
+			);
+			name = VC_MainPageManager;
+			sourceTree = "<group>";
+		};
+		13F41B162114500100A5CA1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B172114500D00A5CA1F /* UIColor_EXT */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		13F41B172114500D00A5CA1F /* UIColor_EXT */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B192114502400A5CA1F /* UIColor_EXT.h */,
+				13F41B182114502400A5CA1F /* UIColor_EXT.m */,
+			);
+			path = UIColor_EXT;
+			sourceTree = "<group>";
+		};
+		13F41B1B21146E6800A5CA1F /* VC_MainPageSpaceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1371EE92211C014D00598D0E /* VW_DetailsView */,
+				1371EE93211C015D00598D0E /* VW_DirectionView */,
+				1371EE94211C016A00598D0E /* VW_EditView */,
+				1371EE95211C243900598D0E /* VC_MainPageSpaceDetails.h */,
+				1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */,
+			);
+			name = VC_MainPageSpaceDetails;
+			sourceTree = "<group>";
+		};
+		13F41B222114849600A5CA1F /* TC_MainPageSearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B23211484C200A5CA1F /* TC_MainPageSearchCell.h */,
+				13F41B24211484C200A5CA1F /* TC_MainPageSearchCell.m */,
+			);
+			name = TC_MainPageSearchCell;
+			sourceTree = "<group>";
+		};
+		13F9AD45211441CE00AEEA66 = {
+			isa = PBXGroup;
+			children = (
+				13F9AD50211441CE00AEEA66 /* ScanerFood */,
+				13F9AD6C211441CE00AEEA66 /* ScanerFoodTests */,
+				13F9AD77211441CE00AEEA66 /* ScanerFoodUITests */,
+				13F9AD4F211441CE00AEEA66 /* Products */,
+				0366E70ACA810271B85B1839 /* Pods */,
+				F3DF8540421D3A32A555B7F2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		13F9AD4F211441CE00AEEA66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13F9AD4E211441CE00AEEA66 /* ScanerFood.app */,
+				13F9AD69211441CE00AEEA66 /* ScanerFoodTests.xctest */,
+				13F9AD74211441CE00AEEA66 /* ScanerFoodUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13F9AD50211441CE00AEEA66 /* ScanerFood */ = {
+			isa = PBXGroup;
+			children = (
+				13F41B162114500100A5CA1F /* Extensions */,
+				13F41AFB2114489300A5CA1F /* ViewControllers */,
+				13F41B0721144AD600A5CA1F /* Applications */,
+				13F41B0C21144C5100A5CA1F /* DefaultFiles */,
+				13F41B0D21144C6B00A5CA1F /* SupportingFiles */,
+			);
+			path = ScanerFood;
+			sourceTree = "<group>";
+		};
+		13F9AD6C211441CE00AEEA66 /* ScanerFoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				13F9AD6D211441CE00AEEA66 /* ScanerFoodTests.m */,
+				13F9AD6F211441CE00AEEA66 /* Info.plist */,
+			);
+			path = ScanerFoodTests;
+			sourceTree = "<group>";
+		};
+		13F9AD77211441CE00AEEA66 /* ScanerFoodUITests */ = {
+			isa = PBXGroup;
+			children = (
+				13F9AD78211441CE00AEEA66 /* ScanerFoodUITests.m */,
+				13F9AD7A211441CE00AEEA66 /* Info.plist */,
+			);
+			path = ScanerFoodUITests;
+			sourceTree = "<group>";
+		};
+		F3DF8540421D3A32A555B7F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */,
+				C9DF64F5EB7497EF4765D04B /* libPods-ScanerFoodTests.a */,
+				4F307F94AD9A1EEC9DB80C9F /* libPods-ScanerFoodUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13F9AD4D211441CE00AEEA66 /* ScanerFood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13F9AD7D211441CE00AEEA66 /* Build configuration list for PBXNativeTarget "ScanerFood" */;
+			buildPhases = (
+				DFD177510B49960198A6DC2E /* [CP] Check Pods Manifest.lock */,
+				13F9AD4A211441CE00AEEA66 /* Sources */,
+				13F9AD4B211441CE00AEEA66 /* Frameworks */,
+				13F9AD4C211441CE00AEEA66 /* Resources */,
+				786E7F6F522899FC68A738B8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScanerFood;
+			productName = ScanerFood;
+			productReference = 13F9AD4E211441CE00AEEA66 /* ScanerFood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		13F9AD68211441CE00AEEA66 /* ScanerFoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13F9AD80211441CE00AEEA66 /* Build configuration list for PBXNativeTarget "ScanerFoodTests" */;
+			buildPhases = (
+				3A1E92D1F564AC1BED9CD21F /* [CP] Check Pods Manifest.lock */,
+				13F9AD65211441CE00AEEA66 /* Sources */,
+				13F9AD66211441CE00AEEA66 /* Frameworks */,
+				13F9AD67211441CE00AEEA66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13F9AD6B211441CE00AEEA66 /* PBXTargetDependency */,
+			);
+			name = ScanerFoodTests;
+			productName = ScanerFoodTests;
+			productReference = 13F9AD69211441CE00AEEA66 /* ScanerFoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13F9AD73211441CE00AEEA66 /* ScanerFoodUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13F9AD83211441CE00AEEA66 /* Build configuration list for PBXNativeTarget "ScanerFoodUITests" */;
+			buildPhases = (
+				56AA1B508AC0D2DBB8C3000F /* [CP] Check Pods Manifest.lock */,
+				13F9AD70211441CE00AEEA66 /* Sources */,
+				13F9AD71211441CE00AEEA66 /* Frameworks */,
+				13F9AD72211441CE00AEEA66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13F9AD76211441CE00AEEA66 /* PBXTargetDependency */,
+			);
+			name = ScanerFoodUITests;
+			productName = ScanerFoodUITests;
+			productReference = 13F9AD74211441CE00AEEA66 /* ScanerFoodUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13F9AD46211441CE00AEEA66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Lucas Luu";
+				TargetAttributes = {
+					13F9AD4D211441CE00AEEA66 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					13F9AD68211441CE00AEEA66 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 13F9AD4D211441CE00AEEA66;
+					};
+					13F9AD73211441CE00AEEA66 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 13F9AD4D211441CE00AEEA66;
+					};
+				};
+			};
+			buildConfigurationList = 13F9AD49211441CE00AEEA66 /* Build configuration list for PBXProject "ScanerFood" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 13F9AD45211441CE00AEEA66;
+			productRefGroup = 13F9AD4F211441CE00AEEA66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13F9AD4D211441CE00AEEA66 /* ScanerFood */,
+				13F9AD68211441CE00AEEA66 /* ScanerFoodTests */,
+				13F9AD73211441CE00AEEA66 /* ScanerFoodUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13F9AD4C211441CE00AEEA66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13F9AD5E211441CE00AEEA66 /* Assets.xcassets in Resources */,
+				13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13F9AD67211441CE00AEEA66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13F9AD72211441CE00AEEA66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A1E92D1F564AC1BED9CD21F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanerFoodTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56AA1B508AC0D2DBB8C3000F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanerFoodUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		786E7F6F522899FC68A738B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFD177510B49960198A6DC2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanerFood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13F9AD4A211441CE00AEEA66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1371EE9D211C246500598D0E /* VW_DirectionView.m in Sources */,
+				1371EEA0211C247700598D0E /* VW_EditView.m in Sources */,
+				13F41B25211484C200A5CA1F /* TC_MainPageSearchCell.m in Sources */,
+				13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */,
+				13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */,
+				13F9AD64211441CE00AEEA66 /* main.m in Sources */,
+				13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */,
+				13F41B00211448C300A5CA1F /* VC_MainPageHome.m in Sources */,
+				13087BB9211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m in Sources */,
+				1371EE97211C243A00598D0E /* VC_MainPageSpaceDetails.m in Sources */,
+				1371EE9A211C244F00598D0E /* VW_DetailsView.m in Sources */,
+				13087BB5211ADD4900D9BFD7 /* TVC_MainPageDistrict.m in Sources */,
+				13F41B1221144D9A00A5CA1F /* VC_MainPageManager.m in Sources */,
+				13F41B04211448D500A5CA1F /* VC_MainPageSeach.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13F9AD65211441CE00AEEA66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13F9AD6E211441CE00AEEA66 /* ScanerFoodTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13F9AD70211441CE00AEEA66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13F9AD79211441CE00AEEA66 /* ScanerFoodUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13F9AD6B211441CE00AEEA66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13F9AD4D211441CE00AEEA66 /* ScanerFood */;
+			targetProxy = 13F9AD6A211441CE00AEEA66 /* PBXContainerItemProxy */;
+		};
+		13F9AD76211441CE00AEEA66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13F9AD4D211441CE00AEEA66 /* ScanerFood */;
+			targetProxy = 13F9AD75211441CE00AEEA66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		13F9AD7B211441CE00AEEA66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		13F9AD7C211441CE00AEEA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13F9AD7E211441CE00AEEA66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA92E25A453FB97F1D94F6F /* Pods-ScanerFood.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5592AK55J4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanerFood/PrefixHeader.pch";
+				INFOPLIST_FILE = ScanerFood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13F9AD7F211441CE00AEEA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A21E0E22CDEB2CD432F4282 /* Pods-ScanerFood.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5592AK55J4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanerFood/PrefixHeader.pch";
+				INFOPLIST_FILE = ScanerFood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		13F9AD81211441CE00AEEA66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4248C0DCD1F2F2BCF8AE3AFA /* Pods-ScanerFoodTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5592AK55J4;
+				INFOPLIST_FILE = ScanerFoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScanerFood.app/ScanerFood";
+			};
+			name = Debug;
+		};
+		13F9AD82211441CE00AEEA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7080A48000F0B829F526AC73 /* Pods-ScanerFoodTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5592AK55J4;
+				INFOPLIST_FILE = ScanerFoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScanerFood.app/ScanerFood";
+			};
+			name = Release;
+		};
+		13F9AD84211441CE00AEEA66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A74BBBD59A05E667EAE94ABB /* Pods-ScanerFoodUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5592AK55J4;
+				INFOPLIST_FILE = ScanerFoodUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ScanerFood;
+			};
+			name = Debug;
+		};
+		13F9AD85211441CE00AEEA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 310346DAC741F1795F7AF99A /* Pods-ScanerFoodUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5592AK55J4;
+				INFOPLIST_FILE = ScanerFoodUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ScanerFood;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13F9AD49211441CE00AEEA66 /* Build configuration list for PBXProject "ScanerFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13F9AD7B211441CE00AEEA66 /* Debug */,
+				13F9AD7C211441CE00AEEA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13F9AD7D211441CE00AEEA66 /* Build configuration list for PBXNativeTarget "ScanerFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13F9AD7E211441CE00AEEA66 /* Debug */,
+				13F9AD7F211441CE00AEEA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13F9AD80211441CE00AEEA66 /* Build configuration list for PBXNativeTarget "ScanerFoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13F9AD81211441CE00AEEA66 /* Debug */,
+				13F9AD82211441CE00AEEA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13F9AD83211441CE00AEEA66 /* Build configuration list for PBXNativeTarget "ScanerFoodUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13F9AD84211441CE00AEEA66 /* Debug */,
+				13F9AD85211441CE00AEEA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13F9AD46211441CE00AEEA66 /* Project object */;
+}

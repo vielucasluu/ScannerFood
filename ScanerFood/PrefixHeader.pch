@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  ScanerFood
+//
+//  Created by Lucas Luu on 8/3/18.
+//  Copyright © 2018 Lucas Luu. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+@import GoogleMaps;
+#import <UIKit/UIKit.h>
+
+//Application
+#import "ApplicationNavigationController.h"
+#import "ApplicationMacros.h"
+#import "AppDelegate.h"
+
+//ViewController
+#import "VC_MainPageHome.h"
+#import "VC_MainPageSpaceDetails.h"
+
+//Extensions
+#import "UIColor_EXT.h"
+
+#endif /* PrefixHeader_pch */
