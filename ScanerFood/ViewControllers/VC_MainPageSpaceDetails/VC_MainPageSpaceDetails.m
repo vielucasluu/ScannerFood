@@ -66,7 +66,7 @@
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:_mapView
                                                           attribute:NSLayoutAttributeHeight
-                                                         multiplier:4/3
+                                                         multiplier:16/9
                                                            constant:100.0]];
     UIView* tabbarButtonView = [[UIView alloc] init];
     [tabbarButtonView setBackgroundColor:[UIColor LVL_colorWithHexString:@"f1f1f1" andAlpha:1.0]];
@@ -203,6 +203,104 @@
                                                                  attribute:NSLayoutAttributeHeight
                                                                 multiplier:1.0
                                                                   constant:0.0]];
+
+    //
+    _detailsView = [[VW_DetailsView alloc] init];
+    [_detailsView setHidden:NO];
+    [_detailsView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_detailsView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:tabbarButtonView
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    _directionView = [[VW_DirectionView alloc] init];
+    [_directionView setHidden:YES];
+    [_directionView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_directionView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:tabbarButtonView
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    _editView = [[VW_EditView alloc] init];
+    [_editView setHidden:YES];
+    [_editView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_editView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:tabbarButtonView
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
@@ -212,18 +310,26 @@
     marker.map = _mapView;
 }
 
--(void)directionButtonTapped:(UIButton*)btn
-{
-    [btn setSelected:YES];
-    [_editBtn setSelected:NO];
-    [_detailsBtn setSelected:NO];
-}
-
 -(void)detailsButtonTapped:(UIButton*)btn
 {
     [btn setSelected:YES];
     [_directionBtn setSelected:NO];
     [_editBtn setSelected:NO];
+    
+    [_detailsView setHidden:NO];
+    [_directionView setHidden:YES];
+    [_editView setHidden:YES];
+}
+
+-(void)directionButtonTapped:(UIButton*)btn
+{
+    [btn setSelected:YES];
+    [_editBtn setSelected:NO];
+    [_detailsBtn setSelected:NO];
+    
+    [_detailsView setHidden:YES];
+    [_directionView setHidden:NO];
+    [_editView setHidden:YES];
 }
 
 -(void)editButtonTapped:(UIButton*)btn
@@ -231,6 +337,10 @@
     [btn setSelected:YES];
     [_directionBtn setSelected:NO];
     [_detailsBtn setSelected:NO];
+    
+    [_detailsView setHidden:YES];
+    [_directionView setHidden:YES];
+    [_editView setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {

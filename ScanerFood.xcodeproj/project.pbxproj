@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		13087BB5211ADD4900D9BFD7 /* TVC_MainPageDistrict.m in Sources */ = {isa = PBXBuildFile; fileRef = 13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */; };
 		13087BB9211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */; };
+		136CBFB2211EB4C1000E368F /* VC_MainPageHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 136CBFB0211EB4C1000E368F /* VC_MainPageHome.m */; };
 		1371EE97211C243A00598D0E /* VC_MainPageSpaceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */; };
 		1371EE9A211C244F00598D0E /* VW_DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE99211C244F00598D0E /* VW_DetailsView.m */; };
 		1371EE9D211C246500598D0E /* VW_DirectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE9C211C246500598D0E /* VW_DirectionView.m */; };
 		1371EEA0211C247700598D0E /* VW_EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE9F211C247700598D0E /* VW_EditView.m */; };
-		13F41B00211448C300A5CA1F /* VC_MainPageHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41AFE211448C300A5CA1F /* VC_MainPageHome.m */; };
 		13F41B04211448D500A5CA1F /* VC_MainPageSeach.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */; };
 		13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F41B052114497300A5CA1F /* LaunchScreen.storyboard */; };
 		13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */; };
@@ -53,6 +53,8 @@
 		13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TVC_MainPageDistrict.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TVC_MainPageDistrict.m; sourceTree = SOURCE_ROOT; };
 		13087BB7211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TC_MainPageDistrictCell.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TC_MainPageDistrictCell/TC_MainPageDistrictCell.h; sourceTree = SOURCE_ROOT; };
 		13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TC_MainPageDistrictCell.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TC_MainPageDistrictCell/TC_MainPageDistrictCell.m; sourceTree = SOURCE_ROOT; };
+		136CBFB0211EB4C1000E368F /* VC_MainPageHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageHome.m; path = ScanerFood/ViewControllers/VC_MainPageHome.m; sourceTree = SOURCE_ROOT; };
+		136CBFB1211EB4C1000E368F /* VC_MainPageHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageHome.h; path = ScanerFood/ViewControllers/VC_MainPageHome.h; sourceTree = SOURCE_ROOT; };
 		1371EE95211C243900598D0E /* VC_MainPageSpaceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageSpaceDetails.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VC_MainPageSpaceDetails.h; sourceTree = SOURCE_ROOT; };
 		1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageSpaceDetails.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VC_MainPageSpaceDetails.m; sourceTree = SOURCE_ROOT; };
 		1371EE98211C244F00598D0E /* VW_DetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_DetailsView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DetailsView/VW_DetailsView.h; sourceTree = SOURCE_ROOT; };
@@ -61,8 +63,6 @@
 		1371EE9C211C246500598D0E /* VW_DirectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_DirectionView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DirectionView/VW_DirectionView.m; sourceTree = SOURCE_ROOT; };
 		1371EE9E211C247700598D0E /* VW_EditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_EditView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_EditView/VW_EditView.h; sourceTree = SOURCE_ROOT; };
 		1371EE9F211C247700598D0E /* VW_EditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_EditView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_EditView/VW_EditView.m; sourceTree = SOURCE_ROOT; };
-		13F41AFE211448C300A5CA1F /* VC_MainPageHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageHome.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageHome.m; sourceTree = SOURCE_ROOT; };
-		13F41AFF211448C300A5CA1F /* VC_MainPageHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageHome.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageHome.h; sourceTree = SOURCE_ROOT; };
 		13F41B02211448D500A5CA1F /* VC_MainPageSeach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageSeach.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/VC_MainPageSeach.h; sourceTree = SOURCE_ROOT; };
 		13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageSeach.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/VC_MainPageSeach.m; sourceTree = SOURCE_ROOT; };
 		13F41B052114497300A5CA1F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,6 +158,18 @@
 			name = TC_MainPageDistrictCell;
 			sourceTree = "<group>";
 		};
+		136CBFAF211EB463000E368F /* VC_MainPageHome */ = {
+			isa = PBXGroup;
+			children = (
+				136CBFB1211EB4C1000E368F /* VC_MainPageHome.h */,
+				136CBFB0211EB4C1000E368F /* VC_MainPageHome.m */,
+				13F41B1B21146E6800A5CA1F /* VC_MainPageSpaceDetails */,
+				13F41B01211448C600A5CA1F /* VC_MainPageSearch */,
+				13F41B0F21144D7B00A5CA1F /* VC_MainPageManager */,
+			);
+			path = VC_MainPageHome;
+			sourceTree = "<group>";
+		};
 		1371EE92211C014D00598D0E /* VW_DetailsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,21 +200,9 @@
 		13F41AFB2114489300A5CA1F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				13F41AFD211448B800A5CA1F /* VC_MainPageHome */,
+				136CBFAF211EB463000E368F /* VC_MainPageHome */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		13F41AFD211448B800A5CA1F /* VC_MainPageHome */ = {
-			isa = PBXGroup;
-			children = (
-				13F41B1B21146E6800A5CA1F /* VC_MainPageSpaceDetails */,
-				13F41B01211448C600A5CA1F /* VC_MainPageSearch */,
-				13F41B0F21144D7B00A5CA1F /* VC_MainPageManager */,
-				13F41AFF211448C300A5CA1F /* VC_MainPageHome.h */,
-				13F41AFE211448C300A5CA1F /* VC_MainPageHome.m */,
-			);
-			path = VC_MainPageHome;
 			sourceTree = "<group>";
 		};
 		13F41B01211448C600A5CA1F /* VC_MainPageSearch */ = {
@@ -214,6 +214,7 @@
 				13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */,
 			);
 			name = VC_MainPageSearch;
+			path = ../VC_MainPageHome;
 			sourceTree = "<group>";
 		};
 		13F41B0721144AD600A5CA1F /* Applications */ = {
@@ -254,6 +255,7 @@
 				13F41B1121144D9A00A5CA1F /* VC_MainPageManager.m */,
 			);
 			name = VC_MainPageManager;
+			path = ../VC_MainPageHome;
 			sourceTree = "<group>";
 		};
 		13F41B162114500100A5CA1F /* Extensions */ = {
@@ -283,6 +285,7 @@
 				1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */,
 			);
 			name = VC_MainPageSpaceDetails;
+			path = ../VC_MainPageHome;
 			sourceTree = "<group>";
 		};
 		13F41B222114849600A5CA1F /* TC_MainPageSearchCell */ = {
@@ -574,7 +577,7 @@
 				13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */,
 				13F9AD64211441CE00AEEA66 /* main.m in Sources */,
 				13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */,
-				13F41B00211448C300A5CA1F /* VC_MainPageHome.m in Sources */,
+				136CBFB2211EB4C1000E368F /* VC_MainPageHome.m in Sources */,
 				13087BB9211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m in Sources */,
 				1371EE97211C243A00598D0E /* VC_MainPageSpaceDetails.m in Sources */,
 				1371EE9A211C244F00598D0E /* VW_DetailsView.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface VW_DetailsView : UIView
 
+-(void)updateScrollView;
+
 @end
