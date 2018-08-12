@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13087BB5211ADD4900D9BFD7 /* TVC_MainPageDistrict.m in Sources */ = {isa = PBXBuildFile; fileRef = 13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */; };
-		13087BB9211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */; };
-		136CBFB2211EB4C1000E368F /* VC_MainPageHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 136CBFB0211EB4C1000E368F /* VC_MainPageHome.m */; };
-		1371EE97211C243A00598D0E /* VC_MainPageSpaceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */; };
-		1371EE9A211C244F00598D0E /* VW_DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE99211C244F00598D0E /* VW_DetailsView.m */; };
-		1371EE9D211C246500598D0E /* VW_DirectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE9C211C246500598D0E /* VW_DirectionView.m */; };
-		1371EEA0211C247700598D0E /* VW_EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1371EE9F211C247700598D0E /* VW_EditView.m */; };
-		13F41B04211448D500A5CA1F /* VC_MainPageSeach.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */; };
+		1320750A2120476E00D02051 /* VC_MainPageSpaceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075092120476D00D02051 /* VC_MainPageSpaceDetails.m */; };
+		1320750E2120478E00D02051 /* VC_MainPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1320750D2120478E00D02051 /* VC_MainPageManager.m */; };
+		132075122120483A00D02051 /* VC_MainPageSeach.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075102120483A00D02051 /* VC_MainPageSeach.m */; };
+		132075162120487900D02051 /* TC_MainPageSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075152120487900D02051 /* TC_MainPageSearchCell.m */; };
+		1320751A2120489300D02051 /* TVC_MainPageDistrict.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075182120489300D02051 /* TVC_MainPageDistrict.m */; };
+		1320751E212048AA00D02051 /* TC_MainPageDistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1320751C212048AA00D02051 /* TC_MainPageDistrictCell.m */; };
+		13207522212048DC00D02051 /* VW_DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13207520212048DC00D02051 /* VW_DetailsView.m */; };
+		13207526212048F000D02051 /* VW_DirectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13207524212048F000D02051 /* VW_DirectionView.m */; };
+		1320752A2120490600D02051 /* VW_EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075292120490600D02051 /* VW_EditView.m */; };
+		1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */; };
 		13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F41B052114497300A5CA1F /* LaunchScreen.storyboard */; };
 		13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */; };
-		13F41B1221144D9A00A5CA1F /* VC_MainPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B1121144D9A00A5CA1F /* VC_MainPageManager.m */; };
 		13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B182114502400A5CA1F /* UIColor_EXT.m */; };
-		13F41B25211484C200A5CA1F /* TC_MainPageSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B24211484C200A5CA1F /* TC_MainPageSearchCell.m */; };
 		13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD52211441CE00AEEA66 /* AppDelegate.m */; };
 		13F9AD5E211441CE00AEEA66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F9AD5D211441CE00AEEA66 /* Assets.xcassets */; };
 		13F9AD64211441CE00AEEA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD63211441CE00AEEA66 /* main.m */; };
@@ -49,33 +49,33 @@
 
 /* Begin PBXFileReference section */
 		0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13087BB3211ADD4900D9BFD7 /* TVC_MainPageDistrict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TVC_MainPageDistrict.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TVC_MainPageDistrict.h; sourceTree = SOURCE_ROOT; };
-		13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TVC_MainPageDistrict.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TVC_MainPageDistrict.m; sourceTree = SOURCE_ROOT; };
-		13087BB7211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TC_MainPageDistrictCell.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TC_MainPageDistrictCell/TC_MainPageDistrictCell.h; sourceTree = SOURCE_ROOT; };
-		13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TC_MainPageDistrictCell.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TVC_MainPageDistrict/TC_MainPageDistrictCell/TC_MainPageDistrictCell.m; sourceTree = SOURCE_ROOT; };
-		136CBFB0211EB4C1000E368F /* VC_MainPageHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageHome.m; path = ScanerFood/ViewControllers/VC_MainPageHome.m; sourceTree = SOURCE_ROOT; };
-		136CBFB1211EB4C1000E368F /* VC_MainPageHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageHome.h; path = ScanerFood/ViewControllers/VC_MainPageHome.h; sourceTree = SOURCE_ROOT; };
-		1371EE95211C243900598D0E /* VC_MainPageSpaceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageSpaceDetails.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VC_MainPageSpaceDetails.h; sourceTree = SOURCE_ROOT; };
-		1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageSpaceDetails.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VC_MainPageSpaceDetails.m; sourceTree = SOURCE_ROOT; };
-		1371EE98211C244F00598D0E /* VW_DetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_DetailsView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DetailsView/VW_DetailsView.h; sourceTree = SOURCE_ROOT; };
-		1371EE99211C244F00598D0E /* VW_DetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_DetailsView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DetailsView/VW_DetailsView.m; sourceTree = SOURCE_ROOT; };
-		1371EE9B211C246500598D0E /* VW_DirectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_DirectionView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DirectionView/VW_DirectionView.h; sourceTree = SOURCE_ROOT; };
-		1371EE9C211C246500598D0E /* VW_DirectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_DirectionView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_DirectionView/VW_DirectionView.m; sourceTree = SOURCE_ROOT; };
-		1371EE9E211C247700598D0E /* VW_EditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VW_EditView.h; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_EditView/VW_EditView.h; sourceTree = SOURCE_ROOT; };
-		1371EE9F211C247700598D0E /* VW_EditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VW_EditView.m; path = ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_EditView/VW_EditView.m; sourceTree = SOURCE_ROOT; };
-		13F41B02211448D500A5CA1F /* VC_MainPageSeach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC_MainPageSeach.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/VC_MainPageSeach.h; sourceTree = SOURCE_ROOT; };
-		13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageSeach.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/VC_MainPageSeach.m; sourceTree = SOURCE_ROOT; };
+		132075082120476D00D02051 /* VC_MainPageSpaceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageSpaceDetails.h; sourceTree = "<group>"; };
+		132075092120476D00D02051 /* VC_MainPageSpaceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageSpaceDetails.m; sourceTree = "<group>"; };
+		1320750C2120478E00D02051 /* VC_MainPageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageManager.h; sourceTree = "<group>"; };
+		1320750D2120478E00D02051 /* VC_MainPageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageManager.m; sourceTree = "<group>"; };
+		132075102120483A00D02051 /* VC_MainPageSeach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageSeach.m; sourceTree = "<group>"; };
+		132075112120483A00D02051 /* VC_MainPageSeach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageSeach.h; sourceTree = "<group>"; };
+		132075142120487900D02051 /* TC_MainPageSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TC_MainPageSearchCell.h; sourceTree = "<group>"; };
+		132075152120487900D02051 /* TC_MainPageSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TC_MainPageSearchCell.m; sourceTree = "<group>"; };
+		132075182120489300D02051 /* TVC_MainPageDistrict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVC_MainPageDistrict.m; sourceTree = "<group>"; };
+		132075192120489300D02051 /* TVC_MainPageDistrict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVC_MainPageDistrict.h; sourceTree = "<group>"; };
+		1320751C212048AA00D02051 /* TC_MainPageDistrictCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TC_MainPageDistrictCell.m; sourceTree = "<group>"; };
+		1320751D212048AA00D02051 /* TC_MainPageDistrictCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TC_MainPageDistrictCell.h; sourceTree = "<group>"; };
+		13207520212048DC00D02051 /* VW_DetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VW_DetailsView.m; sourceTree = "<group>"; };
+		13207521212048DC00D02051 /* VW_DetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_DetailsView.h; sourceTree = "<group>"; };
+		13207524212048F000D02051 /* VW_DirectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VW_DirectionView.m; sourceTree = "<group>"; };
+		13207525212048F000D02051 /* VW_DirectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_DirectionView.h; sourceTree = "<group>"; };
+		132075282120490600D02051 /* VW_EditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_EditView.h; sourceTree = "<group>"; };
+		132075292120490600D02051 /* VW_EditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VW_EditView.m; sourceTree = "<group>"; };
+		1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageHome.m; sourceTree = "<group>"; };
+		1335B8ED211F1DBC00C8EE2C /* VC_MainPageHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageHome.h; sourceTree = "<group>"; };
 		13F41B052114497300A5CA1F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13F41B0821144B1C00A5CA1F /* ApplicationNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApplicationNavigationController.h; path = Applications/ApplicationNavigationController.h; sourceTree = "<group>"; };
 		13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ApplicationNavigationController.m; path = Applications/ApplicationNavigationController.m; sourceTree = "<group>"; };
 		13F41B0B21144B4900A5CA1F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		13F41B0E21144CAC00A5CA1F /* ApplicationMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationMacros.h; sourceTree = "<group>"; };
-		13F41B1021144D9A00A5CA1F /* VC_MainPageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VC_MainPageManager.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageManager/VC_MainPageManager.h; sourceTree = SOURCE_ROOT; };
-		13F41B1121144D9A00A5CA1F /* VC_MainPageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VC_MainPageManager.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageManager/VC_MainPageManager.m; sourceTree = SOURCE_ROOT; };
 		13F41B182114502400A5CA1F /* UIColor_EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_EXT.m; sourceTree = "<group>"; };
 		13F41B192114502400A5CA1F /* UIColor_EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor_EXT.h; sourceTree = "<group>"; };
-		13F41B23211484C200A5CA1F /* TC_MainPageSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TC_MainPageSearchCell.h; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TC_MainPageSearchCell/TC_MainPageSearchCell.h; sourceTree = SOURCE_ROOT; };
-		13F41B24211484C200A5CA1F /* TC_MainPageSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TC_MainPageSearchCell.m; path = ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageMap/TC_MainPageSearchCell/TC_MainPageSearchCell.m; sourceTree = SOURCE_ROOT; };
 		13F9AD4E211441CE00AEEA66 /* ScanerFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanerFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F9AD51211441CE00AEEA66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13F9AD52211441CE00AEEA66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,82 +139,111 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		13087BB2211ADCEF00D9BFD7 /* TVC_MainPageDistrict */ = {
+		132075072120474B00D02051 /* VC_MainPageSpaceDetails */ = {
 			isa = PBXGroup;
 			children = (
-				13087BB6211AE9B400D9BFD7 /* TC_MainPageDistrictCell */,
-				13087BB3211ADD4900D9BFD7 /* TVC_MainPageDistrict.h */,
-				13087BB4211ADD4900D9BFD7 /* TVC_MainPageDistrict.m */,
+				13207527212048F400D02051 /* VW_EditView */,
+				13207523212048DF00D02051 /* VW_DirectionView */,
+				1320751F212048CA00D02051 /* VW_DetailsView */,
+				132075082120476D00D02051 /* VC_MainPageSpaceDetails.h */,
+				132075092120476D00D02051 /* VC_MainPageSpaceDetails.m */,
 			);
-			name = TVC_MainPageDistrict;
+			path = VC_MainPageSpaceDetails;
 			sourceTree = "<group>";
 		};
-		13087BB6211AE9B400D9BFD7 /* TC_MainPageDistrictCell */ = {
+		1320750B2120477D00D02051 /* VC_MainPageManager */ = {
 			isa = PBXGroup;
 			children = (
-				13087BB7211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.h */,
-				13087BB8211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m */,
+				1320750C2120478E00D02051 /* VC_MainPageManager.h */,
+				1320750D2120478E00D02051 /* VC_MainPageManager.m */,
 			);
-			name = TC_MainPageDistrictCell;
+			path = VC_MainPageManager;
 			sourceTree = "<group>";
 		};
-		136CBFAF211EB463000E368F /* VC_MainPageHome */ = {
+		1320750F2120482800D02051 /* VC_MainPageSearch */ = {
 			isa = PBXGroup;
 			children = (
-				136CBFB1211EB4C1000E368F /* VC_MainPageHome.h */,
-				136CBFB0211EB4C1000E368F /* VC_MainPageHome.m */,
-				13F41B1B21146E6800A5CA1F /* VC_MainPageSpaceDetails */,
-				13F41B01211448C600A5CA1F /* VC_MainPageSearch */,
-				13F41B0F21144D7B00A5CA1F /* VC_MainPageManager */,
+				132075172120487D00D02051 /* TVC_MainPageDistrict */,
+				132075132120486900D02051 /* TC_MainPageSearchCell */,
+				132075112120483A00D02051 /* VC_MainPageSeach.h */,
+				132075102120483A00D02051 /* VC_MainPageSeach.m */,
+			);
+			path = VC_MainPageSearch;
+			sourceTree = "<group>";
+		};
+		132075132120486900D02051 /* TC_MainPageSearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				132075142120487900D02051 /* TC_MainPageSearchCell.h */,
+				132075152120487900D02051 /* TC_MainPageSearchCell.m */,
+			);
+			path = TC_MainPageSearchCell;
+			sourceTree = "<group>";
+		};
+		132075172120487D00D02051 /* TVC_MainPageDistrict */ = {
+			isa = PBXGroup;
+			children = (
+				1320751B2120489C00D02051 /* TC_MainPageDistrictCell */,
+				132075192120489300D02051 /* TVC_MainPageDistrict.h */,
+				132075182120489300D02051 /* TVC_MainPageDistrict.m */,
+			);
+			path = TVC_MainPageDistrict;
+			sourceTree = "<group>";
+		};
+		1320751B2120489C00D02051 /* TC_MainPageDistrictCell */ = {
+			isa = PBXGroup;
+			children = (
+				1320751D212048AA00D02051 /* TC_MainPageDistrictCell.h */,
+				1320751C212048AA00D02051 /* TC_MainPageDistrictCell.m */,
+			);
+			path = TC_MainPageDistrictCell;
+			sourceTree = "<group>";
+		};
+		1320751F212048CA00D02051 /* VW_DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				13207521212048DC00D02051 /* VW_DetailsView.h */,
+				13207520212048DC00D02051 /* VW_DetailsView.m */,
+			);
+			path = VW_DetailsView;
+			sourceTree = "<group>";
+		};
+		13207523212048DF00D02051 /* VW_DirectionView */ = {
+			isa = PBXGroup;
+			children = (
+				13207525212048F000D02051 /* VW_DirectionView.h */,
+				13207524212048F000D02051 /* VW_DirectionView.m */,
+			);
+			path = VW_DirectionView;
+			sourceTree = "<group>";
+		};
+		13207527212048F400D02051 /* VW_EditView */ = {
+			isa = PBXGroup;
+			children = (
+				132075282120490600D02051 /* VW_EditView.h */,
+				132075292120490600D02051 /* VW_EditView.m */,
+			);
+			path = VW_EditView;
+			sourceTree = "<group>";
+		};
+		1335B8EA211F1D8B00C8EE2C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				132075072120474B00D02051 /* VC_MainPageSpaceDetails */,
+				1335B8EB211F1D9A00C8EE2C /* VC_MainPageHome */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1335B8EB211F1D9A00C8EE2C /* VC_MainPageHome */ = {
+			isa = PBXGroup;
+			children = (
+				1320750F2120482800D02051 /* VC_MainPageSearch */,
+				1320750B2120477D00D02051 /* VC_MainPageManager */,
+				1335B8ED211F1DBC00C8EE2C /* VC_MainPageHome.h */,
+				1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */,
 			);
 			path = VC_MainPageHome;
-			sourceTree = "<group>";
-		};
-		1371EE92211C014D00598D0E /* VW_DetailsView */ = {
-			isa = PBXGroup;
-			children = (
-				1371EE98211C244F00598D0E /* VW_DetailsView.h */,
-				1371EE99211C244F00598D0E /* VW_DetailsView.m */,
-			);
-			name = VW_DetailsView;
-			sourceTree = "<group>";
-		};
-		1371EE93211C015D00598D0E /* VW_DirectionView */ = {
-			isa = PBXGroup;
-			children = (
-				1371EE9B211C246500598D0E /* VW_DirectionView.h */,
-				1371EE9C211C246500598D0E /* VW_DirectionView.m */,
-			);
-			name = VW_DirectionView;
-			sourceTree = "<group>";
-		};
-		1371EE94211C016A00598D0E /* VW_EditView */ = {
-			isa = PBXGroup;
-			children = (
-				1371EE9E211C247700598D0E /* VW_EditView.h */,
-				1371EE9F211C247700598D0E /* VW_EditView.m */,
-			);
-			name = VW_EditView;
-			sourceTree = "<group>";
-		};
-		13F41AFB2114489300A5CA1F /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				136CBFAF211EB463000E368F /* VC_MainPageHome */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		13F41B01211448C600A5CA1F /* VC_MainPageSearch */ = {
-			isa = PBXGroup;
-			children = (
-				13087BB2211ADCEF00D9BFD7 /* TVC_MainPageDistrict */,
-				13F41B222114849600A5CA1F /* TC_MainPageSearchCell */,
-				13F41B02211448D500A5CA1F /* VC_MainPageSeach.h */,
-				13F41B03211448D500A5CA1F /* VC_MainPageSeach.m */,
-			);
-			name = VC_MainPageSearch;
-			path = ../VC_MainPageHome;
 			sourceTree = "<group>";
 		};
 		13F41B0721144AD600A5CA1F /* Applications */ = {
@@ -248,16 +277,6 @@
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		13F41B0F21144D7B00A5CA1F /* VC_MainPageManager */ = {
-			isa = PBXGroup;
-			children = (
-				13F41B1021144D9A00A5CA1F /* VC_MainPageManager.h */,
-				13F41B1121144D9A00A5CA1F /* VC_MainPageManager.m */,
-			);
-			name = VC_MainPageManager;
-			path = ../VC_MainPageHome;
-			sourceTree = "<group>";
-		};
 		13F41B162114500100A5CA1F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,28 +292,6 @@
 				13F41B182114502400A5CA1F /* UIColor_EXT.m */,
 			);
 			path = UIColor_EXT;
-			sourceTree = "<group>";
-		};
-		13F41B1B21146E6800A5CA1F /* VC_MainPageSpaceDetails */ = {
-			isa = PBXGroup;
-			children = (
-				1371EE92211C014D00598D0E /* VW_DetailsView */,
-				1371EE93211C015D00598D0E /* VW_DirectionView */,
-				1371EE94211C016A00598D0E /* VW_EditView */,
-				1371EE95211C243900598D0E /* VC_MainPageSpaceDetails.h */,
-				1371EE96211C243900598D0E /* VC_MainPageSpaceDetails.m */,
-			);
-			name = VC_MainPageSpaceDetails;
-			path = ../VC_MainPageHome;
-			sourceTree = "<group>";
-		};
-		13F41B222114849600A5CA1F /* TC_MainPageSearchCell */ = {
-			isa = PBXGroup;
-			children = (
-				13F41B23211484C200A5CA1F /* TC_MainPageSearchCell.h */,
-				13F41B24211484C200A5CA1F /* TC_MainPageSearchCell.m */,
-			);
-			name = TC_MainPageSearchCell;
 			sourceTree = "<group>";
 		};
 		13F9AD45211441CE00AEEA66 = {
@@ -322,8 +319,8 @@
 		13F9AD50211441CE00AEEA66 /* ScanerFood */ = {
 			isa = PBXGroup;
 			children = (
+				1335B8EA211F1D8B00C8EE2C /* ViewControllers */,
 				13F41B162114500100A5CA1F /* Extensions */,
-				13F41AFB2114489300A5CA1F /* ViewControllers */,
 				13F41B0721144AD600A5CA1F /* Applications */,
 				13F41B0C21144C5100A5CA1F /* DefaultFiles */,
 				13F41B0D21144C6B00A5CA1F /* SupportingFiles */,
@@ -425,7 +422,7 @@
 		13F9AD46211441CE00AEEA66 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Lucas Luu";
 				TargetAttributes = {
 					13F9AD4D211441CE00AEEA66 = {
@@ -570,20 +567,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1371EE9D211C246500598D0E /* VW_DirectionView.m in Sources */,
-				1371EEA0211C247700598D0E /* VW_EditView.m in Sources */,
-				13F41B25211484C200A5CA1F /* TC_MainPageSearchCell.m in Sources */,
+				13207526212048F000D02051 /* VW_DirectionView.m in Sources */,
+				1320752A2120490600D02051 /* VW_EditView.m in Sources */,
+				1320750E2120478E00D02051 /* VC_MainPageManager.m in Sources */,
+				132075162120487900D02051 /* TC_MainPageSearchCell.m in Sources */,
 				13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */,
 				13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */,
+				132075122120483A00D02051 /* VC_MainPageSeach.m in Sources */,
+				1320750A2120476E00D02051 /* VC_MainPageSpaceDetails.m in Sources */,
 				13F9AD64211441CE00AEEA66 /* main.m in Sources */,
+				1320751E212048AA00D02051 /* TC_MainPageDistrictCell.m in Sources */,
+				13207522212048DC00D02051 /* VW_DetailsView.m in Sources */,
+				1320751A2120489300D02051 /* TVC_MainPageDistrict.m in Sources */,
+				1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome.m in Sources */,
 				13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */,
-				136CBFB2211EB4C1000E368F /* VC_MainPageHome.m in Sources */,
-				13087BB9211AE9DC00D9BFD7 /* TC_MainPageDistrictCell.m in Sources */,
-				1371EE97211C243A00598D0E /* VC_MainPageSpaceDetails.m in Sources */,
-				1371EE9A211C244F00598D0E /* VW_DetailsView.m in Sources */,
-				13087BB5211ADD4900D9BFD7 /* TVC_MainPageDistrict.m in Sources */,
-				13F41B1221144D9A00A5CA1F /* VC_MainPageManager.m in Sources */,
-				13F41B04211448D500A5CA1F /* VC_MainPageSeach.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +630,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -640,6 +638,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -688,6 +687,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -695,6 +695,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
