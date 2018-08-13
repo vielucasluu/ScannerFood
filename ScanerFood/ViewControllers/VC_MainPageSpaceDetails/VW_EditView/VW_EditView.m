@@ -10,9 +10,9 @@
 
 @implementation VW_EditView
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor blueColor]];
     }

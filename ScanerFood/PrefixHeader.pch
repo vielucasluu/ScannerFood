@@ -26,5 +26,6 @@
 
 //Extensions
 #import "UIColor_EXT.h"
+#import "AutoScrollLabel.h"
 
 #endif /* PrefixHeader_pch */

@@ -10,6 +10,6 @@
 
 @interface VW_DetailsView : UIView
 
--(void)updateScrollView;
+-(void)setDataSource:(NSDictionary*)dataSource;
 
 @end

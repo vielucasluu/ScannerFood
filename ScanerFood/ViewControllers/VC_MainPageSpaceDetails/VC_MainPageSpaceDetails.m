@@ -27,7 +27,8 @@
 
 @implementation VC_MainPageSpaceDetails
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
@@ -36,271 +37,64 @@
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
                                                             longitude:151.20
                                                                  zoom:6];
-    _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    
+    CGFloat xPos = 0.0;
+    CGFloat yPos = 0.0;
+    
+    CGRect frame = self.view.frame;
+    CGRect contentRect = CGRectMake(xPos, yPos, frame.size.width, frame.size.width*9/16);
+    
+    _mapView = [GMSMapView mapWithFrame:contentRect camera:camera];
     _mapView.myLocationEnabled = YES;
-    [_mapView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_mapView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
-                                                          attribute:NSLayoutAttributeLeft
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeLeft
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
-                                                          attribute:NSLayoutAttributeRight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeRight
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
-                                                          attribute:NSLayoutAttributeWidth
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_mapView
-                                                          attribute:NSLayoutAttributeHeight
-                                                         multiplier:16/9
-                                                           constant:100.0]];
-    UIView* tabbarButtonView = [[UIView alloc] init];
+    
+    yPos += contentRect.size.height;
+    contentRect = CGRectMake(xPos, yPos, frame.size.width, 50);
+    UIView* tabbarButtonView = [[UIView alloc] initWithFrame:contentRect];
     [tabbarButtonView setBackgroundColor:[UIColor LVL_colorWithHexString:@"f1f1f1" andAlpha:1.0]];
-    [tabbarButtonView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:tabbarButtonView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_mapView
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeLeft
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeLeft
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeRight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeRight
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1.0
-                                                           constant:30.0]];
-    _directionBtn = [[UIButton alloc] init];
-    [_directionBtn setBackgroundImage:[[UIImage imageNamed:@"direction"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [_directionBtn setBackgroundImage:[[UIImage imageNamed:@"direction"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateSelected];
-    [_directionBtn addTarget:self action:@selector(directionButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [_directionBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [tabbarButtonView addSubview:_directionBtn];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_directionBtn
-                                                                 attribute:NSLayoutAttributeTop
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeTop
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_directionBtn
-                                                                 attribute:NSLayoutAttributeCenterX
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeCenterX
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_directionBtn
-                                                                 attribute:NSLayoutAttributeCenterY
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeCenterY
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_directionBtn
-                                                                 attribute:NSLayoutAttributeWidth
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:_directionBtn
-                                                                 attribute:NSLayoutAttributeHeight
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    _detailsBtn = [[UIButton alloc] init];
+    
+    yPos += contentRect.size.height;
+    xPos = (frame.size.width - 3*30)/4;
+    contentRect = CGRectMake(xPos, 10, 30, 30);
+    _detailsBtn = [[UIButton alloc] initWithFrame:contentRect];
     [_detailsBtn setSelected:YES];
     [_detailsBtn setBackgroundImage:[[UIImage imageNamed:@"detail_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [_detailsBtn setBackgroundImage:[[UIImage imageNamed:@"detail_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateSelected];
     [_detailsBtn addTarget:self action:@selector(detailsButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [_detailsBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
     [tabbarButtonView addSubview:_detailsBtn];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_detailsBtn
-                                                                 attribute:NSLayoutAttributeTop
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeTop
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_detailsBtn
-                                                                 attribute:NSLayoutAttributeCenterX
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeCenterX
-                                                                multiplier:0.5
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_detailsBtn
-                                                                 attribute:NSLayoutAttributeCenterY
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeCenterY
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_detailsBtn
-                                                                 attribute:NSLayoutAttributeWidth
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:_detailsBtn
-                                                                 attribute:NSLayoutAttributeHeight
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    _editBtn = [[UIButton alloc] init];
+    
+    xPos += 30 + (frame.size.width - 3*30)/4;
+    contentRect = CGRectMake(xPos, 10, 30, 30);
+    _directionBtn = [[UIButton alloc] initWithFrame:contentRect];
+    [_directionBtn setBackgroundImage:[[UIImage imageNamed:@"direction"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [_directionBtn setBackgroundImage:[[UIImage imageNamed:@"direction"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateSelected];
+    [_directionBtn addTarget:self action:@selector(directionButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [tabbarButtonView addSubview:_directionBtn];
+    
+    xPos += 30 + (frame.size.width - 3*30)/4;
+    contentRect = CGRectMake(xPos, 10, 30, 30);
+    _editBtn = [[UIButton alloc] initWithFrame:contentRect];
     [_editBtn setBackgroundImage:[[UIImage imageNamed:@"edit_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [_editBtn setBackgroundImage:[[UIImage imageNamed:@"edit_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateSelected];
     [_editBtn addTarget:self action:@selector(editButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [_editBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
     [tabbarButtonView addSubview:_editBtn];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_editBtn
-                                                                 attribute:NSLayoutAttributeTop
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeTop
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_editBtn
-                                                                 attribute:NSLayoutAttributeCenterX
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeCenterX
-                                                                multiplier:1.5
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_editBtn
-                                                                 attribute:NSLayoutAttributeCenterY
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:tabbarButtonView
-                                                                 attribute:NSLayoutAttributeCenterY
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-    [tabbarButtonView addConstraint:[NSLayoutConstraint constraintWithItem:_editBtn
-                                                                 attribute:NSLayoutAttributeWidth
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:_editBtn
-                                                                 attribute:NSLayoutAttributeHeight
-                                                                multiplier:1.0
-                                                                  constant:0.0]];
-
-    //
-    _detailsView = [[VW_DetailsView alloc] init];
+    
+    xPos = 0.0;
+    contentRect = CGRectMake(xPos, yPos, frame.size.width, frame.size.height - yPos - 49 - 64 );
+    _detailsView = [[VW_DetailsView alloc] initWithFrame:contentRect];
     [_detailsView setHidden:NO];
-    [_detailsView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_detailsView setDataSource:nil];
     [self.view addSubview:_detailsView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
-                                                          attribute:NSLayoutAttributeLeft
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeLeft
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
-                                                          attribute:NSLayoutAttributeRight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeRight
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_detailsView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    _directionView = [[VW_DirectionView alloc] init];
+    
+    
+    _directionView = [[VW_DirectionView alloc] initWithFrame:contentRect];
     [_directionView setHidden:YES];
-    [_directionView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_directionView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
-                                                          attribute:NSLayoutAttributeLeft
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeLeft
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
-                                                          attribute:NSLayoutAttributeRight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeRight
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_directionView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    _editView = [[VW_EditView alloc] init];
+    
+    _editView = [[VW_EditView alloc] initWithFrame:contentRect];
     [_editView setHidden:YES];
-    [_editView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_editView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:tabbarButtonView
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
-                                                          attribute:NSLayoutAttributeLeft
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeLeft
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
-                                                          attribute:NSLayoutAttributeRight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeRight
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_editView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
@@ -308,8 +102,11 @@
     marker.title = @"Sydney";
     marker.snippet = @"Australia";
     marker.map = _mapView;
+    
+    [self reloadData];
 }
 
+#pragma mark - Loading UI
 -(void)detailsButtonTapped:(UIButton*)btn
 {
     [btn setSelected:YES];
@@ -346,6 +143,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Loading DataSource
+-(void)reloadData
+{
+    [self setTitle:@"Nhà Hàng Bách Việt"];
 }
 
 @end

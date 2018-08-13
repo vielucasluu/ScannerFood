@@ -10,9 +10,9 @@
 
 @implementation VW_DirectionView
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor greenColor]];
     }
