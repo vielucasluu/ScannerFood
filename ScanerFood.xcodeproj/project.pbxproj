@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		130B89FE21216E7800DDB7A3 /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B89FD21216E7800DDB7A3 /* AutoScrollLabel.m */; };
+		130B8A1B212274AA00DDB7A3 /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A1A212274AA00DDB7A3 /* Step.m */; };
+		130B8A1E2122756100DDB7A3 /* ApplicationDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A1D2122756100DDB7A3 /* ApplicationDataHandler.m */; };
+		130B8A212122769200DDB7A3 /* ApplicationDirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A202122769200DDB7A3 /* ApplicationDirectionService.m */; };
+		130B8A2521227A0400DDB7A3 /* DirectionOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A2421227A0400DDB7A3 /* DirectionOverview.m */; };
+		130B8A2821227A2F00DDB7A3 /* Leg.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A2721227A2F00DDB7A3 /* Leg.m */; };
+		130B8A2B2122891C00DDB7A3 /* GeocodedWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A2A2122891C00DDB7A3 /* GeocodedWaypoint.m */; };
+		130B8A2E21228C9800DDB7A3 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A2D21228C9800DDB7A3 /* Route.m */; };
+		130B8A3121228D9800DDB7A3 /* Bounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A3021228D9800DDB7A3 /* Bounds.m */; };
+		130B8A3421228DAC00DDB7A3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A3321228DAC00DDB7A3 /* Location.m */; };
+		130B8A3721228EF100DDB7A3 /* GoogleMapValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A3621228EF100DDB7A3 /* GoogleMapValue.m */; };
+		130B8A3A21228FED00DDB7A3 /* Polyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A3921228FED00DDB7A3 /* Polyline.m */; };
 		1320750A2120476E00D02051 /* VC_MainPageSpaceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075092120476D00D02051 /* VC_MainPageSpaceDetails.m */; };
 		1320750E2120478E00D02051 /* VC_MainPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1320750D2120478E00D02051 /* VC_MainPageManager.m */; };
 		132075122120483A00D02051 /* VC_MainPageSeach.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075102120483A00D02051 /* VC_MainPageSeach.m */; };
@@ -52,6 +63,29 @@
 		0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		130B89FC21216E7800DDB7A3 /* AutoScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
 		130B89FD21216E7800DDB7A3 /* AutoScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
+		130B8A012122051400DDB7A3 /* ScanerFood-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanerFood-Bridging-Header.h"; sourceTree = "<group>"; };
+		130B8A19212274AA00DDB7A3 /* Step.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		130B8A1A212274AA00DDB7A3 /* Step.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
+		130B8A1C2122756100DDB7A3 /* ApplicationDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApplicationDataHandler.h; path = Applications/ApplicationDataHandler.h; sourceTree = "<group>"; };
+		130B8A1D2122756100DDB7A3 /* ApplicationDataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ApplicationDataHandler.m; path = Applications/ApplicationDataHandler.m; sourceTree = "<group>"; };
+		130B8A1F2122769200DDB7A3 /* ApplicationDirectionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApplicationDirectionService.h; path = Applications/ApplicationDirectionService.h; sourceTree = "<group>"; };
+		130B8A202122769200DDB7A3 /* ApplicationDirectionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ApplicationDirectionService.m; path = Applications/ApplicationDirectionService.m; sourceTree = "<group>"; };
+		130B8A2321227A0400DDB7A3 /* DirectionOverview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectionOverview.h; sourceTree = "<group>"; };
+		130B8A2421227A0400DDB7A3 /* DirectionOverview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DirectionOverview.m; sourceTree = "<group>"; };
+		130B8A2621227A2F00DDB7A3 /* Leg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leg.h; sourceTree = "<group>"; };
+		130B8A2721227A2F00DDB7A3 /* Leg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Leg.m; sourceTree = "<group>"; };
+		130B8A292122891C00DDB7A3 /* GeocodedWaypoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeocodedWaypoint.h; sourceTree = "<group>"; };
+		130B8A2A2122891C00DDB7A3 /* GeocodedWaypoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeocodedWaypoint.m; sourceTree = "<group>"; };
+		130B8A2C21228C9800DDB7A3 /* Route.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		130B8A2D21228C9800DDB7A3 /* Route.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		130B8A2F21228D9800DDB7A3 /* Bounds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bounds.h; sourceTree = "<group>"; };
+		130B8A3021228D9800DDB7A3 /* Bounds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bounds.m; sourceTree = "<group>"; };
+		130B8A3221228DAC00DDB7A3 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		130B8A3321228DAC00DDB7A3 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		130B8A3521228EF100DDB7A3 /* GoogleMapValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleMapValue.h; sourceTree = "<group>"; };
+		130B8A3621228EF100DDB7A3 /* GoogleMapValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleMapValue.m; sourceTree = "<group>"; };
+		130B8A3821228FED00DDB7A3 /* Polyline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Polyline.h; sourceTree = "<group>"; };
+		130B8A3921228FED00DDB7A3 /* Polyline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Polyline.m; sourceTree = "<group>"; };
 		132075082120476D00D02051 /* VC_MainPageSpaceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageSpaceDetails.h; sourceTree = "<group>"; };
 		132075092120476D00D02051 /* VC_MainPageSpaceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageSpaceDetails.m; sourceTree = "<group>"; };
 		1320750C2120478E00D02051 /* VC_MainPageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageManager.h; sourceTree = "<group>"; };
@@ -149,6 +183,40 @@
 				130B89FD21216E7800DDB7A3 /* AutoScrollLabel.m */,
 			);
 			path = UIlabel_EXT;
+			sourceTree = "<group>";
+		};
+		130B89FF2122016200DDB7A3 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				130B8A002122017A00DDB7A3 /* MappingObject */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		130B8A002122017A00DDB7A3 /* MappingObject */ = {
+			isa = PBXGroup;
+			children = (
+				130B8A012122051400DDB7A3 /* ScanerFood-Bridging-Header.h */,
+				130B8A2321227A0400DDB7A3 /* DirectionOverview.h */,
+				130B8A2421227A0400DDB7A3 /* DirectionOverview.m */,
+				130B8A292122891C00DDB7A3 /* GeocodedWaypoint.h */,
+				130B8A2A2122891C00DDB7A3 /* GeocodedWaypoint.m */,
+				130B8A2C21228C9800DDB7A3 /* Route.h */,
+				130B8A2D21228C9800DDB7A3 /* Route.m */,
+				130B8A2621227A2F00DDB7A3 /* Leg.h */,
+				130B8A2721227A2F00DDB7A3 /* Leg.m */,
+				130B8A19212274AA00DDB7A3 /* Step.h */,
+				130B8A1A212274AA00DDB7A3 /* Step.m */,
+				130B8A3821228FED00DDB7A3 /* Polyline.h */,
+				130B8A3921228FED00DDB7A3 /* Polyline.m */,
+				130B8A3521228EF100DDB7A3 /* GoogleMapValue.h */,
+				130B8A3621228EF100DDB7A3 /* GoogleMapValue.m */,
+				130B8A2F21228D9800DDB7A3 /* Bounds.h */,
+				130B8A3021228D9800DDB7A3 /* Bounds.m */,
+				130B8A3221228DAC00DDB7A3 /* Location.h */,
+				130B8A3321228DAC00DDB7A3 /* Location.m */,
+			);
+			path = MappingObject;
 			sourceTree = "<group>";
 		};
 		132075072120474B00D02051 /* VC_MainPageSpaceDetails */ = {
@@ -265,6 +333,10 @@
 				13F9AD52211441CE00AEEA66 /* AppDelegate.m */,
 				13F41B0821144B1C00A5CA1F /* ApplicationNavigationController.h */,
 				13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */,
+				130B8A1F2122769200DDB7A3 /* ApplicationDirectionService.h */,
+				130B8A202122769200DDB7A3 /* ApplicationDirectionService.m */,
+				130B8A1C2122756100DDB7A3 /* ApplicationDataHandler.h */,
+				130B8A1D2122756100DDB7A3 /* ApplicationDataHandler.m */,
 				13F41B0E21144CAC00A5CA1F /* ApplicationMacros.h */,
 			);
 			name = Applications;
@@ -332,6 +404,7 @@
 		13F9AD50211441CE00AEEA66 /* ScanerFood */ = {
 			isa = PBXGroup;
 			children = (
+				130B89FF2122016200DDB7A3 /* DataSource */,
 				13F41B162114500100A5CA1F /* Extensions */,
 				1335B8EA211F1D8B00C8EE2C /* ViewControllers */,
 				13F41B0721144AD600A5CA1F /* Applications */,
@@ -440,6 +513,7 @@
 				TargetAttributes = {
 					13F9AD4D211441CE00AEEA66 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 					13F9AD68211441CE00AEEA66 = {
@@ -582,10 +656,20 @@
 			files = (
 				13207526212048F000D02051 /* VW_DirectionView.m in Sources */,
 				1320752A2120490600D02051 /* VW_EditView.m in Sources */,
+				130B8A2E21228C9800DDB7A3 /* Route.m in Sources */,
+				130B8A3721228EF100DDB7A3 /* GoogleMapValue.m in Sources */,
 				1320750E2120478E00D02051 /* VC_MainPageManager.m in Sources */,
+				130B8A3421228DAC00DDB7A3 /* Location.m in Sources */,
 				132075162120487900D02051 /* TC_MainPageSearchCell.m in Sources */,
 				130B89FE21216E7800DDB7A3 /* AutoScrollLabel.m in Sources */,
 				13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */,
+				130B8A2821227A2F00DDB7A3 /* Leg.m in Sources */,
+				130B8A2B2122891C00DDB7A3 /* GeocodedWaypoint.m in Sources */,
+				130B8A1E2122756100DDB7A3 /* ApplicationDataHandler.m in Sources */,
+				130B8A3121228D9800DDB7A3 /* Bounds.m in Sources */,
+				130B8A2521227A0400DDB7A3 /* DirectionOverview.m in Sources */,
+				130B8A3A21228FED00DDB7A3 /* Polyline.m in Sources */,
+				130B8A1B212274AA00DDB7A3 /* Step.m in Sources */,
 				13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */,
 				132075122120483A00D02051 /* VC_MainPageSeach.m in Sources */,
 				1320750A2120476E00D02051 /* VC_MainPageSpaceDetails.m in Sources */,
@@ -594,6 +678,7 @@
 				13207522212048DC00D02051 /* VW_DetailsView.m in Sources */,
 				1320751A2120489300D02051 /* TVC_MainPageDistrict.m in Sources */,
 				1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome.m in Sources */,
+				130B8A212122769200DDB7A3 /* ApplicationDirectionService.m in Sources */,
 				13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,6 +819,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -742,16 +828,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CEA92E25A453FB97F1D94F6F /* Pods-ScanerFood.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5592AK55J4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanerFood/PrefixHeader.pch";
 				INFOPLIST_FILE = ScanerFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "ScanerFood/DataSource/MappingObject/ScanerFood-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -759,16 +851,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A21E0E22CDEB2CD432F4282 /* Pods-ScanerFood.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5592AK55J4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanerFood/PrefixHeader.pch";
 				INFOPLIST_FILE = ScanerFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.ScanerFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "ScanerFood/DataSource/MappingObject/ScanerFood-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

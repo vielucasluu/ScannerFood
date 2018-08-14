@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VC_MainPageSpaceDetails.m"
-            timestampString = "555853362.392989"
+            filePath = "ScanerFood/DataSource/MappingObject/Step.m"
+            timestampString = "555921636.992949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-initWithDataSource:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

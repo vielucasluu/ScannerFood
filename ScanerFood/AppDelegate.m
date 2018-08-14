@@ -22,13 +22,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //Application
+    _dataHandler = [[ApplicationDataHandler alloc] init];
+    
     //Apprerance
     [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
     [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
     [[UISearchBar appearance] setBackgroundColor:[UIColor whiteColor]];
     
     //Google Maps
-    [GMSServices provideAPIKey:@"AIzaSyClf28LsPng1kRd-zfjGghsIyw5Ti2yqU8"];
+    [GMSServices provideAPIKey:kGoogleAPI];
     
     VC_MainPageHome* homeVC = [[VC_MainPageHome alloc] init];
     _navController = [[ApplicationNavigationController alloc] initWithRootViewController:homeVC];

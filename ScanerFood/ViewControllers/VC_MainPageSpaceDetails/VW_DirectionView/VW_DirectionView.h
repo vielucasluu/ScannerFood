@@ -10,4 +10,6 @@
 
 @interface VW_DirectionView : UIView
 
+-(void)reloadData;
+
 @end

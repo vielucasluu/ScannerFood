@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ApplicationNavigationController* navController;
+@property (strong, nonatomic) ApplicationDataHandler* dataHandler;
 
 + (AppDelegate*)sharedInstance;
 

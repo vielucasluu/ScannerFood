@@ -12,7 +12,12 @@
 #import "VW_DirectionView.h"
 #import "VW_EditView.h"
 
-@interface VC_MainPageSpaceDetails ()
+@interface VC_MainPageSpaceDetails ()<GMSMapViewDelegate, CLLocationManagerDelegate>
+{
+    CLLocationManager*  _locationManager;
+    CLLocation*         _currentLocation;
+}
+@property (strong, nonatomic) ApplicationDirectionService* directionService;
 
 @property (strong, nonatomic) GMSMapView*   mapView;
 @property (strong, nonatomic) UIButton*     detailsBtn;
@@ -27,6 +32,26 @@
 
 @implementation VC_MainPageSpaceDetails
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        _locationManager = [[CLLocationManager alloc] init];
+        [_locationManager setDelegate:self];;
+        [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+            [_locationManager requestWhenInUseAuthorization];
+        }
+        else {
+            [_locationManager startUpdatingLocation];
+        }
+        
+        _directionService = [ApplicationDirectionService shareInstance];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,7 +61,7 @@
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
                                                             longitude:151.20
-                                                                 zoom:6];
+                                                                 zoom:15];
     
     CGFloat xPos = 0.0;
     CGFloat yPos = 0.0;
@@ -45,7 +70,9 @@
     CGRect contentRect = CGRectMake(xPos, yPos, frame.size.width, frame.size.width*9/16);
     
     _mapView = [GMSMapView mapWithFrame:contentRect camera:camera];
-    _mapView.myLocationEnabled = YES;
+    [_mapView setMyLocationEnabled:YES];
+    [_mapView.settings setMyLocationButton:YES];
+    [_mapView setDelegate:self];
     [self.view addSubview:_mapView];
     
     yPos += contentRect.size.height;
@@ -145,10 +172,106 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Process Location
+
+//direction() {
+//    self.mapView.clear()
+//    let origin: String = "\(originLatitude),\(originLongtitude)"
+//    let destination: String = "\(destinationLatitude),\(destinationLongtitude)"
+//    let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongtitude))
+//    marker.map = self.mapView
+//    self.directionService.getDirections(origin: origin,
+//                                        destination: destination,
+//                                        travelMode: travelMode) { [weak self] (success) in
+//        if success {
+//            DispatchQueue.main.async {
+//                self?.drawRoute()
+//                if let totalDistance = self?.directionService.totalDistance,
+//                    let totalDuration = self?.directionService.totalDuration {
+//                        self?.detailDirection.text = totalDistance + ". " + totalDuration
+//                        self?.detailDirection.isHidden = false
+//                    }
+//            }
+//        } else {
+//            print("error direction")
+//        }
+//    }
+//}
+
+-(void)scanDirection
+{
+    [_mapView clear];
+    NSString* origin = @"10.792659,106.699817";
+    NSString* destination = @"10.772638, 106.690937";
+    GMSMarker* destinationMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(10.772638, 106.690937)];
+    [destinationMarker setMap:_mapView];
+    [self.directionService getDirectionsWithOrigin:origin
+                                       destination:destination
+                                        travelMode:@"driving"
+                                getDirectionStatus:^(BOOL success) {
+                                    if (success) {
+                                        [self drawRoute];
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [self->_directionView reloadData];
+                                        });
+                                    }
+                                }];
+}
+
+-(void)drawRoute
+{
+    for (Step* step in self.directionService.selectSteps){
+        if (![step.polyline.points isEqualToString:@""])
+        {
+            GMSPath* path = [GMSPath pathFromEncodedPath:step.polyline.points];
+            GMSPolyline* routePolyline = [GMSPolyline polylineWithPath:path];
+            [routePolyline setStrokeColor:[UIColor blueColor]];
+            [routePolyline setStrokeWidth:3.0];
+            [routePolyline setMap:_mapView];
+        } else {
+            return;
+        }
+    }
+}
+
+#pragma mark - CLLocationManagerDelegate
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    [manager stopUpdatingLocation];
+    _currentLocation = [locations lastObject];
+    if (_currentLocation) {
+        GMSCameraPosition* camera = [GMSCameraPosition cameraWithLatitude:_currentLocation.coordinate.latitude
+                                                               longitude:_currentLocation.coordinate.longitude
+                                                                    zoom:15];
+        if ([_mapView isHidden]) {
+            [_mapView setHidden:NO];
+            [_mapView setCamera:camera];
+        }
+        else
+        {
+            [_mapView animateToCameraPosition:camera];
+        }
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [manager startUpdatingLocation];
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [manager stopUpdatingLocation];
+    NSLog(@"Error: %@",error.localizedDescription);
+}
+
 #pragma mark - Loading DataSource
 -(void)reloadData
 {
     [self setTitle:@"Nhà Hàng Bách Việt"];
+    [self scanDirection];
 }
 
 @end

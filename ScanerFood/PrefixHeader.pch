@@ -14,9 +14,22 @@
 
 @import GoogleMaps;
 #import <UIKit/UIKit.h>
+#import <ObjectMapper/ObjectMapper-umbrella.h>
+#import <AFNetworking/AFNetworking.h>
+
+//Model
+#import "Location.h"
+#import "Bounds.h"
+#import "Polyline.h"
+#import "GoogleMapValue.h"
+#import "Route.h"
+#import "GeocodedWaypoint.h"
+#import "DirectionOverview.h"
 
 //Application
 #import "ApplicationNavigationController.h"
+#import "ApplicationDataHandler.h"
+#import "ApplicationDirectionService.h"
 #import "ApplicationMacros.h"
 #import "AppDelegate.h"
 
