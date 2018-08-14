@@ -19,6 +19,7 @@
 		130B8A3421228DAC00DDB7A3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A3321228DAC00DDB7A3 /* Location.m */; };
 		130B8A3721228EF100DDB7A3 /* GoogleMapValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A3621228EF100DDB7A3 /* GoogleMapValue.m */; };
 		130B8A3A21228FED00DDB7A3 /* Polyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B8A3921228FED00DDB7A3 /* Polyline.m */; };
+		130B8A3C2122B35900DDB7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 130B8A3B2122B35900DDB7A3 /* GoogleService-Info.plist */; };
 		1320750A2120476E00D02051 /* VC_MainPageSpaceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075092120476D00D02051 /* VC_MainPageSpaceDetails.m */; };
 		1320750E2120478E00D02051 /* VC_MainPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1320750D2120478E00D02051 /* VC_MainPageManager.m */; };
 		132075122120483A00D02051 /* VC_MainPageSeach.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075102120483A00D02051 /* VC_MainPageSeach.m */; };
@@ -86,6 +87,7 @@
 		130B8A3621228EF100DDB7A3 /* GoogleMapValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleMapValue.m; sourceTree = "<group>"; };
 		130B8A3821228FED00DDB7A3 /* Polyline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Polyline.h; sourceTree = "<group>"; };
 		130B8A3921228FED00DDB7A3 /* Polyline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Polyline.m; sourceTree = "<group>"; };
+		130B8A3B2122B35900DDB7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		132075082120476D00D02051 /* VC_MainPageSpaceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageSpaceDetails.h; sourceTree = "<group>"; };
 		132075092120476D00D02051 /* VC_MainPageSpaceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageSpaceDetails.m; sourceTree = "<group>"; };
 		1320750C2120478E00D02051 /* VC_MainPageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageManager.h; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				13F9AD5D211441CE00AEEA66 /* Assets.xcassets */,
 				13F9AD62211441CE00AEEA66 /* Info.plist */,
 				13F9AD63211441CE00AEEA66 /* main.m */,
+				130B8A3B2122B35900DDB7A3 /* GoogleService-Info.plist */,
 			);
 			name = DefaultFiles;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 			files = (
 				13F9AD5E211441CE00AEEA66 /* Assets.xcassets in Resources */,
 				13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */,
+				130B8A3C2122B35900DDB7A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

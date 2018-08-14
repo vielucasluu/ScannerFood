@@ -10,7 +10,7 @@ target 'ScanerFood' do
   pod 'SDWebImage', '4.2.3'
   pod 'iCarousel', '1.8.3'
   pod 'GoogleMaps', '2.7.0'
-  pod 'ObjectMapper', '3.3.0'
+  pod 'Firebase/Core'
 
   target 'ScanerFoodTests' do
     inherit! :search_paths
