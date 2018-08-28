@@ -25,7 +25,7 @@
         [_spaceNameLabel setFont:[UIFont boldSystemFontOfSize:14]];
         [_spaceNameLabel setTextColor:[UIColor blueColor]];
         [_spaceNameLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_spaceNameLabel setText:@"CHI NHÁNH CÔNG TY CỔ PHẨN NHÀ HÀNG BÁCH VIỆT"];
+        [_spaceNameLabel setText:@""];
         [self addSubview:_spaceNameLabel];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceNameLabel
                                                          attribute:NSLayoutAttributeTop
@@ -58,7 +58,7 @@
         _addressLabel = [[UILabel alloc] init];
         [_addressLabel setFont:[UIFont systemFontOfSize:12]];
         [_addressLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_addressLabel setText:@"89/10 NGÔ ĐỨC KẾ - Phường 12"];
+        [_addressLabel setText:@""];
         [self addSubview:_addressLabel];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_addressLabel
                                                          attribute:NSLayoutAttributeTop
@@ -92,7 +92,7 @@
         [_districtLabel setFont:[UIFont systemFontOfSize:12]];
         [_districtLabel setTextColor:[UIColor grayColor]];
         [_districtLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_districtLabel setText:@"Quận Bình Thạnh"];
+        [_districtLabel setText:@""];
         [self addSubview:_districtLabel];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_districtLabel
                                                          attribute:NSLayoutAttributeTop
@@ -156,7 +156,7 @@
                                                           constant:30.0]];
         _distanceLabel = [[UILabel alloc] init];
         [_distanceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_distanceLabel setText:@"3,7 km"];
+        [_distanceLabel setText:@""];
         [self addSubview:_distanceLabel];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_distanceLabel
                                                          attribute:NSLayoutAttributeTop

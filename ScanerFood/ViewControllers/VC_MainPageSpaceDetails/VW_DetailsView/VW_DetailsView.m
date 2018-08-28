@@ -12,9 +12,17 @@
 {
     CGFloat _xPos;
     CGFloat _yPos;
+    
+    NSMutableArray* _listReviewView;
 }
 @property (strong, nonatomic) UIScrollView*     pageScroll;
-@property (strong, nonatomic) UILabel*          spaceName;
+
+@property (strong, nonatomic) AutoScrollLabel*  spaceName;
+@property (strong, nonatomic) AutoScrollLabel*  spaceAddress;
+@property (strong, nonatomic) AutoScrollLabel*  spacePhone;
+@property (strong, nonatomic) AutoScrollLabel*  spaceAdmin;
+@property (strong, nonatomic) AutoScrollLabel*  spaceDocument;
+@property (strong, nonatomic) AutoScrollLabel*  spaceDate;
 
 @end
 
@@ -49,11 +57,11 @@
         
         _xPos += 50;
         contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 40);
-        AutoScrollLabel* spaceName = [[AutoScrollLabel alloc] initWithFrame:contentRect];
-        [spaceName setLabelText:@"Cty Cổ Phần Nhà Hàng Bách Việt"];
-        [spaceName setLabelFont:[UIFont boldSystemFontOfSize:13]];
-        [spaceName setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:spaceName];
+        _spaceName = [[AutoScrollLabel alloc] initWithFrame:contentRect];
+        [_spaceName setLabelText:@""];
+        [_spaceName setLabelFont:[UIFont boldSystemFontOfSize:13]];
+        [_spaceName setLabelTextAlignment:NSTextAlignmentLeft];
+        [self.pageScroll addSubview:_spaceName];
         
         _xPos = 20;
         _yPos += 40;
@@ -64,11 +72,11 @@
 
         _xPos += 50;
         contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        AutoScrollLabel* spaceAddress = [[AutoScrollLabel alloc] initWithFrame:contentRect];
-        [spaceAddress setLabelText:@"số 206 QL 13 - Phường 26 - Quận Bình Thạnh"];
-        [spaceAddress setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [spaceAddress setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:spaceAddress];
+        _spaceAddress = [[AutoScrollLabel alloc] initWithFrame:contentRect];
+        [_spaceAddress setLabelText:@""];
+        [_spaceAddress setLabelFont:[UIFont italicSystemFontOfSize:12]];
+        [_spaceAddress setLabelTextAlignment:NSTextAlignmentLeft];
+        [self.pageScroll addSubview:_spaceAddress];
         
         _xPos = 20;
         _yPos += 30;
@@ -79,11 +87,11 @@
         
         _xPos += 50;
         contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        AutoScrollLabel* spacePhone = [[AutoScrollLabel alloc] initWithFrame:contentRect];
-        [spacePhone setLabelText:@"09085285392"];
-        [spacePhone setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [spacePhone setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:spacePhone];
+        _spacePhone = [[AutoScrollLabel alloc] initWithFrame:contentRect];
+        [_spacePhone setLabelText:@""];
+        [_spacePhone setLabelFont:[UIFont italicSystemFontOfSize:12]];
+        [_spacePhone setLabelTextAlignment:NSTextAlignmentLeft];
+        [self.pageScroll addSubview:_spacePhone];
         
         _yPos += 50;
         contentRect = CGRectMake(10, _yPos, selfFrame.size.width, 30);
@@ -102,11 +110,11 @@
         
         _xPos += 50;
         contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 40);
-        AutoScrollLabel* spaceAdmin = [[AutoScrollLabel alloc] initWithFrame:contentRect];
-        [spaceAdmin setLabelText:@"Nguyễn Ngọc Long"];
-        [spaceAdmin setLabelFont:[UIFont boldSystemFontOfSize:13]];
-        [spaceAdmin setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:spaceAdmin];
+        _spaceAdmin = [[AutoScrollLabel alloc] initWithFrame:contentRect];
+        [_spaceAdmin setLabelText:@""];
+        [_spaceAdmin setLabelFont:[UIFont boldSystemFontOfSize:13]];
+        [_spaceAdmin setLabelTextAlignment:NSTextAlignmentLeft];
+        [self.pageScroll addSubview:_spaceAdmin];
         
         _xPos = 20;
         _yPos += 40;
@@ -117,11 +125,11 @@
         
         _xPos += 50;
         contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        AutoScrollLabel* spaceDocument = [[AutoScrollLabel alloc] initWithFrame:contentRect];
-        [spaceDocument setLabelText:@"1709/2016/ATTP-CNĐK"];
-        [spaceDocument setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [spaceDocument setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:spaceDocument];
+        _spaceDocument = [[AutoScrollLabel alloc] initWithFrame:contentRect];
+        [_spaceDocument setLabelText:@""];
+        [_spaceDocument setLabelFont:[UIFont italicSystemFontOfSize:12]];
+        [_spaceDocument setLabelTextAlignment:NSTextAlignmentLeft];
+        [self.pageScroll addSubview:_spaceDocument];
         
         _xPos = 20;
         _yPos += 30;
@@ -132,11 +140,11 @@
         
         _xPos += 50;
         contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        AutoScrollLabel* spaceDate = [[AutoScrollLabel alloc] initWithFrame:contentRect];
-        [spaceDate setLabelText:@"20/08/2018 - Ban Quản lý ATTP"];
-        [spaceDate setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [spaceDate setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:spaceDate];
+        _spaceDate = [[AutoScrollLabel alloc] initWithFrame:contentRect];
+        [_spaceDate setLabelText:@""];
+        [_spaceDate setLabelFont:[UIFont italicSystemFontOfSize:12]];
+        [_spaceDate setLabelTextAlignment:NSTextAlignmentLeft];
+        [self.pageScroll addSubview:_spaceDate];
         
 //        _yPos += 30;
 //        contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
@@ -162,9 +170,35 @@
 
 -(void)setDataSource:(NSDictionary*)dataSource
 {
-    NSArray* listReview = @[@"20/08/2018 - Cập nhật địa chỉ",@"20/08/2018 - Cập nhật thông tin giấy phép",@"20/08/2018 - Cập nhật tên cơ sở"];
+    [_spaceName setLabelText:[dataSource objectForKey:@"space_name"]];
+    [_spaceAddress setLabelText:[NSString stringWithFormat:@"%@ - %@",[dataSource objectForKey:@"address"],[dataSource objectForKey:@"address_2"]]];
+    [_spacePhone setLabelText:[dataSource objectForKey:@"space_phone"]];
+    [_spaceAdmin setLabelText:[dataSource objectForKey:@"space_admin"]];
+    [_spaceDocument setLabelText:[dataSource objectForKey:@"space_document"]];
+    
+    NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateFormat:@"dd-MM-yyyy"];
+    NSDate* date = [dateFormater dateFromString:[dataSource objectForKey:@"space_date"]];
+    NSString* dateString = [dateFormater stringFromDate:date]?[dateFormater stringFromDate:date]:@"";
+    
+    [_spaceDate setLabelText:[NSString stringWithFormat:@"%@  %@",dateString,[dataSource objectForKey:@"space_police"]]];
+    
+//    NSArray* listReview = [dataSource objectForKey:@"list_review"];
+//    NSArray* listReview = @[@"20/08/2018 - Cập nhật địa chỉ",@"20/08/2018 - Cập nhật thông tin giấy phép",@"20/08/2018 - Cập nhật tên cơ sở"];
+//    [self setReview:listReview];
+}
+
+-(void)setReview:(NSArray*)listReview
+{
+    for (UIView* view in _listReviewView) {
+        [view removeFromSuperview];
+    };
+    
+    _yPos = 340;
+    [self.pageScroll setContentSize:CGSizeMake(self.frame.size.width, _yPos + 40)];
+    
     _xPos = 20;
-   
+    _listReviewView = [NSMutableArray new];
     for (NSString* textString in listReview) {
         CGRect contentRect = CGRectMake(_xPos, _yPos, self.frame.size.width-50, 30);
         UILabel* spaceDate = [[UILabel alloc] initWithFrame:contentRect];
@@ -172,6 +206,7 @@
         [spaceDate setFont:[UIFont italicSystemFontOfSize:12]];
         [spaceDate setTextAlignment:NSTextAlignmentLeft];
         [self.pageScroll addSubview:spaceDate];
+        [_listReviewView addObject:spaceDate];
         
         _yPos += 30;
     }

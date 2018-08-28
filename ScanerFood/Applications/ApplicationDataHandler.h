@@ -16,6 +16,8 @@
 
 @interface ApplicationDataHandler : NSObject
 
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
 +(ApplicationDataHandler *)shareInstance;
 
 

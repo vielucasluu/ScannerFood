@@ -11,9 +11,13 @@
 #import "TVC_MainPageDistrict.h"
 
 @interface VC_MainPageSeach ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
-
+{
+    NSMutableArray*         _listSpace;
+}
 @property (strong, nonatomic) UISearchBar* searchBar;
 @property (strong, nonatomic) UITableView* tableView;
+
+@property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
 
 @end
 
@@ -99,6 +103,17 @@
                                                          multiplier:1.0
                                                            constant:0.0]];
     [self createInputAccessoryView];
+    
+    _listSpace = [NSMutableArray new];
+    _firebaseRef = FIRDatabase.database.reference;
+    [[_firebaseRef child:@"space_data"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        //Code when new space has added;
+        //Take the value and add it into list space
+        if (snapshot.value) {
+            [self->_listSpace addObject:snapshot.value];
+            [self->_tableView reloadData];
+        }
+    }];
 }
 
 -(void)createInputAccessoryView
@@ -159,7 +174,7 @@
     if (indexPath.row == 0) {
         [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_san"]];
         [cell.spaceName setText:@"Cơ sở chế biến suất ăn sẵn"];
-        [cell.spaceCountLable setText:@"210"];
+        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_listSpace.count]];
     }
     else if (indexPath.row == 1)
     {

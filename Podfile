@@ -11,6 +11,7 @@ target 'ScanerFood' do
   pod 'iCarousel', '1.8.3'
   pod 'GoogleMaps', '2.7.0'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
   target 'ScanerFoodTests' do
     inherit! :search_paths

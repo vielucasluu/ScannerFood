@@ -16,6 +16,8 @@
 {
     CLLocationManager*  _locationManager;
     CLLocation*         _currentLocation;
+    
+    NSDictionary*       _dataSource;
 }
 @property (strong, nonatomic) ApplicationDirectionService* directionService;
 
@@ -27,6 +29,8 @@
 @property (strong, nonatomic) VW_DetailsView*       detailsView;
 @property (strong, nonatomic) VW_DirectionView*     directionView;
 @property (strong, nonatomic) VW_EditView*          editView;
+
+@property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
 
 @end
 
@@ -111,7 +115,6 @@
     contentRect = CGRectMake(xPos, yPos, frame.size.width, frame.size.height - yPos - 49 - 64 );
     _detailsView = [[VW_DetailsView alloc] initWithFrame:contentRect];
     [_detailsView setHidden:NO];
-    [_detailsView setDataSource:nil];
     [self.view addSubview:_detailsView];
     
     
@@ -173,30 +176,6 @@
 }
 
 #pragma mark - Process Location
-
-//direction() {
-//    self.mapView.clear()
-//    let origin: String = "\(originLatitude),\(originLongtitude)"
-//    let destination: String = "\(destinationLatitude),\(destinationLongtitude)"
-//    let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongtitude))
-//    marker.map = self.mapView
-//    self.directionService.getDirections(origin: origin,
-//                                        destination: destination,
-//                                        travelMode: travelMode) { [weak self] (success) in
-//        if success {
-//            DispatchQueue.main.async {
-//                self?.drawRoute()
-//                if let totalDistance = self?.directionService.totalDistance,
-//                    let totalDuration = self?.directionService.totalDuration {
-//                        self?.detailDirection.text = totalDistance + ". " + totalDuration
-//                        self?.detailDirection.isHidden = false
-//                    }
-//            }
-//        } else {
-//            print("error direction")
-//        }
-//    }
-//}
 
 -(void)scanDirection
 {
@@ -268,9 +247,32 @@
 }
 
 #pragma mark - Loading DataSource
+
+-(void)setSpaceID:(NSString*)spaceID
+{
+    _spaceID = spaceID;
+    _firebaseRef = FIRDatabase.database.reference;
+
+    //Retive Data
+    [[[_firebaseRef child:@"space_data"] child:_spaceID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self->_dataSource = (NSDictionary*)snapshot.value;
+        [self reloadData];
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
+    
+    //Handle Data change
+    [[[_firebaseRef child:@"space_data"] child:_spaceID] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
+            self->_dataSource = (NSDictionary*)snapshot.value;
+            [self reloadData];
+        }
+    }];
+}
+
 -(void)reloadData
 {
-    [self setTitle:@"Nhà Hàng Bách Việt"];
+    [_detailsView setDataSource:_dataSource];
     [self scanDirection];
 }
 

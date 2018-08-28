@@ -23,6 +23,7 @@
     // Override point for customization after application launch.
     
     //Application
+    [FIRApp configure];
     _dataHandler = [[ApplicationDataHandler alloc] init];
     
     //Apprerance

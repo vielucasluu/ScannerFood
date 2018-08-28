@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class VC_MainPageSpaceDetails;
 
 @interface VW_EditView : UIView
+
+@property (weak, nonatomic) VC_MainPageSpaceDetails* delegate;
 
 @end

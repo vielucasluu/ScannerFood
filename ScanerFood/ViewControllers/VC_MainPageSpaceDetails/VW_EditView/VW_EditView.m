@@ -7,6 +7,15 @@
 //
 
 #import "VW_EditView.h"
+#import "VC_MainPageSpaceDetails.h"
+
+@interface VW_EditView()
+
+{
+    FIRDatabaseReference* _firebaseRef;
+}
+
+@end
 
 @implementation VW_EditView
 
@@ -15,7 +24,25 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
+        _firebaseRef = FIRDatabase.database.reference;
     }
     return self;
 }
+
+-(void)addReview
+{
+    //Hard code
+    NSString* spaceID = [_delegate spaceID];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    NSString* date = [dateFormatter stringFromDate:[NSDate date]];
+    
+    NSString *key = [[[_firebaseRef child:@"space_data"] child:spaceID] childByAutoId].key;
+    NSDictionary *post = @{@"date": date,
+                           @"author": @"Admin001",
+                           @"title": @"Cập nhật thông tin giấy phép"};
+    NSDictionary *childUpdates = @{[@"/reviews/" stringByAppendingString:key]: post};
+    [[[_firebaseRef child:@"space_data"] child:spaceID] updateChildValues:childUpdates];
+}
+
 @end

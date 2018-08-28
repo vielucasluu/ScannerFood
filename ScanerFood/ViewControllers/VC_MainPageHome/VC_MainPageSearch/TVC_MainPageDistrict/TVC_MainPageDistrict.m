@@ -10,6 +10,10 @@
 #import "TC_MainPageDistrictCell.h"
 
 @interface TVC_MainPageDistrict ()
+{
+    NSMutableArray*     _listSpace;
+}
+@property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
 
 @end
 
@@ -23,6 +27,39 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self.tableView registerClass:[TC_MainPageDistrictCell class] forCellReuseIdentifier:@"districtCell"];
+    
+    _listSpace = [NSMutableArray new];
+    _firebaseRef = FIRDatabase.database.reference;
+    [[_firebaseRef child:@"space_data"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        //Code when new space has added;
+        //Take the value and add it into list space
+        if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
+            NSDictionary* space_dict = (NSDictionary*)snapshot.value;
+            
+            BOOL isSameDict = NO;
+            for (NSDictionary* dict in self->_listSpace) {
+                if ([[dict objectForKey:@"districtName"] isEqualToString:[space_dict objectForKey:@"district"]]) {
+                    
+                    NSMutableArray* space_in_district = [dict objectForKey:@"list_space"];
+                    [space_in_district addObject:space_dict];
+                    
+                    isSameDict = YES;
+                    break;
+                }
+            }
+            
+            if (!isSameDict) {
+                NSMutableArray* space_in_district = [NSMutableArray new];
+                [space_in_district addObject:space_dict];
+                NSDictionary* districtDict = @{@"districtName": [space_dict objectForKey:@"district"],
+                                               @"list_space":space_in_district};
+                NSMutableDictionary* districtData = [NSMutableDictionary dictionaryWithDictionary:districtDict];
+                [self->_listSpace addObject:districtData];
+            }
+            
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,24 +70,20 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return _listSpace.count;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return @"Quận Tân Bình";
-    }
-    else if (section == 1)
-    {
-        return @"Quận 1";
-    }
-    return @"Quận Thủ Đức";
+    NSDictionary* districtData = [_listSpace objectAtIndex:section];
+    return [districtData objectForKey:@"districtName"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+   NSDictionary* districtData = [_listSpace objectAtIndex:section];
+    NSArray* listSpace = [districtData objectForKey:@"list_space"];
+    return listSpace.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,60 +97,32 @@
     if (!cell) {
         cell = [[TC_MainPageDistrictCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"districtCell"];
     }
+    
+    NSDictionary* districtData = [_listSpace objectAtIndex:indexPath.section];
+    NSArray* listSpace = [districtData objectForKey:@"list_space"];
+    NSDictionary* cellData = [listSpace objectAtIndex:indexPath.row];
+    
+    [cell.spaceNameLabel setText:[cellData objectForKey:@"space_name"]];
+    [cell.addressLabel setText:[NSString stringWithFormat:@"%@ - %@",[cellData objectForKey:@"address"],[cellData objectForKey:@"address_2"]]];
+    [cell.districtLabel setText:[cellData objectForKey:@"district"]];
+    [cell.distanceLabel setText:@"0.0 km"];
  
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSDictionary* districtData = [_listSpace objectAtIndex:indexPath.section];
+    NSArray* listSpace = [districtData objectForKey:@"list_space"];
+    NSDictionary* cellData = [listSpace objectAtIndex:indexPath.row];
+    
     VC_MainPageSpaceDetails* spaceDetails = [[VC_MainPageSpaceDetails alloc] init];
+    [spaceDetails setSpaceID:[[cellData objectForKey:@"space_id"] stringValue]];
     [self.navigationController pushViewController:spaceDetails animated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

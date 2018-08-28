@@ -36,6 +36,8 @@
     if (self) {
         _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURLString]];
         _manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        
+        self.ref = [[FIRDatabase database] reference];
     }
     return self;
 }

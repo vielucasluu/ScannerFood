@@ -10,4 +10,6 @@
 
 @interface VC_MainPageSpaceDetails : UIViewController
 
+@property (strong, nonatomic) NSString* spaceID;
+
 @end
