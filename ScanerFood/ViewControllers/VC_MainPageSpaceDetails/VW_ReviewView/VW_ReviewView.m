@@ -6,10 +6,10 @@
 //  Copyright © 2018 Lucas Luu. All rights reserved.
 //
 
-#import "VW_EditView.h"
+#import "VW_ReviewView.h"
 #import "VC_MainPageSpaceDetails.h"
 
-@interface VW_EditView()
+@interface VW_ReviewView()
 
 {
     FIRDatabaseReference* _firebaseRef;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation VW_EditView
+@implementation VW_ReviewView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

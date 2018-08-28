@@ -10,7 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "VW_DetailsView.h"
 #import "VW_DirectionView.h"
-#import "VW_EditView.h"
+#import "VW_ReviewView.h"
 
 @interface VC_MainPageSpaceDetails ()<GMSMapViewDelegate, CLLocationManagerDelegate>
 {
@@ -28,7 +28,7 @@
 
 @property (strong, nonatomic) VW_DetailsView*       detailsView;
 @property (strong, nonatomic) VW_DirectionView*     directionView;
-@property (strong, nonatomic) VW_EditView*          editView;
+@property (strong, nonatomic) VW_ReviewView*          editView;
 
 @property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
 
@@ -122,7 +122,7 @@
     [_directionView setHidden:YES];
     [self.view addSubview:_directionView];
     
-    _editView = [[VW_EditView alloc] initWithFrame:contentRect];
+    _editView = [[VW_ReviewView alloc] initWithFrame:contentRect];
     [_editView setHidden:YES];
     [self.view addSubview:_editView];
     

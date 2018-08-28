@@ -28,7 +28,7 @@
 		1320751E212048AA00D02051 /* TC_MainPageDistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1320751C212048AA00D02051 /* TC_MainPageDistrictCell.m */; };
 		13207522212048DC00D02051 /* VW_DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13207520212048DC00D02051 /* VW_DetailsView.m */; };
 		13207526212048F000D02051 /* VW_DirectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13207524212048F000D02051 /* VW_DirectionView.m */; };
-		1320752A2120490600D02051 /* VW_EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075292120490600D02051 /* VW_EditView.m */; };
+		1320752A2120490600D02051 /* VW_ReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075292120490600D02051 /* VW_ReviewView.m */; };
 		1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */; };
 		13745F502134034B000F9B18 /* PKGymNguyenHue.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 13745F4F2134034B000F9B18 /* PKGymNguyenHue.gpx */; };
 		13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F41B052114497300A5CA1F /* LaunchScreen.storyboard */; };
@@ -105,8 +105,8 @@
 		13207521212048DC00D02051 /* VW_DetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_DetailsView.h; sourceTree = "<group>"; };
 		13207524212048F000D02051 /* VW_DirectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VW_DirectionView.m; sourceTree = "<group>"; };
 		13207525212048F000D02051 /* VW_DirectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_DirectionView.h; sourceTree = "<group>"; };
-		132075282120490600D02051 /* VW_EditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_EditView.h; sourceTree = "<group>"; };
-		132075292120490600D02051 /* VW_EditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VW_EditView.m; sourceTree = "<group>"; };
+		132075282120490600D02051 /* VW_ReviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_ReviewView.h; sourceTree = "<group>"; };
+		132075292120490600D02051 /* VW_ReviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VW_ReviewView.m; sourceTree = "<group>"; };
 		1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageHome.m; sourceTree = "<group>"; };
 		1335B8ED211F1DBC00C8EE2C /* VC_MainPageHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageHome.h; sourceTree = "<group>"; };
 		13745F4F2134034B000F9B18 /* PKGymNguyenHue.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PKGymNguyenHue.gpx; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 		132075072120474B00D02051 /* VC_MainPageSpaceDetails */ = {
 			isa = PBXGroup;
 			children = (
-				13207527212048F400D02051 /* VW_EditView */,
+				13207527212048F400D02051 /* VW_ReviewView */,
 				13207523212048DF00D02051 /* VW_DirectionView */,
 				1320751F212048CA00D02051 /* VW_DetailsView */,
 				132075082120476D00D02051 /* VC_MainPageSpaceDetails.h */,
@@ -302,13 +302,13 @@
 			path = VW_DirectionView;
 			sourceTree = "<group>";
 		};
-		13207527212048F400D02051 /* VW_EditView */ = {
+		13207527212048F400D02051 /* VW_ReviewView */ = {
 			isa = PBXGroup;
 			children = (
-				132075282120490600D02051 /* VW_EditView.h */,
-				132075292120490600D02051 /* VW_EditView.m */,
+				132075282120490600D02051 /* VW_ReviewView.h */,
+				132075292120490600D02051 /* VW_ReviewView.m */,
 			);
-			path = VW_EditView;
+			path = VW_ReviewView;
 			sourceTree = "<group>";
 		};
 		1335B8EA211F1D8B00C8EE2C /* ViewControllers */ = {
@@ -663,7 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13207526212048F000D02051 /* VW_DirectionView.m in Sources */,
-				1320752A2120490600D02051 /* VW_EditView.m in Sources */,
+				1320752A2120490600D02051 /* VW_ReviewView.m in Sources */,
 				130B8A2E21228C9800DDB7A3 /* Route.m in Sources */,
 				130B8A3721228EF100DDB7A3 /* GoogleMapValue.m in Sources */,
 				1320750E2120478E00D02051 /* VC_MainPageManager.m in Sources */,
