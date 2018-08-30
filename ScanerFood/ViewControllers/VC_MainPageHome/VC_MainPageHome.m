@@ -19,6 +19,16 @@
 
 @implementation VC_MainPageHome
 
++(VC_MainPageHome *)shareInstance
+{
+    static VC_MainPageHome *_sharedInstance = nil;
+    static dispatch_once_t oncePredicate;
+    dispatch_once(&oncePredicate, ^{
+        _sharedInstance = [[VC_MainPageHome alloc] init];
+    });
+    return _sharedInstance;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

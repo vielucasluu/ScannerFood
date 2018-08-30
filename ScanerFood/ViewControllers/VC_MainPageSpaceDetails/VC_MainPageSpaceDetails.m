@@ -28,7 +28,7 @@
 
 @property (strong, nonatomic) VW_DetailsView*       detailsView;
 @property (strong, nonatomic) VW_DirectionView*     directionView;
-@property (strong, nonatomic) VW_ReviewView*          editView;
+@property (strong, nonatomic) VW_ReviewView*          reviewView;
 
 @property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
 
@@ -122,9 +122,10 @@
     [_directionView setHidden:YES];
     [self.view addSubview:_directionView];
     
-    _editView = [[VW_ReviewView alloc] initWithFrame:contentRect];
-    [_editView setHidden:YES];
-    [self.view addSubview:_editView];
+    _reviewView = [[VW_ReviewView alloc] initWithFrame:contentRect];
+    [_reviewView setSpaceID:_spaceID];
+    [_reviewView setHidden:YES];
+    [self.view addSubview:_reviewView];
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
@@ -145,7 +146,7 @@
     
     [_detailsView setHidden:NO];
     [_directionView setHidden:YES];
-    [_editView setHidden:YES];
+    [_reviewView setHidden:YES];
 }
 
 -(void)directionButtonTapped:(UIButton*)btn
@@ -156,7 +157,7 @@
     
     [_detailsView setHidden:YES];
     [_directionView setHidden:NO];
-    [_editView setHidden:YES];
+    [_reviewView setHidden:YES];
 }
 
 -(void)editButtonTapped:(UIButton*)btn
@@ -167,7 +168,7 @@
     
     [_detailsView setHidden:YES];
     [_directionView setHidden:YES];
-    [_editView setHidden:NO];
+    [_reviewView setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -251,6 +252,7 @@
 -(void)setSpaceID:(NSString*)spaceID
 {
     _spaceID = spaceID;
+    [_reviewView setSpaceID:spaceID];
     _firebaseRef = FIRDatabase.database.reference;
 
     //Retive Data

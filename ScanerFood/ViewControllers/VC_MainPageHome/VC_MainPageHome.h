@@ -10,4 +10,6 @@
 
 @interface VC_MainPageHome : UITabBarController
 
++(VC_MainPageHome *)shareInstance;
+
 @end

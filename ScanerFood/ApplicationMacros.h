@@ -13,7 +13,7 @@
 #define _AppDelegate            [AppDelegate sharedInstance]
 
 //Navigation Controller
-#define _NavController          [[AppDelegate sharedInstance] appNavigationController]
+#define _NavController          [[AppDelegate sharedInstance] navController]
 
 //Application DataHandler
 #define _AppDataHandler          [[AppDelegate sharedInstance] dataHandler]

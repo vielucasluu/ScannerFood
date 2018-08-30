@@ -11,6 +11,6 @@
 
 @interface VW_ReviewView : UIView
 
-@property (weak, nonatomic) VC_MainPageSpaceDetails* delegate;
+-(void)setSpaceID:(NSString*)spaceID;
 
 @end
