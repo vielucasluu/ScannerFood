@@ -12,6 +12,7 @@
 @interface TVC_MainPageDistrict ()
 {
     NSMutableArray*     _listSpace;
+    NSMutableSet*       _collapsedSections;
 }
 @property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
 
@@ -60,11 +61,45 @@
             [self.tableView reloadData];
         }
     }];
+    
+    _collapsedSections = [NSMutableSet new];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSArray*) indexPathsForSection:(NSInteger)section withNumberOfRows:(NSInteger)numberOfRows
+{
+    NSMutableArray* indexPaths = [NSMutableArray new];
+    for (int i = 0; i < numberOfRows; i++) {
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:i inSection:section];
+        [indexPaths addObject:indexPath];
+    }
+    return indexPaths;
+}
+
+-(void)sectionButtonTouchUpInside:(UIButton*)sender
+{
+    [self.tableView beginUpdates];
+    NSInteger section = sender.tag;
+    bool shouldCollapse = ![_collapsedSections containsObject:@(section)];
+    if (shouldCollapse) {
+        NSInteger numOfRows = [self.tableView numberOfRowsInSection:section];
+        NSArray* indexPaths = [self indexPathsForSection:section withNumberOfRows:numOfRows];
+        [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+        [_collapsedSections addObject:@(section)];
+    }
+    else
+    {
+        NSDictionary* districtData = [_listSpace objectAtIndex:section];
+        NSArray* listSpace = [districtData objectForKey:@"list_space"];
+        NSArray* indexPaths = [self indexPathsForSection:section withNumberOfRows:listSpace.count];
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+        [_collapsedSections removeObject:@(section)];
+    }
+    [self.tableView endUpdates];
 }
 
 #pragma mark - UITableViewDataSource
@@ -73,17 +108,30 @@
     return _listSpace.count;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    NSDictionary* districtData = [_listSpace objectAtIndex:section];
-    return [districtData objectForKey:@"districtName"];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   NSDictionary* districtData = [_listSpace objectAtIndex:section];
-    NSArray* listSpace = [districtData objectForKey:@"list_space"];
-    return listSpace.count;
+    if ([_collapsedSections containsObject:@(section)] )
+    {
+        return 0;
+    }
+    else
+    {
+        NSDictionary* districtData = [_listSpace objectAtIndex:section];
+        NSArray* listSpace = [districtData objectForKey:@"list_space"];
+        return listSpace.count;
+    }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSDictionary* districtData = [_listSpace objectAtIndex:section];
+    
+    UIButton* result = [UIButton buttonWithType:UIButtonTypeCustom];
+    [result addTarget:self action:@selector(sectionButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+    result.backgroundColor = [UIColor grayColor];
+    [result setTitle:[districtData objectForKey:@"districtName"] forState:UIControlStateNormal];
+    result.tag = section;
+    return result;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
