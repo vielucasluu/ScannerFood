@@ -13,6 +13,7 @@
 -(instancetype)initWithDict:(NSDictionary*)dict
 {
     if (self = [super init]) {
+        _userID = [dict objectForKey:@"userid"]?[dict objectForKey:@"userid"]:@"";
         _userName = [dict objectForKey:@"username"]?[dict objectForKey:@"username"]:@"";
         _password = [dict objectForKey:@"userpassword"]?[dict objectForKey:@"userpassword"]:@"";
         _prioritylevel = [dict objectForKey:@"prioritylevel"]?[dict objectForKey:@"prioritylevel"]:@"1";

@@ -12,8 +12,8 @@
 
 @interface VC_MainPageManager ()
 
-@property (strong, nonatomic) UIView* signInView;
-@property (strong, nonatomic) UIView* userInfoView;
+@property (strong, nonatomic) VW_SignInView* signInView;
+@property (strong, nonatomic) VW_UserInfoView* userInfoView;
 
 @end
 
@@ -26,15 +26,12 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    _userInfoView = [[VW_UserInfoView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_userInfoView];
+    
     _signInView = [[VW_SignInView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_signInView];
     
-//    _userInfoView = [[UIView alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:_userInfoView];
-    
-    if (![_AppDataHandler userID]) {
-        [_userInfoView setHidden:YES];
-    }
 }
 
 - (void)didReceiveMemoryWarning {

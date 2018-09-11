@@ -245,6 +245,7 @@
 {
     if ([responseValue isKindOfClass:[User class]]) {
         [self setHidden:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kUserSignedIn" object:nil];
     }
     else
     {

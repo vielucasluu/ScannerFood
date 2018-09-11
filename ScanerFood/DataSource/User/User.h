@@ -10,6 +10,7 @@
 
 @interface User : NSObject
 
+@property (strong, nonatomic) NSString* userID;
 @property (strong, nonatomic) NSString* userName;
 @property (strong, nonatomic) NSString* password;
 @property (strong, nonatomic) NSString* prioritylevel;

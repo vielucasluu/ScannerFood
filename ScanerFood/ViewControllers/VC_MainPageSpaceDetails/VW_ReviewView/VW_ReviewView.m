@@ -70,8 +70,15 @@
         [_loginBtn addTarget:self action:@selector(loginButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         [_nonLoginView addSubview:_loginBtn];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUI) name:@"kUserSignedIn" object:nil];
+        
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(void)createInputAccessoryView
@@ -103,14 +110,15 @@
         return;
     }
     
-    //Hard code
+    User* userData = [_AppDataHandler userID];
+    
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     NSString* date = [dateFormatter stringFromDate:[NSDate date]];
     
     NSString *key = [[[_firebaseRef child:@"space_data"] child:_spaceID] childByAutoId].key;
     NSDictionary *post = @{@"date": date,
-                           @"author": @"Admin001",
+                           @"author": userData.userID,
                            @"content": _commentView.text};
     NSDictionary *childUpdates = @{[@"/reviews/" stringByAppendingString:key]: post};
     [[[_firebaseRef child:@"space_data"] child:_spaceID] updateChildValues:childUpdates withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
