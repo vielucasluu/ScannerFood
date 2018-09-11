@@ -16,9 +16,12 @@
 
 @interface ApplicationDataHandler : NSObject
 
-@property (strong, nonatomic) NSString* userID;
+@property (strong, nonatomic) User* userID;
 
 +(ApplicationDataHandler *)shareInstance;
 
+-(void)signInWithUserName:(NSString*)userName
+                 password:(NSString*)password
+                   sender:(NSObject<ApplicationDataHandlerDelegate>*)sender;
 
 @end

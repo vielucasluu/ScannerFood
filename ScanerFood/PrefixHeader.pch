@@ -26,6 +26,7 @@
 #import "Route.h"
 #import "GeocodedWaypoint.h"
 #import "DirectionOverview.h"
+#import "User.h"
 
 //Application
 #import "ApplicationNavigationController.h"

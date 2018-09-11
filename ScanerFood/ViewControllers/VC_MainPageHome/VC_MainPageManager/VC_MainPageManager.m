@@ -7,16 +7,34 @@
 //
 
 #import "VC_MainPageManager.h"
+#import "VW_SignInView.h"
+#import "VW_UserInfoView.h"
 
 @interface VC_MainPageManager ()
+
+@property (strong, nonatomic) UIView* signInView;
+@property (strong, nonatomic) UIView* userInfoView;
 
 @end
 
 @implementation VC_MainPageManager
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor redColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    _signInView = [[VW_SignInView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_signInView];
+    
+//    _userInfoView = [[UIView alloc] initWithFrame:self.view.bounds];
+//    [self.view addSubview:_userInfoView];
+    
+    if (![_AppDataHandler userID]) {
+        [_userInfoView setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageSearch/TVC_MainPageDistrict/TVC_MainPageDistrict.m"
-            timestampString = "557900101.932915"
+            timestampString = "558266966.954332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -42,28 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageSearch/TVC_MainPageDistrict/TVC_MainPageDistrict.m"
-            timestampString = "557900101.933434"
+            timestampString = "558266966.954859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
             landmarkName = "-sectionButtonTouchUpInside:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScanerFood/ViewControllers/VC_MainPageHome/VC_MainPageSearch/TVC_MainPageDistrict/TVC_MainPageDistrict.m"
-            timestampString = "557900101.9338109"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
