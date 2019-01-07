@@ -16,8 +16,8 @@
 #define _NavController          [[AppDelegate sharedInstance] navController]
 
 //Application DataHandler
-#define _AppDataHandler          [[AppDelegate sharedInstance] dataHandler]
+#define _AppDataHandler         [[AppDelegate sharedInstance] dataHandler]
 
-#define kGoogleAPI      @"AIzaSyClf28LsPng1kRd-zfjGghsIyw5Ti2yqU8"
+#define kGoogleAPI              @"AIzaSyClf28LsPng1kRd-zfjGghsIyw5Ti2yqU8"
 
 #endif /* ApplicationMacros_h */

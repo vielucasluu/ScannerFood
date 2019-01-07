@@ -12,11 +12,14 @@
 
 @interface VC_MainPageSeach ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 {
-    NSMutableArray*         _listSpace;
+    NSInteger _numberOfBATT_KCN_KCX;
+    NSInteger _numberOfBATT_ngoai_KCN;
+    NSInteger _numberOfBATT_ngoai_TH_KCN_KCX;
+    NSInteger _numberOfBATT_TH;
+    NSInteger _numberOfSuatAnSan;
 }
 @property (strong, nonatomic) UISearchBar* searchBar;
 @property (strong, nonatomic) UITableView* tableView;
-
 @property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
 
 @end
@@ -71,7 +74,7 @@
     [_tableView registerClass:[TC_MainPageSearchCell class] forCellReuseIdentifier:@"searchCell"];
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
-    [_tableView setSeparatorColor:[UIColor clearColor]];
+//    [_tableView setSeparatorColor:[UIColor clearColor]];
     [_tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_tableView];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
@@ -104,15 +107,34 @@
                                                            constant:0.0]];
     [self createInputAccessoryView];
     
-    _listSpace = [NSMutableArray new];
     _firebaseRef = FIRDatabase.database.reference;
-    [[_firebaseRef child:@"space_data"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        //Code when new space has added;
-        //Take the value and add it into list space
-        if (snapshot.value) {
-            [self->_listSpace addObject:snapshot.value];
-            [self->_tableView reloadData];
-        }
+//    [[_firebaseRef child:@"suat_an_san"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//        //Code when new space has added;
+//        //Take the value and add it into list space
+//        if (snapshot.value) {
+//            [self->_listSpace addObject:snapshot.value];
+//            [self->_tableView reloadData];
+//        }
+//    }];
+    [[_firebaseRef child:@"suat_an_san"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self->_numberOfSuatAnSan = snapshot.childrenCount;
+        [self->_tableView reloadData];
+    }];
+    [[_firebaseRef child:@"batt_kcn_kcx"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self->_numberOfBATT_KCN_KCX = snapshot.childrenCount;
+        [self->_tableView reloadData];
+    }];
+    [[_firebaseRef child:@"batt_ngoai_KCN"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self->_numberOfBATT_ngoai_KCN = snapshot.childrenCount;
+        [self->_tableView reloadData];
+    }];
+    [[_firebaseRef child:@"batt_ngoai_TH_kcn_kcx"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self->_numberOfBATT_ngoai_TH_KCN_KCX = snapshot.childrenCount;
+        [self->_tableView reloadData];
+    }];
+    [[_firebaseRef child:@"batt_truong_hoc"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self->_numberOfBATT_TH = snapshot.childrenCount;
+        [self->_tableView reloadData];
     }];
 }
 
@@ -156,12 +178,12 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 5;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 80;
 }
 
 -(TC_MainPageSearchCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -172,15 +194,33 @@
     }
     
     if (indexPath.row == 0) {
-        [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_san"]];
+//        [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_san"]];
         [cell.spaceName setText:@"Cơ sở chế biến suất ăn sẵn"];
-        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_listSpace.count]];
+        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfSuatAnSan]];
     }
     else if (indexPath.row == 1)
     {
-        [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_cong_nghiep"]];
-        [cell.spaceName setText:@"Khu chế xuất - Khu công nghiệp"];
-        [cell.spaceCountLable setText:@"115"];
+//        [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_cong_nghiep"]];
+        [cell.spaceName setText:@"Bếp ăn tập thể Trường Học"];
+        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_TH]];
+    }
+    else if (indexPath.row == 2)
+    {
+        //        [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_cong_nghiep"]];
+        [cell.spaceName setText:@"Bếp ăn tập thể KCN/KCX"];
+        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_KCN_KCX]];
+    }
+    else if (indexPath.row == 3)
+    {
+        //        [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_cong_nghiep"]];
+        [cell.spaceName setText:@"Bếp ăn tập thể ngoài KCN"];
+        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_ngoai_KCN]];
+    }
+    else if (indexPath.row == 4)
+    {
+        //        [cell.spaceTypeImage setImage:[UIImage imageNamed:@"suat_an_cong_nghiep"]];
+        [cell.spaceName setText:@"Bếp ăn tập thể ngoài Trường Học/KCN/KCX"];
+        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_ngoai_TH_KCN_KCX]];
     }
     
     return cell;
@@ -194,13 +234,34 @@
     TVC_MainPageDistrict* districtVC = [[TVC_MainPageDistrict alloc] initWithStyle:UITableViewStylePlain];
     if (indexPath.row == 0) {
         [districtVC setTitle:@"Suất ăn sẵn"];
+        [districtVC setKeyString:@"suat_an_san"];
         [self.navigationController pushViewController:districtVC animated:YES];
     }
-    else
+    else if (indexPath.row == 1)
     {
-        [districtVC setTitle:@"Suất ăn công nghiệp"];
+        [districtVC setTitle:@"BATT Trường Học"];
+        [districtVC setKeyString:@"batt_truong_hoc"];
         [self.navigationController pushViewController:districtVC animated:YES];
     }
+    else if (indexPath.row == 2)
+    {
+        [districtVC setTitle:@"BATT KCN và KCX"];
+        [districtVC setKeyString:@"batt_kcn_kcx"];
+        [self.navigationController pushViewController:districtVC animated:YES];
+    }
+    else if (indexPath.row == 3)
+    {
+        [districtVC setTitle:@"BATT ngoài  KCN"];
+        [districtVC setKeyString:@"batt_ngoai_KCN"];
+        [self.navigationController pushViewController:districtVC animated:YES];
+    }
+    else if (indexPath.row == 4)
+    {
+        [districtVC setTitle:@"BATT ngoài Trường học/KCN/KCX"];
+        [districtVC setKeyString:@"batt_ngoai_TH_kcn_kcx"];
+        [self.navigationController pushViewController:districtVC animated:YES];
+    }
+    
 }
 
 #pragma mark - UISearchBarDelegate

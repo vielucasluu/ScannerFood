@@ -10,7 +10,7 @@
 
 @interface TC_MainPageSearchCell : UITableViewCell
 
-@property (strong, nonatomic) UIImageView*  spaceTypeImage;
+//@property (strong, nonatomic) UIImageView*  spaceTypeImage;
 @property (strong, nonatomic) UILabel*      spaceName;
 @property (strong, nonatomic) UILabel*      spaceCountLable;
 

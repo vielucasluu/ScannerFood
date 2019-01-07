@@ -60,7 +60,7 @@
     
     for (User* user in _listUser) {
         if ([user.userName isEqualToString:userName] && [user.password isEqualToString:password]) {
-            _userID = user;
+            _user = user;
             if ([sender respondsToSelector:@selector(LVLDataRequestComplete:)]) {
                 [sender LVLDataRequestComplete:user];
             }

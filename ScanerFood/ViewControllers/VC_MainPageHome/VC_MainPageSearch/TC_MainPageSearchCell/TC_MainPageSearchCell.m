@@ -15,37 +15,37 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        _spaceTypeImage = [[UIImageView alloc] init];
-        [_spaceTypeImage setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self addSubview:_spaceTypeImage];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
-                                                         attribute:NSLayoutAttributeTop
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:self
-                                                         attribute:NSLayoutAttributeTop
-                                                        multiplier:1.0
-                                                          constant:0.0]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
-                                                         attribute:NSLayoutAttributeBottom
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:self
-                                                         attribute:NSLayoutAttributeBottom
-                                                        multiplier:1.0
-                                                          constant:0.0]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
-                                                         attribute:NSLayoutAttributeLeft
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:self
-                                                         attribute:NSLayoutAttributeLeft
-                                                        multiplier:1.0
-                                                          constant:5.0]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
-                                                         attribute:NSLayoutAttributeHeight
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:_spaceTypeImage
-                                                         attribute:NSLayoutAttributeWidth
-                                                        multiplier:1.0
-                                                          constant:0.0]];
+//        _spaceTypeImage = [[UIImageView alloc] init];
+//        [_spaceTypeImage setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [self addSubview:_spaceTypeImage];
+//        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
+//                                                         attribute:NSLayoutAttributeTop
+//                                                         relatedBy:NSLayoutRelationEqual
+//                                                            toItem:self
+//                                                         attribute:NSLayoutAttributeTop
+//                                                        multiplier:1.0
+//                                                          constant:0.0]];
+//        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
+//                                                         attribute:NSLayoutAttributeBottom
+//                                                         relatedBy:NSLayoutRelationEqual
+//                                                            toItem:self
+//                                                         attribute:NSLayoutAttributeBottom
+//                                                        multiplier:1.0
+//                                                          constant:0.0]];
+//        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
+//                                                         attribute:NSLayoutAttributeLeft
+//                                                         relatedBy:NSLayoutRelationEqual
+//                                                            toItem:self
+//                                                         attribute:NSLayoutAttributeLeft
+//                                                        multiplier:1.0
+//                                                          constant:5.0]];
+//        [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceTypeImage
+//                                                         attribute:NSLayoutAttributeHeight
+//                                                         relatedBy:NSLayoutRelationEqual
+//                                                            toItem:_spaceTypeImage
+//                                                         attribute:NSLayoutAttributeWidth
+//                                                        multiplier:1.0
+//                                                          constant:0.0]];
         
         _spaceCountLable = [[UILabel alloc] init];
         [_spaceCountLable setTextAlignment:NSTextAlignmentRight];
@@ -101,8 +101,8 @@
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
                                                          attribute:NSLayoutAttributeLeft
                                                          relatedBy:NSLayoutRelationEqual
-                                                            toItem:_spaceTypeImage
-                                                         attribute:NSLayoutAttributeRight
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeLeft
                                                         multiplier:1.0
                                                           constant:20.0]];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName

@@ -27,48 +27,191 @@
 
 @implementation VW_ReviewView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         [self setBackgroundColor:[UIColor lightGrayColor]];
         _firebaseRef = FIRDatabase.database.reference;
-        
-        frame.origin.x = 10;
-        frame.origin.y = 10;
-        frame.size.height -= 70;
-        frame.size.width -= 20;
-        
-        _commentView = [[UITextView alloc] initWithFrame:frame];
-        [self addSubview:_commentView];
-        
-        CGRect btnFrame = CGRectMake(10, frame.size.height + 20, frame.size.width, 50);
-        _submitBtn = [[UIButton alloc] initWithFrame:btnFrame];
-        [_submitBtn setBackgroundColor:[UIColor yellowColor]];
+
+        _submitBtn = [[UIButton alloc] init];
+        [_submitBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_submitBtn setBackgroundColor:[UIColor blackColor]];
         [_submitBtn setTitle:@"Submit" forState:UIControlStateNormal];
         [_submitBtn addTarget:self action:@selector(addReview) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_submitBtn];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_submitBtn
+                                                         attribute:NSLayoutAttributeBottom
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeBottom
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_submitBtn
+                                                         attribute:NSLayoutAttributeCenterX
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeCenterX
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_submitBtn
+                                                         attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeWidth
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_submitBtn
+                                                         attribute:NSLayoutAttributeTop
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeBottom
+                                                        multiplier:1.0
+                                                          constant:-50.0]];
+        
+        _commentView = [[UITextView alloc] init];
+        [self addSubview:_commentView];
+        [_commentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
+                                                         attribute:NSLayoutAttributeTop
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeTop
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
+                                                         attribute:NSLayoutAttributeCenterX
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeCenterX
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
+                                                         attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeWidth
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
+                                                         attribute:NSLayoutAttributeHeight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeHeight
+                                                        multiplier:1.0
+                                                          constant:-70.0]];
+        
         
         [self createInputAccessoryView];
         
-        _nonLoginView = [[UIView alloc] initWithFrame:self.bounds];
+        _nonLoginView = [[UIView alloc] init];
         [_nonLoginView setHidden:NO];
         [_nonLoginView setBackgroundColor:[UIColor whiteColor]];
+        [_nonLoginView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:_nonLoginView];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_nonLoginView
+                                                         attribute:NSLayoutAttributeCenterX
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeCenterX
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_nonLoginView
+                                                         attribute:NSLayoutAttributeCenterY
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeCenterY
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_nonLoginView
+                                                         attribute:NSLayoutAttributeHeight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeHeight
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_nonLoginView
+                                                         attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeWidth
+                                                        multiplier:1.0
+                                                          constant:0.0]];
         
-        _loginRequiredLabel = [[UILabel alloc] initWithFrame:frame];
+        _loginRequiredLabel = [[UILabel alloc] init];
+        [_loginRequiredLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_loginRequiredLabel setTextAlignment:NSTextAlignmentCenter];
         [_loginRequiredLabel setNumberOfLines:0];
         [_loginRequiredLabel setText:@"Bạn phải đăng nhập để sử dụng tính năng này"];
         [_nonLoginView addSubview:_loginRequiredLabel];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginRequiredLabel
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_nonLoginView
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginRequiredLabel
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_nonLoginView
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginRequiredLabel
+                                                                  attribute:NSLayoutAttributeWidth
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_nonLoginView
+                                                                  attribute:NSLayoutAttributeWidth
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginRequiredLabel
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_nonLoginView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                 multiplier:0.0
+                                                                   constant:50.0]];
         
-        _loginBtn = [[UIButton alloc] initWithFrame:btnFrame];
+        _loginBtn = [[UIButton alloc] init];
         [_loginBtn.layer setCornerRadius:5];
         [_loginBtn.layer setBorderWidth:0.75];
         [_loginBtn setTintColor:[UIColor blackColor]];
         [_loginBtn setTitleColor:[UIColor  blackColor] forState:UIControlStateNormal];
         [_loginBtn setTitle:@"Login" forState:UIControlStateNormal];
         [_loginBtn addTarget:self action:@selector(loginButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+        [_loginBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
         [_nonLoginView addSubview:_loginBtn];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginBtn
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_nonLoginView
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginBtn
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_nonLoginView
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                 multiplier:1.0
+                                                                   constant:80.0]];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginBtn
+                                                                  attribute:NSLayoutAttributeRight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_loginBtn
+                                                                  attribute:NSLayoutAttributeLeft
+                                                                 multiplier:1.0
+                                                                   constant:100.0]];
+        [_nonLoginView addConstraint:[NSLayoutConstraint constraintWithItem:_loginBtn
+                                                                  attribute:NSLayoutAttributeBottom
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_loginBtn
+                                                                  attribute:NSLayoutAttributeTop
+                                                                 multiplier:1.0
+                                                                   constant:50.0]];
+        
+        [self reloadUI];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUI) name:@"kUserSignedIn" object:nil];
         
@@ -110,7 +253,7 @@
         return;
     }
     
-    User* userData = [_AppDataHandler userID];
+    User* userData = [_AppDataHandler user];
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
@@ -145,7 +288,7 @@
 
 -(void)reloadUI
 {
-    if ([_AppDataHandler userID])
+    if ([_AppDataHandler user])
     {
         [_nonLoginView setHidden:YES];
     }

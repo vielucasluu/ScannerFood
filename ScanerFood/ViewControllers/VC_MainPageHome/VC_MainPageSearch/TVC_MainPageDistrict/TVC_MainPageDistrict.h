@@ -10,4 +10,6 @@
 
 @interface TVC_MainPageDistrict : UITableViewController
 
+@property (strong, nonatomic) NSString* keyString;
+
 @end

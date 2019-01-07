@@ -31,7 +31,7 @@
     
     _listSpace = [NSMutableArray new];
     _firebaseRef = FIRDatabase.database.reference;
-    [[_firebaseRef child:@"space_data"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    [[_firebaseRef child:_keyString] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         //Code when new space has added;
         //Take the value and add it into list space
         if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
@@ -39,7 +39,7 @@
             
             BOOL isSameDict = NO;
             for (NSDictionary* dict in self->_listSpace) {
-                if ([[dict objectForKey:@"districtName"] isEqualToString:[space_dict objectForKey:@"district"]]) {
+                if ([[dict objectForKey:@"quan_huyen"] isEqualToString:[space_dict objectForKey:@"quan_huyen"]]) {
                     
                     NSMutableArray* space_in_district = [dict objectForKey:@"list_space"];
                     [space_in_district addObject:space_dict];
@@ -52,7 +52,7 @@
             if (!isSameDict) {
                 NSMutableArray* space_in_district = [NSMutableArray new];
                 [space_in_district addObject:space_dict];
-                NSDictionary* districtDict = @{@"districtName": [space_dict objectForKey:@"district"],
+                NSDictionary* districtDict = @{@"quan_huyen": [space_dict objectForKey:@"quan_huyen"],
                                                @"list_space":space_in_district};
                 NSMutableDictionary* districtData = [NSMutableDictionary dictionaryWithDictionary:districtDict];
                 [self->_listSpace addObject:districtData];
@@ -129,7 +129,7 @@
     UIButton* result = [UIButton buttonWithType:UIButtonTypeCustom];
     [result addTarget:self action:@selector(sectionButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     result.backgroundColor = [UIColor grayColor];
-    [result setTitle:[districtData objectForKey:@"districtName"] forState:UIControlStateNormal];
+    [result setTitle:[districtData objectForKey:@"quan_huyen"] forState:UIControlStateNormal];
     result.tag = section;
     return result;
 }
@@ -150,9 +150,9 @@
     NSArray* listSpace = [districtData objectForKey:@"list_space"];
     NSDictionary* cellData = [listSpace objectAtIndex:indexPath.row];
     
-    [cell.spaceNameLabel setText:[cellData objectForKey:@"space_name"]];
-    [cell.addressLabel setText:[NSString stringWithFormat:@"%@ - %@",[cellData objectForKey:@"address"],[cellData objectForKey:@"address_2"]]];
-    [cell.districtLabel setText:[cellData objectForKey:@"district"]];
+    [cell.spaceNameLabel setText:[cellData objectForKey:@"ten_cong_ty"]];
+    [cell.addressLabel setText:[NSString stringWithFormat:@"%@ - %@",[cellData objectForKey:@"dia_chi"],[cellData objectForKey:@"phuong_xa"]]];
+    [cell.districtLabel setText:[cellData objectForKey:@"quan_huyen"]];
     [cell.distanceLabel setText:@"0.0 km"];
  
     return cell;
@@ -169,6 +169,7 @@
     NSDictionary* cellData = [listSpace objectAtIndex:indexPath.row];
     
     VC_MainPageSpaceDetails* spaceDetails = [[VC_MainPageSpaceDetails alloc] init];
+    [spaceDetails setKeyString:self.keyString];
     [spaceDetails setSpaceID:[[cellData objectForKey:@"space_id"] stringValue]];
     [self.navigationController pushViewController:spaceDetails animated:YES];
 }

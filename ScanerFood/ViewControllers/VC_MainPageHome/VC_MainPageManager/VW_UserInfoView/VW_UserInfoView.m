@@ -130,7 +130,7 @@
 
 -(void)updateData
 {
-    User* userData = [_AppDataHandler userID];
+    User* userData = [_AppDataHandler user];
     [_userName setText:userData.userName];
 }
 

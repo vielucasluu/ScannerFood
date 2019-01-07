@@ -20,27 +20,48 @@
 
 @implementation VW_DirectionView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
         
-        CGRect selfFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+//        CGRect selfFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         
-        _xPos = 0.0;
-        _yPos = 0.0;
+//        _xPos = 0.0;
+//        _yPos = 0.0;
         
-        self.pageScroll = [[UIScrollView alloc] initWithFrame:selfFrame];
+        _pageScroll = [[UIScrollView alloc] init];
+        [_pageScroll setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:_pageScroll];
-        
-        CGRect contentRect = CGRectMake(10, 0, selfFrame.size.width, 30);
-        UILabel* contactTitle = [[UILabel alloc] initWithFrame:contentRect];
-        [contactTitle setText:@"Tổng quan"];
-        [contactTitle setBackgroundColor:[UIColor LVL_colorWithHexString:@"ebeaf0" andAlpha:1.0]];
-        [contactTitle setTextColor:[UIColor LVL_colorWithHexString:@"355183" andAlpha:1.0]];
-        [self.pageScroll addSubview:contactTitle];
-        
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_pageScroll
+                                                         attribute:NSLayoutAttributeCenterX
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeCenterX
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_pageScroll
+                                                         attribute:NSLayoutAttributeCenterY
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeCenterY
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_pageScroll
+                                                         attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeWidth
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_pageScroll
+                                                         attribute:NSLayoutAttributeHeight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeHeight
+                                                        multiplier:1.0
+                                                          constant:0.0]];
     }
     return self;
 }

@@ -16,7 +16,7 @@
 
 @interface ApplicationDataHandler : NSObject
 
-@property (strong, nonatomic) User* userID;
+@property (strong, nonatomic) User* user;
 
 +(ApplicationDataHandler *)shareInstance;
 
