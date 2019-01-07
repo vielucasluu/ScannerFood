@@ -243,6 +243,7 @@
 #pragma mark - ApplicationDataHandlerDelegate
 -(void)LVLDataRequestComplete:(id)responseValue
 {
+    [self endEditing:YES];
     if ([responseValue isKindOfClass:[User class]]) {
         [self setHidden:YES];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"kUserSignedIn" object:nil];

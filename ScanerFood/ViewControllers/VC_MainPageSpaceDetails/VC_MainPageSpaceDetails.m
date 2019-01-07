@@ -288,6 +288,7 @@
     _reviewView = [[VW_ReviewView alloc] init];
     [_reviewView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_reviewView setSpaceID:_spaceID];
+    [_reviewView setKeyString:_keyString];
     [_reviewView setHidden:YES];
     [self.view addSubview:_reviewView];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_reviewView

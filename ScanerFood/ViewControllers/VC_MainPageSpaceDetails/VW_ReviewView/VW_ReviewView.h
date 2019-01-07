@@ -12,5 +12,6 @@
 @interface VW_ReviewView : UIView
 
 -(void)setSpaceID:(NSString*)spaceID;
+-(void)setKeyString:(NSString*)keyString;
 
 @end

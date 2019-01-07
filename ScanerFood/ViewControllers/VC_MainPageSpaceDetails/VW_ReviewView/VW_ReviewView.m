@@ -16,6 +16,7 @@
 }
 
 @property (strong, nonatomic) NSString*     spaceID;
+@property (strong, nonatomic) NSString*     keyString;
 @property (strong, nonatomic) UITextView*   commentView;
 @property (strong, nonatomic) UIButton*     submitBtn;
 
@@ -247,6 +248,11 @@
     _spaceID = spaceID;
 }
 
+-(void)setKeyString:(NSString*)keyString
+{
+    _keyString = keyString;
+}
+
 -(void)addReview
 {
     if ([_commentView.text isEqualToString:@""]) {
@@ -259,12 +265,12 @@
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     NSString* date = [dateFormatter stringFromDate:[NSDate date]];
     
-    NSString *key = [[[_firebaseRef child:@"space_data"] child:_spaceID] childByAutoId].key;
+    NSString *key = [[[_firebaseRef child:_keyString] child:_spaceID] childByAutoId].key;
     NSDictionary *post = @{@"date": date,
                            @"author": userData.userID,
                            @"content": _commentView.text};
     NSDictionary *childUpdates = @{[@"/reviews/" stringByAppendingString:key]: post};
-    [[[_firebaseRef child:@"space_data"] child:_spaceID] updateChildValues:childUpdates withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+    [[[_firebaseRef child:_keyString] child:_spaceID] updateChildValues:childUpdates withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
         if (!error) {
             UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Update Successfull"
                                                                              message:@"Review has been updated!"
@@ -276,6 +282,7 @@
                                                              }];
             [alertVC addAction:okAction];
             [_NavController presentViewController:alertVC animated:YES completion:nil];
+            [self endEditing:YES];
         }
     }];
 }
