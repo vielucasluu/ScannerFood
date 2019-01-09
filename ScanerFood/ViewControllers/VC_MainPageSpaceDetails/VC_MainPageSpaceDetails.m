@@ -334,14 +334,8 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [_mapView clear];
-    // clear polyline
-    if (_addedPolyline.count > 0) {
-        for (GMSPolyline *polylineToremove in _addedPolyline) {
-            [polylineToremove setMap:nil];
-        }
-        _addedPolyline = [NSMutableArray new];
-    }
+    [self.directionService.selectLegs removeAllObjects];
+    [self.directionService.selectSteps removeAllObjects];
 }
 
 #pragma mark - Loading UI
