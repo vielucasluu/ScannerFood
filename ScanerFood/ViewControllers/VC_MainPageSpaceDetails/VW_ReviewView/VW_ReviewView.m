@@ -259,6 +259,24 @@
         return;
     }
     
+    // hard code location
+//    NSDictionary *childUpdates = @{@"/location/": _commentView.text};
+//    [[[_firebaseRef child:_keyString] child:_spaceID] updateChildValues:childUpdates withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+//        if (!error) {
+//            UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Update Successfull"
+//                                                                             message:@"Review has been updated!"
+//                                                                      preferredStyle:UIAlertControllerStyleAlert];
+//            UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
+//                                                               style:UIAlertActionStyleDefault
+//                                                             handler:^(UIAlertAction * _Nonnull action) {
+//                                                                 [alertVC dismissViewControllerAnimated:YES completion:nil];
+//                                                             }];
+//            [alertVC addAction:okAction];
+//            [_NavController presentViewController:alertVC animated:YES completion:nil];
+//            [self endEditing:YES];
+//        }
+//    }];
+    
     User* userData = [_AppDataHandler user];
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];

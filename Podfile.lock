@@ -86,7 +86,7 @@ DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - Firebase/Core
   - Firebase/Database
-  - GoogleMaps (= 2.7.0)
+  - GoogleMaps
   - iCarousel (= 1.8.3)
   - SDWebImage (= 4.2.3)
 
@@ -123,6 +123,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: dee02f05c21e45d78b8c878bceeae85aefc0f8af
+PODFILE CHECKSUM: 492b57ba9b8dd6a0b6b9eb364db53d94494edad2
 
 COCOAPODS: 1.5.3

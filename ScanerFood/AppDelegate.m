@@ -32,7 +32,7 @@
     [[UISearchBar appearance] setBackgroundColor:[UIColor whiteColor]];
     
     //Google Maps
-    [GMSServices provideAPIKey:kGoogleAPI];
+    [GMSServices provideAPIKey:@"AIzaSyClf28LsPng1kRd-zfjGghsIyw5Ti2yqU8"];
     
     VC_MainPageHome* homeVC = [VC_MainPageHome shareInstance];
     _navController = [[ApplicationNavigationController alloc] initWithRootViewController:homeVC];

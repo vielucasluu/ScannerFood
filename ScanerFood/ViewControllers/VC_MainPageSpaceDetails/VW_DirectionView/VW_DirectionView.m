@@ -26,11 +26,6 @@
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
         
-//        CGRect selfFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        
-//        _xPos = 0.0;
-//        _yPos = 0.0;
-        
         _pageScroll = [[UIScrollView alloc] init];
         [_pageScroll setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:_pageScroll];

@@ -22,6 +22,7 @@
 @property (strong, nonatomic) ApplicationDirectionService* directionService;
 
 @property (strong, nonatomic) GMSMapView*   mapView;
+@property (strong, nonatomic) NSMutableArray* addedPolyline;
 @property (strong, nonatomic) UIButton*     detailsBtn;
 @property (strong, nonatomic) UIButton*     directionBtn;
 @property (strong, nonatomic) UIButton*     editBtn;
@@ -252,7 +253,7 @@
                                                            constant:0.0]];
     
     
-    _directionView = [[VW_DirectionView alloc] initWithFrame:CGRectZero];
+    _directionView = [[VW_DirectionView alloc] init];
     [_directionView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_directionView setHidden:YES];
     [self.view addSubview:_directionView];
@@ -330,6 +331,19 @@
     [self reloadData];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_mapView clear];
+    // clear polyline
+    if (_addedPolyline.count > 0) {
+        for (GMSPolyline *polylineToremove in _addedPolyline) {
+            [polylineToremove setMap:nil];
+        }
+        _addedPolyline = [NSMutableArray new];
+    }
+}
+
 #pragma mark - Loading UI
 -(void)detailsButtonTapped:(UIButton*)btn
 {
@@ -374,9 +388,12 @@
 -(void)scanDirection
 {
     [_mapView clear];
-    NSString* origin = @"10.792659,106.699817";
-    NSString* destination = @"10.772638, 106.690937";
-    GMSMarker* destinationMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(10.772638, 106.690937)];
+    NSString* origin = @"10.773327, 106.690346"; // Trung Tam ATTP
+    NSString* destination = [_dataSource objectForKey:@"location"];
+    
+    NSArray* elementLocation = [destination componentsSeparatedByString:@", "];
+    
+    GMSMarker* destinationMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake([elementLocation[0] doubleValue], [elementLocation[1] doubleValue])];
     [destinationMarker setMap:_mapView];
     [self.directionService getDirectionsWithOrigin:origin
                                        destination:destination
@@ -393,6 +410,14 @@
 
 -(void)drawRoute
 {
+    // clear polyline
+    if (_addedPolyline.count > 0) {
+        for (GMSPolyline *polylineToremove in _addedPolyline) {
+            [polylineToremove setMap:nil];
+        }
+    }
+    
+    _addedPolyline = [NSMutableArray new];
     for (Step* step in self.directionService.selectSteps){
         if (![step.polyline.points isEqualToString:@""])
         {
@@ -401,6 +426,7 @@
             [routePolyline setStrokeColor:[UIColor blueColor]];
             [routePolyline setStrokeWidth:3.0];
             [routePolyline setMap:_mapView];
+            [_addedPolyline addObject:routePolyline];
         } else {
             return;
         }

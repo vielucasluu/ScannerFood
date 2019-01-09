@@ -41,12 +41,28 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_ReviewView/VW_ReviewView.m"
-            timestampString = "568572015.536799"
+            filePath = "ScanerFood/Applications/ApplicationDirectionService.m"
+            timestampString = "568746483.526806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-getDirectionsWithOrigin:destination:travelMode:getDirectionStatus:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScanerFood/ViewControllers/VC_MainPageSpaceDetails/VW_ReviewView/VW_ReviewView.m"
+            timestampString = "568746809.899773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "-addReview"
             landmarkType = "7">
          </BreakpointContent>

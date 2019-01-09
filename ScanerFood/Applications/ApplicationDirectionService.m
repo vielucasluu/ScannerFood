@@ -78,6 +78,21 @@
          }
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               NSDictionary* returnDict = (NSDictionary*)responseObject;
+              
+              if ([returnDict objectForKey:@"error_message"]) {
+                  UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Request Fail"
+                                                                                   message:[returnDict objectForKey:@"error_message"]
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                  UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                     style:UIAlertActionStyleDefault
+                                                                   handler:^(UIAlertAction * _Nonnull action) {
+                                                                       [alertVC dismissViewControllerAnimated:YES completion:nil];
+                                                                   }];
+                  [alertVC addAction:okAction];
+                  [_NavController presentViewController:alertVC animated:YES completion:nil];
+                  return;
+              }
+              
               DirectionOverview* direction = [[DirectionOverview alloc] initWithDictionary:returnDict];
               NSLog(@"");
               if ([direction.status isEqualToString:@""]) {
