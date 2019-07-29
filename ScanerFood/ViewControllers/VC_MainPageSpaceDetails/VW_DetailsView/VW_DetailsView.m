@@ -578,7 +578,7 @@
 //        contentRect = CGRectMake(10, _yPos, selfFrame.size.width, 30);
         UILabel* checkingInfo = [[UILabel alloc] init];
         [checkingInfo setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [checkingInfo setText:@"Lịch sử kiểm định"];
+        [checkingInfo setText:@"Lịch sử thanh tra/kiểm tra"];
         [checkingInfo setBackgroundColor:[UIColor LVL_colorWithHexString:@"ebeaf0" andAlpha:1.0]];
         [checkingInfo setTextColor:[UIColor LVL_colorWithHexString:@"355183" andAlpha:1.0]];
         [self.pageScroll addSubview:checkingInfo];

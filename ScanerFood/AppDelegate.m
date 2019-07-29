@@ -34,8 +34,8 @@
     //Google Maps
     [GMSServices provideAPIKey:kGoogleAPI];
     
-    VC_MainPageHome* homeVC = [VC_MainPageHome shareInstance];
-    _navController = [[ApplicationNavigationController alloc] initWithRootViewController:homeVC];
+    VC_MainPageLogin* loginVC = [[VC_MainPageLogin alloc] init];
+    _navController = [[ApplicationNavigationController alloc] initWithRootViewController:loginVC];
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [_window setRootViewController:_navController];
     [_window makeKeyAndVisible];

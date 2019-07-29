@@ -1,4 +1,4 @@
-module Pods_ScanerFood {
+framework module Pods_ScanerFood {
   umbrella header "Pods-ScanerFood-umbrella.h"
 
   export *

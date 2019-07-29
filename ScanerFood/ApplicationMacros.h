@@ -20,4 +20,6 @@
 
 #define kGoogleAPI              @"AIzaSyClf28LsPng1kRd-zfjGghsIyw5Ti2yqU8"
 
+#define kToneColor              @"2C767E"
+
 #endif /* ApplicationMacros_h */

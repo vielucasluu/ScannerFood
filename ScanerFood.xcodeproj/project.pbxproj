@@ -34,7 +34,8 @@
 		133649D22142803B00E1D00E /* VW_UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 133649D12142803B00E1D00E /* VW_UserInfoView.m */; };
 		1356F0ED2147A3290033C0F4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1356F0EC2147A3290033C0F4 /* User.m */; };
 		13745F502134034B000F9B18 /* PKGymNguyenHue.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 13745F4F2134034B000F9B18 /* PKGymNguyenHue.gpx */; };
-		13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F41B052114497300A5CA1F /* LaunchScreen.storyboard */; };
+		13E94FB022EF481900FACCDB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E94FAF22EF481900FACCDB /* Launch Screen.storyboard */; };
+		13F3410722E8A37C00FB831D /* VC_MainPageLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F3410622E8A37C00FB831D /* VC_MainPageLogin.m */; };
 		13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */; };
 		13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B182114502400A5CA1F /* UIColor_EXT.m */; };
 		13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD52211441CE00AEEA66 /* AppDelegate.m */; };
@@ -42,9 +43,9 @@
 		13F9AD64211441CE00AEEA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD63211441CE00AEEA66 /* main.m */; };
 		13F9AD6E211441CE00AEEA66 /* ScanerFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD6D211441CE00AEEA66 /* ScanerFoodTests.m */; };
 		13F9AD79211441CE00AEEA66 /* ScanerFoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9AD78211441CE00AEEA66 /* ScanerFoodUITests.m */; };
-		290292E8C53FE8C98CA90667 /* libPods-ScanerFoodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DF64F5EB7497EF4765D04B /* libPods-ScanerFoodTests.a */; };
-		8B98AA5C81103F7687601FC3 /* libPods-ScanerFoodUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F307F94AD9A1EEC9DB80C9F /* libPods-ScanerFoodUITests.a */; };
-		95BFA6CC16EC4DC87F563A36 /* libPods-ScanerFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */; };
+		311161572419AAC9DE90FB5D /* Pods_ScanerFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDA92EDD9722210D6563ABC /* Pods_ScanerFoodUITests.framework */; };
+		67739678D25CBA6173D413A7 /* Pods_ScanerFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECC89BB875171B730AB2A5D /* Pods_ScanerFoodTests.framework */; };
+		FFEE42BFDD4E91216339E327 /* Pods_ScanerFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB6697606F2E272A31C06C4 /* Pods_ScanerFood.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CB6697606F2E272A31C06C4 /* Pods_ScanerFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScanerFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		130B89FC21216E7800DDB7A3 /* AutoScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
 		130B89FD21216E7800DDB7A3 /* AutoScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
 		130B8A012122051400DDB7A3 /* ScanerFood-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanerFood-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -119,7 +120,9 @@
 		1356F0EB2147A3290033C0F4 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		1356F0EC2147A3290033C0F4 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		13745F4F2134034B000F9B18 /* PKGymNguyenHue.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PKGymNguyenHue.gpx; sourceTree = "<group>"; };
-		13F41B052114497300A5CA1F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13E94FAF22EF481900FACCDB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		13F3410522E8A37C00FB831D /* VC_MainPageLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC_MainPageLogin.h; sourceTree = "<group>"; };
+		13F3410622E8A37C00FB831D /* VC_MainPageLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageLogin.m; sourceTree = "<group>"; };
 		13F41B0821144B1C00A5CA1F /* ApplicationNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApplicationNavigationController.h; path = Applications/ApplicationNavigationController.h; sourceTree = "<group>"; };
 		13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ApplicationNavigationController.m; path = Applications/ApplicationNavigationController.m; sourceTree = "<group>"; };
 		13F41B0B21144B4900A5CA1F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -140,12 +143,12 @@
 		13F9AD7A211441CE00AEEA66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		310346DAC741F1795F7AF99A /* Pods-ScanerFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodUITests/Pods-ScanerFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4248C0DCD1F2F2BCF8AE3AFA /* Pods-ScanerFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodTests/Pods-ScanerFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4F307F94AD9A1EEC9DB80C9F /* libPods-ScanerFoodUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFoodUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A21E0E22CDEB2CD432F4282 /* Pods-ScanerFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood.release.xcconfig"; sourceTree = "<group>"; };
 		7080A48000F0B829F526AC73 /* Pods-ScanerFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodTests/Pods-ScanerFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		A74BBBD59A05E667EAE94ABB /* Pods-ScanerFoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFoodUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFoodUITests/Pods-ScanerFoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C9DF64F5EB7497EF4765D04B /* libPods-ScanerFoodTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanerFoodTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA92E25A453FB97F1D94F6F /* Pods-ScanerFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanerFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood.debug.xcconfig"; sourceTree = "<group>"; };
+		FECC89BB875171B730AB2A5D /* Pods_ScanerFoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScanerFoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEDA92EDD9722210D6563ABC /* Pods_ScanerFoodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScanerFoodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95BFA6CC16EC4DC87F563A36 /* libPods-ScanerFood.a in Frameworks */,
+				FFEE42BFDD4E91216339E327 /* Pods_ScanerFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				290292E8C53FE8C98CA90667 /* libPods-ScanerFoodTests.a in Frameworks */,
+				67739678D25CBA6173D413A7 /* Pods_ScanerFoodTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B98AA5C81103F7687601FC3 /* libPods-ScanerFoodUITests.a in Frameworks */,
+				311161572419AAC9DE90FB5D /* Pods_ScanerFoodUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +329,7 @@
 		1335B8EA211F1D8B00C8EE2C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				13F3410422E8A34400FB831D /* VC_MainPageLogin */,
 				132075072120474B00D02051 /* VC_MainPageSpaceDetails */,
 				1335B8EB211F1D9A00C8EE2C /* VC_MainPageHome */,
 			);
@@ -370,6 +374,15 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		13F3410422E8A34400FB831D /* VC_MainPageLogin */ = {
+			isa = PBXGroup;
+			children = (
+				13F3410522E8A37C00FB831D /* VC_MainPageLogin.h */,
+				13F3410622E8A37C00FB831D /* VC_MainPageLogin.m */,
+			);
+			path = VC_MainPageLogin;
+			sourceTree = "<group>";
+		};
 		13F41B0721144AD600A5CA1F /* Applications */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,7 +402,7 @@
 		13F41B0C21144C5100A5CA1F /* DefaultFiles */ = {
 			isa = PBXGroup;
 			children = (
-				13F41B052114497300A5CA1F /* LaunchScreen.storyboard */,
+				13E94FAF22EF481900FACCDB /* Launch Screen.storyboard */,
 				13F9AD5D211441CE00AEEA66 /* Assets.xcassets */,
 				13F9AD62211441CE00AEEA66 /* Info.plist */,
 				13F9AD63211441CE00AEEA66 /* main.m */,
@@ -480,9 +493,9 @@
 		F3DF8540421D3A32A555B7F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B530F56463F4E5E93B6A29D /* libPods-ScanerFood.a */,
-				C9DF64F5EB7497EF4765D04B /* libPods-ScanerFoodTests.a */,
-				4F307F94AD9A1EEC9DB80C9F /* libPods-ScanerFoodUITests.a */,
+				0CB6697606F2E272A31C06C4 /* Pods_ScanerFood.framework */,
+				FECC89BB875171B730AB2A5D /* Pods_ScanerFoodTests.framework */,
+				FEDA92EDD9722210D6563ABC /* Pods_ScanerFoodUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -499,6 +512,7 @@
 				13F9AD4B211441CE00AEEA66 /* Frameworks */,
 				13F9AD4C211441CE00AEEA66 /* Resources */,
 				786E7F6F522899FC68A738B8 /* [CP] Copy Pods Resources */,
+				EB701CA68232615D20669E8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -599,8 +613,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F9AD5E211441CE00AEEA66 /* Assets.xcassets in Resources */,
-				13F41B062114497300A5CA1F /* LaunchScreen.storyboard in Resources */,
 				130B8A3C2122B35900DDB7A3 /* GoogleService-Info.plist in Resources */,
+				13E94FB022EF481900FACCDB /* Launch Screen.storyboard in Resources */,
 				13745F502134034B000F9B18 /* PKGymNguyenHue.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,7 +678,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -673,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DFD177510B49960198A6DC2E /* [CP] Check Pods Manifest.lock */ = {
@@ -694,6 +708,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EB701CA68232615D20669E8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -711,6 +753,7 @@
 				130B8A3421228DAC00DDB7A3 /* Location.m in Sources */,
 				132075162120487900D02051 /* TC_MainPageSearchCell.m in Sources */,
 				130B89FE21216E7800DDB7A3 /* AutoScrollLabel.m in Sources */,
+				13F3410722E8A37C00FB831D /* VC_MainPageLogin.m in Sources */,
 				13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */,
 				130B8A2821227A2F00DDB7A3 /* Leg.m in Sources */,
 				130B8A2B2122891C00DDB7A3 /* GeocodedWaypoint.m in Sources */,
@@ -882,13 +925,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5592AK55J4;
+				DEVELOPMENT_TEAM = C6C656UCJM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanerFood/PrefixHeader.pch";
 				INFOPLIST_FILE = ScanerFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.scanerfood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.attp.lucaluu.sfi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ScanerFood/DataSource/MappingObject/ScanerFood-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -905,13 +948,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5592AK55J4;
+				DEVELOPMENT_TEAM = C6C656UCJM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanerFood/PrefixHeader.pch";
 				INFOPLIST_FILE = ScanerFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cd.personal.scanerfood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.attp.lucaluu.sfi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ScanerFood/DataSource/MappingObject/ScanerFood-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
