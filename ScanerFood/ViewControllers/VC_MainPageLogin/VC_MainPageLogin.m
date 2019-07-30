@@ -11,7 +11,7 @@
 
 #define _textSize               12
 
-@interface VC_MainPageLogin ()<MFMailComposeViewControllerDelegate>
+@interface VC_MainPageLogin ()<MFMailComposeViewControllerDelegate, ApplicationDataHandlerDelegate>
 {
     UIImageView*    _logoImage;
     UILabel*        _welcomeTitle;
@@ -20,6 +20,7 @@
 @property (strong, nonatomic) UITextField*      email;
 @property (strong, nonatomic) UITextField*      password;
 @property (strong, nonatomic) UIButton*         loginBtn;
+@property (strong, nonatomic) UIButton*         loginAsGuest;
 @property (strong, nonatomic) UIButton*         forgotPassword;
 
 @end
@@ -31,41 +32,41 @@
     [self.navigationController setNavigationBarHidden:YES];
     [self.view setBackgroundColor:[UIColor LVL_colorWithHexString:kToneColor andAlpha:1.0]];
     
-//    UIImage *backImage = [UIImage imageNamed:@"backArrowImage"];
-//    UIButton* backBtn = [[UIButton alloc] init];
-//    [backBtn addTarget:self action:@selector(backBtnTapped) forControlEvents:UIControlEventTouchUpInside];
-//    [backBtn setTintColor:[UIColor greenColor]];
-//    [backBtn setImage:backImage forState:UIControlStateNormal];
-//    [backBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    [self.view addSubview:backBtn];
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
-//                                                          attribute:NSLayoutAttributeTop
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:self.view
-//                                                          attribute:NSLayoutAttributeTop
-//                                                         multiplier:1.0
-//                                                           constant:30.0]];
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
-//                                                          attribute:NSLayoutAttributeLeft
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:self.view
-//                                                          attribute:NSLayoutAttributeLeft
-//                                                         multiplier:1.0
-//                                                           constant:17.0]];
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
-//                                                          attribute:NSLayoutAttributeRight
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:backBtn
-//                                                          attribute:NSLayoutAttributeLeft
-//                                                         multiplier:1.0
-//                                                           constant:44.0]];
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
-//                                                          attribute:NSLayoutAttributeBottom
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:backBtn
-//                                                          attribute:NSLayoutAttributeTop
-//                                                         multiplier:1.0
-//                                                           constant:44.0]];
+    //    UIImage *backImage = [UIImage imageNamed:@"backArrowImage"];
+    //    UIButton* backBtn = [[UIButton alloc] init];
+    //    [backBtn addTarget:self action:@selector(backBtnTapped) forControlEvents:UIControlEventTouchUpInside];
+    //    [backBtn setTintColor:[UIColor greenColor]];
+    //    [backBtn setImage:backImage forState:UIControlStateNormal];
+    //    [backBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
+    //    [self.view addSubview:backBtn];
+    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
+    //                                                          attribute:NSLayoutAttributeTop
+    //                                                          relatedBy:NSLayoutRelationEqual
+    //                                                             toItem:self.view
+    //                                                          attribute:NSLayoutAttributeTop
+    //                                                         multiplier:1.0
+    //                                                           constant:30.0]];
+    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
+    //                                                          attribute:NSLayoutAttributeLeft
+    //                                                          relatedBy:NSLayoutRelationEqual
+    //                                                             toItem:self.view
+    //                                                          attribute:NSLayoutAttributeLeft
+    //                                                         multiplier:1.0
+    //                                                           constant:17.0]];
+    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
+    //                                                          attribute:NSLayoutAttributeRight
+    //                                                          relatedBy:NSLayoutRelationEqual
+    //                                                             toItem:backBtn
+    //                                                          attribute:NSLayoutAttributeLeft
+    //                                                         multiplier:1.0
+    //                                                           constant:44.0]];
+    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:backBtn
+    //                                                          attribute:NSLayoutAttributeBottom
+    //                                                          relatedBy:NSLayoutRelationEqual
+    //                                                             toItem:backBtn
+    //                                                          attribute:NSLayoutAttributeTop
+    //                                                         multiplier:1.0
+    //                                                           constant:44.0]];
     _logoImage = [[UIImageView alloc] init];
     [_logoImage setImage:[UIImage imageNamed:@"app_icon"]];
     [_logoImage setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -219,19 +220,19 @@
                                                          multiplier:1.0
                                                            constant:30.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_email
-                                                          attribute:NSLayoutAttributeRight
+                                                          attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
-                                                          attribute:NSLayoutAttributeRight
+                                                          attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.0
-                                                           constant:-8.0]];
+                                                           constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_email
                                                           attribute:NSLayoutAttributeWidth
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeWidth
                                                          multiplier:1.0
-                                                           constant:-16.0]];
+                                                           constant:-60.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_email
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
@@ -272,7 +273,7 @@
                                                          multiplier:1.0
                                                            constant:0.0]];
     _password = [[UITextField alloc] init];
-    _password.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor LVL_colorWithHexString:@"cdcccc" andAlpha:1.0]}];
+    _password.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Mật khẩu" attributes:@{NSForegroundColorAttributeName: [UIColor LVL_colorWithHexString:@"cdcccc" andAlpha:1.0]}];
     [_password setTextColor:[UIColor LVL_colorWithHexString:@"cdcccc" andAlpha:1.0]];
     [_password setFont:[UIFont systemFontOfSize:_textSize]];
     [_password setSecureTextEntry:YES];
@@ -286,19 +287,19 @@
                                                          multiplier:1.0
                                                            constant:30.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_password
-                                                          attribute:NSLayoutAttributeLeft
+                                                          attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
-                                                          attribute:NSLayoutAttributeLeft
+                                                          attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.0
-                                                           constant:8.0]];
+                                                           constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_password
                                                           attribute:NSLayoutAttributeWidth
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeWidth
                                                          multiplier:1.0
-                                                           constant:-16.0]];
+                                                           constant:-60.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_password
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
@@ -340,7 +341,7 @@
                                                            constant:0.0]];
     _forgotPassword = [[UIButton alloc] init];
     [_forgotPassword setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_forgotPassword setTitle:@"Forgot Password?" forState:UIControlStateNormal];
+    [_forgotPassword setTitle:@"Quên mật khẩu?" forState:UIControlStateNormal];
     [_forgotPassword.titleLabel setFont:[UIFont systemFontOfSize:_textSize]];
     _forgotPassword.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [_forgotPassword addTarget:self action:@selector(forgotPasswordButtonTapped) forControlEvents:UIControlEventTouchUpInside];
@@ -376,7 +377,7 @@
                                                            constant:30.0]];
     
     _loginBtn = [[UIButton alloc] init];
-    [_loginBtn setTitle:@"Login" forState:UIControlStateNormal];
+    [_loginBtn setTitle:@"Đăng nhập" forState:UIControlStateNormal];
     [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_loginBtn setBackgroundColor:[UIColor LVL_colorWithHexString:@"aa4b16" andAlpha:1.0]];
     [_loginBtn addTarget:self action:@selector(loginButtonTapped) forControlEvents:UIControlEventTouchUpInside];
@@ -402,7 +403,7 @@
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeWidth
                                                          multiplier:1.0
-                                                           constant:-16.0]];
+                                                           constant:-60.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginBtn
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
@@ -410,40 +411,41 @@
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
                                                            constant:50.0]];
-    //    _registerBtn = [[UIButton alloc] init];
-    //    [_registerBtn setTitle:@"Register" forState:UIControlStateNormal];
-    //    [_registerBtn setBackgroundColor:[UIColor orangeColor]];
-    //    [_registerBtn addTarget:self action:@selector(cancelButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    //    [_registerBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
-    //    [self.view addSubview:_registerBtn];
-    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_registerBtn
-    //                                                                 attribute:NSLayoutAttributeTop
-    //                                                                 relatedBy:NSLayoutRelationEqual
-    //                                                                    toItem:_password
-    //                                                                 attribute:NSLayoutAttributeBottom
-    //                                                                multiplier:1.0
-    //                                                                  constant:5.0]];
-    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_registerBtn
-    //                                                                 attribute:NSLayoutAttributeLeft
-    //                                                                 relatedBy:NSLayoutRelationEqual
-    //                                                                    toItem:self.view
-    //                                                                 attribute:NSLayoutAttributeCenterX
-    //                                                                multiplier:1.0
-    //                                                                  constant:3.0]];
-    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_registerBtn
-    //                                                                 attribute:NSLayoutAttributeWidth
-    //                                                                 relatedBy:NSLayoutRelationEqual
-    //                                                                    toItem:self.view
-    //                                                                 attribute:NSLayoutAttributeWidth
-    //                                                                multiplier:0.4
-    //                                                                  constant:0.0]];
-    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_registerBtn
-    //                                                                 attribute:NSLayoutAttributeBottom
-    //                                                                 relatedBy:NSLayoutRelationEqual
-    //                                                                    toItem:_registerBtn
-    //                                                                 attribute:NSLayoutAttributeTop
-    //                                                                multiplier:1.0
-    //                                                                  constant:50.0]];
+    _loginAsGuest = [[UIButton alloc] init];
+    [_loginAsGuest setTitle:@"Bỏ qua đăng nhập" forState:UIControlStateNormal];
+    [_loginAsGuest setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_loginAsGuest setBackgroundColor:[UIColor LVL_colorWithHexString:@"aa4b16" andAlpha:1.0]];
+    [_loginAsGuest addTarget:self action:@selector(loginAsGuestButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [_loginAsGuest setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_loginAsGuest];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_loginBtn
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:5.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0
+                                                           constant:-60.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:50.0]];
     UIGestureRecognizer* singleTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTouchTapped)];
     [self.view addGestureRecognizer:singleTouch];
 }
@@ -478,6 +480,46 @@
     }
 }
 
+-(void)loginButtonTapped {
+    
+    if ([_email.text isEqualToString:@""]) {
+        UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Lỗi email"
+                                                                         message:@"Email đăng nhập không được bỏ trống"
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"Ok, đã hiểu"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             [alertVC dismissViewControllerAnimated:YES completion:nil];
+                                                         }];
+        [alertVC addAction:okAction];
+        [_NavController presentViewController:alertVC animated:YES completion:nil];
+        return;
+    }
+    else if ([_password.text isEqualToString:@""]) {
+        UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Lỗi mật khẩu"
+                                                                         message:@"Mật khẩu không được bỏ trống"
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"Ok, đã hiểu"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             [alertVC dismissViewControllerAnimated:YES completion:nil];
+                                                         }];
+        [alertVC addAction:okAction];
+        [_NavController presentViewController:alertVC animated:YES completion:nil];
+        return;
+    }
+    
+    [_AppDataHandler signInWithUserName:_email.text
+                               password:_password.text
+                                 sender:self];
+}
+
+-(void)loginAsGuestButtonTapped {
+    VC_MainPageHome* homeVC = [VC_MainPageHome shareInstance];
+    [_NavController setViewControllers:@[homeVC] animated:true];
+}
+
+
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result) {
@@ -498,6 +540,31 @@
             break;
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark ApplicationDataHandlerDelegate
+-(void)LVLDataRequestComplete:(id)responseValue
+{
+    if ([responseValue isKindOfClass:[User class]]) {
+        _AppDataHandler.user = (User*)responseValue;
+        VC_MainPageHome* homeVC = [VC_MainPageHome shareInstance];
+        [_NavController setViewControllers:@[homeVC] animated:true];
+    }
+    else {
+        UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Lỗi đăng nhập"
+                                                                         message:@"Email hoặc mật khẩu không chính xác, vui lòng thử lại hoặc liên hệ Admin để hỗ trợ"
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"Ok, đã hiểu"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             [self.email setText:@""];
+                                                             [self.password setText:@""];
+                                                             [self.view endEditing:YES];
+                                                             [alertVC dismissViewControllerAnimated:YES completion:nil];
+                                                         }];
+        [alertVC addAction:okAction];
+        [_NavController presentViewController:alertVC animated:YES completion:nil];
+    }
 }
 
 @end
