@@ -12,6 +12,7 @@ target 'ScanerFood' do
   pod 'GoogleMaps',         '2.7.0'
   pod 'Firebase/Core',      '6.0.0'
   pod 'Firebase/Database',  '6.0.0'
+  pod 'Material',           '2.16.4'
 
   target 'ScanerFoodTests' do
     inherit! :search_paths

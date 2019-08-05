@@ -29,12 +29,13 @@
 		13207522212048DC00D02051 /* VW_DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13207520212048DC00D02051 /* VW_DetailsView.m */; };
 		13207526212048F000D02051 /* VW_DirectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13207524212048F000D02051 /* VW_DirectionView.m */; };
 		1320752A2120490600D02051 /* VW_ReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132075292120490600D02051 /* VW_ReviewView.m */; };
-		1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */; };
+		1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome1.m */; };
 		133649CE2142801500E1D00E /* VW_SignInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 133649CD2142801500E1D00E /* VW_SignInView.m */; };
 		133649D22142803B00E1D00E /* VW_UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 133649D12142803B00E1D00E /* VW_UserInfoView.m */; };
 		1356F0ED2147A3290033C0F4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1356F0EC2147A3290033C0F4 /* User.m */; };
 		13745F502134034B000F9B18 /* PKGymNguyenHue.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 13745F4F2134034B000F9B18 /* PKGymNguyenHue.gpx */; };
 		13E94FB022EF481900FACCDB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E94FAF22EF481900FACCDB /* Launch Screen.storyboard */; };
+		13E96BF622F87E0D00E45270 /* CC_MainPageGroupCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E96BF522F87E0D00E45270 /* CC_MainPageGroupCells.m */; };
 		13F3410722E8A37C00FB831D /* VC_MainPageLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F3410622E8A37C00FB831D /* VC_MainPageLogin.m */; };
 		13F41B0A21144B1C00A5CA1F /* ApplicationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B0921144B1C00A5CA1F /* ApplicationNavigationController.m */; };
 		13F41B1A2114502400A5CA1F /* UIColor_EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F41B182114502400A5CA1F /* UIColor_EXT.m */; };
@@ -111,8 +112,8 @@
 		13207525212048F000D02051 /* VW_DirectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_DirectionView.h; sourceTree = "<group>"; };
 		132075282120490600D02051 /* VW_ReviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VW_ReviewView.h; sourceTree = "<group>"; };
 		132075292120490600D02051 /* VW_ReviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VW_ReviewView.m; sourceTree = "<group>"; };
-		1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageHome.m; sourceTree = "<group>"; };
-		1335B8ED211F1DBC00C8EE2C /* VC_MainPageHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageHome.h; sourceTree = "<group>"; };
+		1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageHome1.m; sourceTree = "<group>"; };
+		1335B8ED211F1DBC00C8EE2C /* VC_MainPageHome1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_MainPageHome1.h; sourceTree = "<group>"; };
 		133649CC2142801500E1D00E /* VW_SignInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VW_SignInView.h; sourceTree = "<group>"; };
 		133649CD2142801500E1D00E /* VW_SignInView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VW_SignInView.m; sourceTree = "<group>"; };
 		133649D02142803B00E1D00E /* VW_UserInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VW_UserInfoView.h; sourceTree = "<group>"; };
@@ -121,6 +122,8 @@
 		1356F0EC2147A3290033C0F4 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		13745F4F2134034B000F9B18 /* PKGymNguyenHue.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PKGymNguyenHue.gpx; sourceTree = "<group>"; };
 		13E94FAF22EF481900FACCDB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		13E96BF422F87E0D00E45270 /* CC_MainPageGroupCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CC_MainPageGroupCells.h; sourceTree = "<group>"; };
+		13E96BF522F87E0D00E45270 /* CC_MainPageGroupCells.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CC_MainPageGroupCells.m; sourceTree = "<group>"; };
 		13F3410522E8A37C00FB831D /* VC_MainPageLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC_MainPageLogin.h; sourceTree = "<group>"; };
 		13F3410622E8A37C00FB831D /* VC_MainPageLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC_MainPageLogin.m; sourceTree = "<group>"; };
 		13F41B0821144B1C00A5CA1F /* ApplicationNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApplicationNavigationController.h; path = Applications/ApplicationNavigationController.h; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		1320750F2120482800D02051 /* VC_MainPageSearch */ = {
 			isa = PBXGroup;
 			children = (
+				13E96BF322F87DE300E45270 /* CC_MainPageGroupCells */,
 				132075172120487D00D02051 /* TVC_MainPageDistrict */,
 				132075132120486900D02051 /* TC_MainPageSearchCell */,
 				132075112120483A00D02051 /* VC_MainPageSeach.h */,
@@ -341,8 +345,8 @@
 			children = (
 				1320750F2120482800D02051 /* VC_MainPageSearch */,
 				1320750B2120477D00D02051 /* VC_MainPageManager */,
-				1335B8ED211F1DBC00C8EE2C /* VC_MainPageHome.h */,
-				1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome.m */,
+				1335B8ED211F1DBC00C8EE2C /* VC_MainPageHome1.h */,
+				1335B8EC211F1DBC00C8EE2C /* VC_MainPageHome1.m */,
 			);
 			path = VC_MainPageHome;
 			sourceTree = "<group>";
@@ -372,6 +376,15 @@
 				1356F0EC2147A3290033C0F4 /* User.m */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		13E96BF322F87DE300E45270 /* CC_MainPageGroupCells */ = {
+			isa = PBXGroup;
+			children = (
+				13E96BF422F87E0D00E45270 /* CC_MainPageGroupCells.h */,
+				13E96BF522F87E0D00E45270 /* CC_MainPageGroupCells.m */,
+			);
+			path = CC_MainPageGroupCells;
 			sourceTree = "<group>";
 		};
 		13F3410422E8A34400FB831D /* VC_MainPageLogin */ = {
@@ -717,6 +730,8 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ScanerFood/Pods-ScanerFood-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -726,6 +741,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -767,10 +784,11 @@
 				1320750A2120476E00D02051 /* VC_MainPageSpaceDetails.m in Sources */,
 				13F9AD64211441CE00AEEA66 /* main.m in Sources */,
 				1320751E212048AA00D02051 /* TC_MainPageDistrictCell.m in Sources */,
+				13E96BF622F87E0D00E45270 /* CC_MainPageGroupCells.m in Sources */,
 				13207522212048DC00D02051 /* VW_DetailsView.m in Sources */,
 				1356F0ED2147A3290033C0F4 /* User.m in Sources */,
 				1320751A2120489300D02051 /* TVC_MainPageDistrict.m in Sources */,
-				1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome.m in Sources */,
+				1335B8EE211F1DBC00C8EE2C /* VC_MainPageHome1.m in Sources */,
 				130B8A212122769200DDB7A3 /* ApplicationDirectionService.m in Sources */,
 				13F9AD53211441CE00AEEA66 /* AppDelegate.m in Sources */,
 			);

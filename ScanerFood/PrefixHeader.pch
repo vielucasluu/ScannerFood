@@ -14,6 +14,7 @@
 
 @import GoogleMaps;
 @import Firebase;
+@import Material;
 
 #import <UIKit/UIKit.h>
 #import <AFNetworking/AFNetworking.h>
@@ -36,9 +37,10 @@
 #import "AppDelegate.h"
 
 //ViewController
-#import "VC_MainPageHome.h"
+#import "VC_MainPageHome1.h"
 #import "VC_MainPageSpaceDetails.h"
 #import "VC_MainPageLogin.h"
+#import "VC_MainPageSeach.h"
 
 //Extensions
 #import "UIColor_EXT.h"

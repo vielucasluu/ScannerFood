@@ -307,7 +307,7 @@
 
 -(void)loginButtonTapped
 {
-    VC_MainPageHome* homeVC = [VC_MainPageHome shareInstance];
+    VC_MainPageHome1* homeVC = [VC_MainPageHome1 shareInstance];
     [homeVC setSelectedIndex:1];
 }
 

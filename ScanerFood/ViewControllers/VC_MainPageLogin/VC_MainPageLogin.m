@@ -8,6 +8,7 @@
 
 #import <MessageUI/MessageUI.h>
 #import "VC_MainPageLogin.h"
+#import "Material-Swift.h"
 
 #define _textSize               12
 
@@ -17,8 +18,8 @@
     UILabel*        _welcomeTitle;
 }
 
-@property (strong, nonatomic) UITextField*      email;
-@property (strong, nonatomic) UITextField*      password;
+@property (strong, nonatomic) ErrorTextField*   email;
+@property (strong, nonatomic) ErrorTextField*   password;
 @property (strong, nonatomic) UIButton*         loginBtn;
 @property (strong, nonatomic) UIButton*         loginAsGuest;
 @property (strong, nonatomic) UIButton*         forgotPassword;
@@ -71,13 +72,14 @@
     [_logoImage setImage:[UIImage imageNamed:@"app_icon"]];
     [_logoImage setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_logoImage];
+    
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_logoImage
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
-                                                           constant:5.0]];
+                                                           constant:30.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_logoImage
                                                           attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
@@ -112,7 +114,7 @@
                                                              toItem:_logoImage
                                                           attribute:NSLayoutAttributeBottom
                                                          multiplier:1.0
-                                                           constant:8.0]];
+                                                           constant:-20.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_welcomeTitle
                                                           attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
@@ -203,8 +205,12 @@
     //                                                                 attribute:NSLayoutAttributeTop
     //                                                                multiplier:1.0
     //                                                                  constant:30.0]];
-    _email = [[UITextField alloc] init];
-    _email.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: [UIColor LVL_colorWithHexString:@"cdcccc" andAlpha:1.0]}];
+    _email = [[ErrorTextField alloc] init];
+    _email.placeholder = @"Email";
+    _email.dividerNormalHeight = 0.5;
+    _email.dividerActiveHeight = 1;
+    _email.dividerActiveColor = [UIColor whiteColor];
+    _email.placeholderActiveColor = [UIColor whiteColor];
     [_email setTextColor:[UIColor LVL_colorWithHexString:@"cdcccc" andAlpha:1.0]];
     [_email setFont:[UIFont systemFontOfSize:_textSize]];
     [_email setAutocapitalizationType:UITextAutocapitalizationTypeNone];
@@ -240,42 +246,17 @@
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
                                                            constant:20.0]];
-    UIView* bottomLineEmail = [[UIView alloc] init];
-    [bottomLineEmail setBackgroundColor:[UIColor whiteColor]];
-    [bottomLineEmail setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addSubview:bottomLineEmail];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLineEmail
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_email
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:1.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLineEmail
-                                                          attribute:NSLayoutAttributeCenterX
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_email
-                                                          attribute:NSLayoutAttributeCenterX
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLineEmail
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:bottomLineEmail
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1.0
-                                                           constant:1.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLineEmail
-                                                          attribute:NSLayoutAttributeWidth
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_email
-                                                          attribute:NSLayoutAttributeWidth
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    _password = [[UITextField alloc] init];
-    _password.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Mật khẩu" attributes:@{NSForegroundColorAttributeName: [UIColor LVL_colorWithHexString:@"cdcccc" andAlpha:1.0]}];
+
+    _password = [[ErrorTextField alloc] init];
+    _password.placeholder = @"Password";
+    _password.dividerNormalHeight = 0.5;
+    _password.dividerActiveHeight = 1;
+    _password.dividerActiveColor = [UIColor whiteColor];
+    _password.placeholderActiveColor = [UIColor whiteColor];
     [_password setTextColor:[UIColor LVL_colorWithHexString:@"cdcccc" andAlpha:1.0]];
     [_password setFont:[UIFont systemFontOfSize:_textSize]];
+    [_password setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [_password setAutocorrectionType:UITextAutocorrectionTypeNo];
     [_password setSecureTextEntry:YES];
     [_password setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_password];
@@ -307,42 +288,11 @@
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
                                                            constant:20.0]];
-    UIView* bottomLinePassword = [[UIView alloc] init];
-    [bottomLinePassword setBackgroundColor:[UIColor whiteColor]];
-    [bottomLinePassword setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addSubview:bottomLinePassword];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLinePassword
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_password
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:1.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLinePassword
-                                                          attribute:NSLayoutAttributeCenterX
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_password
-                                                          attribute:NSLayoutAttributeCenterX
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLinePassword
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:bottomLinePassword
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1.0
-                                                           constant:1.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bottomLinePassword
-                                                          attribute:NSLayoutAttributeWidth
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_password
-                                                          attribute:NSLayoutAttributeWidth
-                                                         multiplier:1.0
-                                                           constant:0.0]];
+    
     _forgotPassword = [[UIButton alloc] init];
     [_forgotPassword setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_forgotPassword setTitle:@"Quên mật khẩu?" forState:UIControlStateNormal];
-    [_forgotPassword.titleLabel setFont:[UIFont systemFontOfSize:_textSize]];
+    [_forgotPassword.titleLabel setFont:[UIFont italicSystemFontOfSize:_textSize]];
     _forgotPassword.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [_forgotPassword addTarget:self action:@selector(forgotPasswordButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [_forgotPassword setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -353,21 +303,21 @@
                                                              toItem:_password
                                                           attribute:NSLayoutAttributeBottom
                                                          multiplier:1.0
-                                                           constant:0.0]];
+                                                           constant:10.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_forgotPassword
                                                           attribute:NSLayoutAttributeRight
                                                           relatedBy:NSLayoutRelationEqual
-                                                             toItem:bottomLinePassword
+                                                             toItem:_password
                                                           attribute:NSLayoutAttributeRight
                                                          multiplier:1.0
                                                            constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_forgotPassword
-                                                          attribute:NSLayoutAttributeLeft
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_forgotPassword
-                                                          attribute:NSLayoutAttributeRight
-                                                         multiplier:1.0
-                                                           constant:-160.0]];
+//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_forgotPassword
+//                                                          attribute:NSLayoutAttributeLeft
+//                                                          relatedBy:NSLayoutRelationEqual
+//                                                             toItem:_forgotPassword
+//                                                          attribute:NSLayoutAttributeRight
+//                                                         multiplier:1.0
+//                                                           constant:-160.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_forgotPassword
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
@@ -375,10 +325,46 @@
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
                                                            constant:30.0]];
+    UIView* forgotPasswrodLine = [[UIView alloc] init];
+    forgotPasswrodLine.backgroundColor = [UIColor whiteColor];
+    [forgotPasswrodLine setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:forgotPasswrodLine];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:forgotPasswrodLine
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_forgotPassword
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-3.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:forgotPasswrodLine
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_forgotPassword
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:forgotPasswrodLine
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_forgotPassword
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:0.0
+                                                           constant:1.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:forgotPasswrodLine
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_forgotPassword
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
+    
     
     _loginBtn = [[UIButton alloc] init];
     [_loginBtn setTitle:@"Đăng nhập" forState:UIControlStateNormal];
     [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_loginBtn.layer setCornerRadius:5];
+    [_loginBtn.layer setMasksToBounds:YES];
     [_loginBtn setBackgroundColor:[UIColor LVL_colorWithHexString:@"aa4b16" andAlpha:1.0]];
     [_loginBtn addTarget:self action:@selector(loginButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [_loginBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -411,10 +397,12 @@
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
                                                            constant:50.0]];
+    
     _loginAsGuest = [[UIButton alloc] init];
-    [_loginAsGuest setTitle:@"Bỏ qua đăng nhập" forState:UIControlStateNormal];
     [_loginAsGuest setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_loginAsGuest setBackgroundColor:[UIColor LVL_colorWithHexString:@"aa4b16" andAlpha:1.0]];
+    [_loginAsGuest setTitle:@"Bỏ qua đăng nhập" forState:UIControlStateNormal];
+    [_loginAsGuest.titleLabel setFont:[UIFont italicSystemFontOfSize:_textSize+4]];
+    _loginAsGuest.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     [_loginAsGuest addTarget:self action:@selector(loginAsGuestButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [_loginAsGuest setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_loginAsGuest];
@@ -424,28 +412,55 @@
                                                              toItem:_loginBtn
                                                           attribute:NSLayoutAttributeBottom
                                                          multiplier:1.0
-                                                           constant:5.0]];
+                                                           constant:10.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginAsGuest
                                                           attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
+                                                             toItem:_loginBtn
                                                           attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.0
                                                            constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginAsGuest
-                                                          attribute:NSLayoutAttributeWidth
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeWidth
-                                                         multiplier:1.0
-                                                           constant:-60.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_loginAsGuest
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:_loginAsGuest
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
-                                                           constant:50.0]];
+                                                           constant:30.0]];
+    
+    UIView* guestLine = [[UIView alloc] init];
+    guestLine.backgroundColor = [UIColor whiteColor];
+    [guestLine setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:guestLine];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:guestLine
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-3.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:guestLine
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:guestLine
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:0.0
+                                                           constant:1.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:guestLine
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_loginAsGuest
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
     UIGestureRecognizer* singleTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTouchTapped)];
     [self.view addGestureRecognizer:singleTouch];
 }
@@ -481,7 +496,6 @@
 }
 
 -(void)loginButtonTapped {
-    
     if ([_email.text isEqualToString:@""]) {
         UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Lỗi email"
                                                                          message:@"Email đăng nhập không được bỏ trống"
@@ -515,7 +529,7 @@
 }
 
 -(void)loginAsGuestButtonTapped {
-    VC_MainPageHome* homeVC = [VC_MainPageHome shareInstance];
+    VC_MainPageSeach* homeVC = [VC_MainPageSeach alloc];
     [_NavController setViewControllers:@[homeVC] animated:true];
 }
 
@@ -547,8 +561,8 @@
 {
     if ([responseValue isKindOfClass:[User class]]) {
         _AppDataHandler.user = (User*)responseValue;
-        VC_MainPageHome* homeVC = [VC_MainPageHome shareInstance];
-        [_NavController setViewControllers:@[homeVC] animated:true];
+        VC_MainPageSeach* searchVC = [VC_MainPageSeach shareInstance];
+        [_NavController setViewControllers:@[searchVC] animated:true];
     }
     else {
         UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"Lỗi đăng nhập"

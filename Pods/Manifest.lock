@@ -74,6 +74,13 @@ PODS:
     - GoogleUtilities/Logger
   - iCarousel (1.8.3)
   - leveldb-library (1.20)
+  - Material (2.16.4):
+    - Material/Core (= 2.16.4)
+  - Material/Core (2.16.4):
+    - Motion (~> 1.4.3)
+  - Motion (1.4.3):
+    - Motion/Core (= 1.4.3)
+  - Motion/Core (1.4.3)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -89,6 +96,7 @@ DEPENDENCIES:
   - Firebase/Database (= 6.0.0)
   - GoogleMaps (= 2.7.0)
   - iCarousel (= 1.8.3)
+  - Material (= 2.16.4)
   - SDWebImage (= 4.2.3)
 
 SPEC REPOS:
@@ -105,6 +113,8 @@ SPEC REPOS:
     - GoogleUtilities
     - iCarousel
     - leveldb-library
+    - Material
+    - Motion
     - nanopb
     - SDWebImage
 
@@ -121,9 +131,11 @@ SPEC CHECKSUMS:
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
+  Motion: 153ba49692997888556c7a95207278a8b1f8be95
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: bfca8ecc193c59e8e1c6ef389747c4144ef2f419
+PODFILE CHECKSUM: 91c2744eed9c45f0ef92a5c1c447f915733403ff
 
 COCOAPODS: 1.7.5

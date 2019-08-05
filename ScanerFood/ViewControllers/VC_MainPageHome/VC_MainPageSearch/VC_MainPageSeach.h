@@ -10,4 +10,6 @@
 
 @interface VC_MainPageSeach : UIViewController
 
++(VC_MainPageSeach*)shareInstance;
+
 @end
