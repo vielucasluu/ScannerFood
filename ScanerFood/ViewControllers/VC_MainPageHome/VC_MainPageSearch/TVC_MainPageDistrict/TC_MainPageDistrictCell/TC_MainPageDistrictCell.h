@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) UILabel*  spaceNameLabel;
 @property (strong, nonatomic) UILabel*  addressLabel;
-@property (strong, nonatomic) UILabel*  districtLabel;
-@property (strong, nonatomic) UILabel*  distanceLabel;
+@property (strong, nonatomic) UILabel*  reviewStatus;
+@property (strong, nonatomic) UIImageView*  warningImage;
 
 @end

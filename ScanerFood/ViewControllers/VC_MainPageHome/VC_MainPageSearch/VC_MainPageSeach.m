@@ -337,32 +337,27 @@
     
     if (indexPath.row == 0) {
         [cell.groupImage setImage:[UIImage imageNamed:@"suat_an_san"]];
-        [cell.groupName setText:@"Suất ăn sẵn"];
-//        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfSuatAnSan]];
+        [cell.groupName setText:[NSString stringWithFormat:@"Suất ăn sẵn (%ld)",_numberOfSuatAnSan]];
     }
     else if (indexPath.row == 1)
     {
         [cell.groupImage setImage:[UIImage imageNamed:@"truong_hoc"]];
-        [cell.groupName setText:@"Trường Học"];
-//        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_TH]];
+        [cell.groupName setText:[NSString stringWithFormat:@"Trường học (%ld)",_numberOfBATT_TH]];
     }
     else if (indexPath.row == 2)
     {
         [cell.groupImage setImage:[UIImage imageNamed:@"kcn_kcx"]];
-        [cell.groupName setText:@"KCN/KCX"];
-//        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_KCN_KCX]];
+        [cell.groupName setText:[NSString stringWithFormat:@"KCN/KCX (%ld)",_numberOfBATT_KCN_KCX]];
     }
     else if (indexPath.row == 3)
     {
         [cell.groupImage setImage:[UIImage imageNamed:@"ngoai_kcn_kcx"]];
-        [cell.groupName setText:@"Ngoài KCN"];
-//        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_ngoai_KCN]];
+        [cell.groupName setText:[NSString stringWithFormat:@"Ngoài KCN (%ld)",_numberOfBATT_ngoai_KCN]];
     }
     else if (indexPath.row == 4)
     {
         [cell.groupImage setImage:[UIImage imageNamed:@"ngoai_truong_hoc"]];
-        [cell.groupName setText:@"Ngoài Trường Học/KCN/KCX"];
-//        [cell.spaceCountLable setText:[NSString stringWithFormat:@"%ld",_numberOfBATT_ngoai_TH_KCN_KCX]];
+        [cell.groupName setText:[NSString stringWithFormat:@"Ngoài Trường học,KCN/KCX (%ld)",_numberOfBATT_ngoai_TH_KCN_KCX]];
     }
     return cell;
 }
