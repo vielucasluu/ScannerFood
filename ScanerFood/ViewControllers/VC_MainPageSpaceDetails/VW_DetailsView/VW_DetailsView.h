@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol VW_DetailsViewDelegate <NSObject>
+
+@required
+-(void)viewHistoryCheck;
+
+@end
+
 @interface VW_DetailsView : UIView
 
--(void)setDataSource:(NSDictionary*)dataSource;
+@property (weak, nonatomic) NSObject<VW_DetailsViewDelegate>* delegate;
+
+-(void)setDataSource:(SpaceDataSource*)dataSource;
 
 @end

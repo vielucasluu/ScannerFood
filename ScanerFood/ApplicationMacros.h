@@ -9,6 +9,8 @@
 #ifndef ApplicationMacros_h
 #define ApplicationMacros_h
 
+#define _textSize               12
+
 //AppDelegate
 #define _AppDelegate            [AppDelegate sharedInstance]
 

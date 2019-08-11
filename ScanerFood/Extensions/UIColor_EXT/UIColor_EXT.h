@@ -7,6 +7,7 @@
 //
 
 #define kToneColor              @"2C767E"
+#define kToneOrangeColor        @"F87321"
 #define kWarningGreenColor      @"379A6C"
 #define kWarningRedColor        @"B9531A"
 

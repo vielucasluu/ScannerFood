@@ -10,8 +10,6 @@
 #import "VC_MainPageLogin.h"
 #import "Material-Swift.h"
 
-#define _textSize               12
-
 @interface VC_MainPageLogin ()<MFMailComposeViewControllerDelegate, ApplicationDataHandlerDelegate>
 {
     UIImageView*    _logoImage;
@@ -363,9 +361,9 @@
     _loginBtn = [[UIButton alloc] init];
     [_loginBtn setTitle:@"Đăng nhập" forState:UIControlStateNormal];
     [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_loginBtn.layer setCornerRadius:5];
+    [_loginBtn.layer setCornerRadius:25];
     [_loginBtn.layer setMasksToBounds:YES];
-    [_loginBtn setBackgroundColor:[UIColor LVL_colorWithHexString:@"aa4b16" andAlpha:1.0]];
+    [_loginBtn setBackgroundColor:[UIColor LVL_colorWithHexString:kToneOrangeColor andAlpha:1.0]];
     [_loginBtn addTarget:self action:@selector(loginButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [_loginBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:_loginBtn];

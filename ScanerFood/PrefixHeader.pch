@@ -28,6 +28,7 @@
 #import "GeocodedWaypoint.h"
 #import "DirectionOverview.h"
 #import "User.h"
+#import "SpaceDataSource.h"
 
 //Application
 #import "ApplicationNavigationController.h"
@@ -38,12 +39,14 @@
 
 //ViewController
 #import "VC_MainPageHome1.h"
+#import "VC_MainPageEditSpace.h"
 #import "VC_MainPageSpaceDetails.h"
 #import "VC_MainPageLogin.h"
 #import "VC_MainPageSeach.h"
 
 //Extensions
 #import "UIColor_EXT.h"
+#import "NSDate_EXT.h"
 #import "AutoScrollLabel.h"
 
 #endif /* PrefixHeader_pch */

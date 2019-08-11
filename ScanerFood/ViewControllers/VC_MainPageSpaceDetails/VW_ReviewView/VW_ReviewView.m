@@ -279,9 +279,7 @@
     
     User* userData = [_AppDataHandler user];
     
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-    NSString* date = [dateFormatter stringFromDate:[NSDate date]];
+    NSString* date = [[NSDate date] stringFromDate];
     
     NSString *key = [[[_firebaseRef child:_keyString] child:_spaceID] childByAutoId].key;
     NSDictionary *post = @{@"date": date,

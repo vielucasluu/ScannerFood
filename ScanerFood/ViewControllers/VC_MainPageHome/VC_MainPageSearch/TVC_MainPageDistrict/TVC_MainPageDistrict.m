@@ -45,13 +45,14 @@
         //Take the value and add it into list space
         if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
             NSDictionary* space_dict = (NSDictionary*)snapshot.value;
+            SpaceDataSource* newSpaceData = [[SpaceDataSource alloc] initWithDict:space_dict];
             
             BOOL isSameDict = NO;
-            for (NSDictionary* dict in self->_listSpace) {
-                if ([[dict objectForKey:@"quan_huyen"] isEqualToString:[space_dict objectForKey:@"quan_huyen"]]) {
+            for (NSDictionary* quanDict in self->_listSpace) {
+                if ([[quanDict objectForKey:@"quan_huyen"] isEqualToString:newSpaceData.quan]) {
                     
-                    NSMutableArray* space_in_district = [dict objectForKey:@"list_space"];
-                    [space_in_district addObject:space_dict];
+                    NSMutableArray* listSpaceInQuan = [quanDict objectForKey:@"list_space"];
+                    [listSpaceInQuan addObject:newSpaceData];
                     
                     isSameDict = YES;
                     break;
@@ -59,10 +60,10 @@
             }
             
             if (!isSameDict) {
-                NSMutableArray* space_in_district = [NSMutableArray new];
-                [space_in_district addObject:space_dict];
-                NSDictionary* districtDict = @{@"quan_huyen": [space_dict objectForKey:@"quan_huyen"],
-                                               @"list_space":space_in_district};
+                NSMutableArray* listSpaceInQuan = [NSMutableArray new];
+                [listSpaceInQuan addObject:newSpaceData];
+                NSDictionary* districtDict = @{@"quan_huyen": newSpaceData.quan,
+                                               @"list_space":listSpaceInQuan};
                 NSMutableDictionary* districtData = [NSMutableDictionary dictionaryWithDictionary:districtDict];
                 [self->_listSpace addObject:districtData];
             }
@@ -243,12 +244,53 @@
     
     NSDictionary* districtData = [_listSpace objectAtIndex:indexPath.section];
     NSArray* listSpace = [districtData objectForKey:@"list_space"];
-    NSDictionary* cellData = [listSpace objectAtIndex:indexPath.row];
+    SpaceDataSource* cellData = (SpaceDataSource*)[listSpace objectAtIndex:indexPath.row];
     
-    [cell.spaceNameLabel setText:[cellData objectForKey:@"ten_cong_ty"]];
-    [cell.addressLabel setText:[NSString stringWithFormat:@"%@ - %@",[cellData objectForKey:@"dia_chi"],[cellData objectForKey:@"phuong_xa"]]];
-//    [cell.districtLabel setText:[cellData objectForKey:@"quan_huyen"]];
-//    [cell.distanceLabel setText:@"0.0 km"];
+    [cell.spaceNameLabel setText:cellData.tenCongty];
+    [cell.addressLabel setText:[NSString stringWithFormat:@"%@ - %@",cellData.diachi,cellData.phuong]];
+    
+    if ([cellData.listInspects allKeys].count > 0) {
+        
+        [cell.warningImage setHidden:YES];
+        
+        NSString* lastObjectKey = [[cellData.listInspects allKeys] lastObject];
+        NSDictionary* lastInspect = [cellData.listInspects objectForKey:lastObjectKey];
+        
+        NSString* dateString = [lastInspect objectForKey:@"date"];
+        NSDate* date = [NSDate dateFromString:dateString];
+        NSDate* nowDate = [NSDate date];
+        
+        NSInteger days = [NSDate daysBetweenDate:date andDate:nowDate];
+        
+        if (days <= 31) {
+            [cell.reviewStatus setText:[NSString stringWithFormat:@"Đã kiểm tra (%ld ngày trước)", days]];
+            [cell.reviewStatus setTextColor:[UIColor LVL_colorWithHexString:kWarningGreenColor andAlpha:1.0]];
+        }
+        else if (days > 31 && days <= 365) {
+            [cell.reviewStatus setText:[NSString stringWithFormat:@"Đã kiểm tra (%ld tháng trước)", days/31]];
+            [cell.reviewStatus setTextColor:[UIColor LVL_colorWithHexString:kWarningGreenColor andAlpha:1.0]];
+        }
+        else {
+            days -= 365;
+            [cell.warningImage setHidden:NO];
+            if (days <= 31) {
+                [cell.reviewStatus setText:[NSString stringWithFormat:@"Qúa hạn kiểm tra (%ld ngày trước)", days]];
+                [cell.reviewStatus setTextColor:[UIColor LVL_colorWithHexString:kWarningRedColor andAlpha:1.0]];
+            }
+            else if (days > 31) {
+                [cell.reviewStatus setText:[NSString stringWithFormat:@"Quá hạn kiểm tra (%ld tháng trước)", days/31]];
+                [cell.reviewStatus setTextColor:[UIColor LVL_colorWithHexString:kWarningRedColor andAlpha:1.0]];
+            }
+        }
+        
+    }
+    else
+    {
+        [cell.warningImage setHidden:NO];
+        [cell.reviewStatus setText:@"Cơ sở không có lịch sử thanh tra"];
+        [cell.reviewStatus setTextColor:[UIColor LVL_colorWithHexString:kWarningRedColor andAlpha:1.0]];
+    }
+    
  
     return cell;
 }
@@ -261,11 +303,11 @@
     
     NSDictionary* districtData = [_listSpace objectAtIndex:indexPath.section];
     NSArray* listSpace = [districtData objectForKey:@"list_space"];
-    NSDictionary* cellData = [listSpace objectAtIndex:indexPath.row];
+    SpaceDataSource* cellData = [listSpace objectAtIndex:indexPath.row];
     
     VC_MainPageSpaceDetails* spaceDetails = [[VC_MainPageSpaceDetails alloc] init];
     [spaceDetails setKeyString:self.keyString];
-    [spaceDetails setSpaceID:[[cellData objectForKey:@"space_id"] stringValue]];
+    [spaceDetails setSpaceID:cellData.spaceID];
     [self.navigationController pushViewController:spaceDetails animated:YES];
 }
 

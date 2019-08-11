@@ -17,12 +17,12 @@
 }
 @property (strong, nonatomic) UIScrollView*     pageScroll;
 
-@property (strong, nonatomic) AutoScrollLabel*  spaceName;
-@property (strong, nonatomic) AutoScrollLabel*  spaceAddress;
-@property (strong, nonatomic) AutoScrollLabel*  spacePhone;
-@property (strong, nonatomic) AutoScrollLabel*  spaceAdmin;
-@property (strong, nonatomic) AutoScrollLabel*  spaceDocument;
-@property (strong, nonatomic) AutoScrollLabel*  spaceDate;
+@property (strong, nonatomic) UILabel*  spaceName;
+@property (strong, nonatomic) UILabel*  spaceAddress;
+@property (strong, nonatomic) UILabel*  spacePhone;
+@property (strong, nonatomic) UILabel*  spaceAdmin;
+@property (strong, nonatomic) UILabel*  spaceDocument;
+@property (strong, nonatomic) UILabel*  spaceDate;
 
 @end
 
@@ -69,8 +69,7 @@
         UILabel* contactTitle = [[UILabel alloc] init];
         [contactTitle setTranslatesAutoresizingMaskIntoConstraints:NO];
         [contactTitle setText:@"Thông tin cơ bản"];
-        [contactTitle setBackgroundColor:[UIColor LVL_colorWithHexString:@"ebeaf0" andAlpha:1.0]];
-        [contactTitle setTextColor:[UIColor LVL_colorWithHexString:@"355183" andAlpha:1.0]];
+        [contactTitle setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:18]];
         [self.pageScroll addSubview:contactTitle];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:contactTitle
                                                                     attribute:NSLayoutAttributeCenterX
@@ -100,6 +99,41 @@
                                                                     attribute:NSLayoutAttributeHeight
                                                                    multiplier:0.0
                                                                      constant:30.0]];
+        _spaceName = [[UILabel alloc] init];
+        [_spaceName setText:@""];
+        [_spaceName setFont:[UIFont fontWithName:@"AvenirNext-Medium" size:13]];
+        [_spaceName setTextAlignment:NSTextAlignmentLeft];
+        [_spaceName setNumberOfLines:2];
+        [_spaceName setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.pageScroll addSubview:_spaceName];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
+                                                                    attribute:NSLayoutAttributeTop
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                   multiplier:1.0
+                                                                     constant:10.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
+                                                                    attribute:NSLayoutAttributeRight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeRight
+                                                                   multiplier:1.0
+                                                                     constant:-20.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                   multiplier:1.0
+                                                                     constant:40.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                       toItem:_spaceName
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:30.0]];
         
         UIImageView* spaceNameIcon = [[UIImageView alloc] init];
         [spaceNameIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -108,8 +142,8 @@
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceNameIcon
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeBottom
+                                                                       toItem:_spaceName
+                                                                    attribute:NSLayoutAttributeTop
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceNameIcon
@@ -120,57 +154,55 @@
                                                                    multiplier:1.0
                                                                      constant:10.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceNameIcon
                                                                     attribute:NSLayoutAttributeWidth
                                                                     relatedBy:NSLayoutRelationEqual
                                                                        toItem:spaceNameIcon
                                                                     attribute:NSLayoutAttributeHeight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-        _spaceName = [[AutoScrollLabel alloc] init];
-        [_spaceName setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_spaceName setLabelText:@""];
-        [_spaceName setLabelFont:[UIFont boldSystemFontOfSize:13]];
-        [_spaceName setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:_spaceName];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
-                                                                    attribute:NSLayoutAttributeLeft
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceNameIcon
+                                                                    attribute:NSLayoutAttributeRight
                                                                     relatedBy:NSLayoutRelationEqual
                                                                        toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeRight
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                   multiplier:1.0
+                                                                     constant:20.0]];
+        
+        _spaceAddress = [[UILabel alloc] init];
+        [_spaceAddress setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_spaceAddress setText:@""];
+        [_spaceAddress setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:12]];
+        [_spaceAddress setTextAlignment:NSTextAlignmentLeft];
+        [self.pageScroll addSubview:_spaceAddress];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
+                                                                    attribute:NSLayoutAttributeTop
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_spaceName
+                                                                    attribute:NSLayoutAttributeBottom
                                                                    multiplier:1.0
                                                                      constant:5.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
-                                                                    attribute:NSLayoutAttributeCenterY
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
+                                                                    attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeCenterY
+                                                                       toItem:_spaceName
+                                                                    attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceName
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
                                                                     attribute:NSLayoutAttributeRight
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
+                                                                       toItem:_spaceName
                                                                     attribute:NSLayoutAttributeRight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_spaceAddress
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:30.0]];
         
-//        _xPos = 20;
-//        _yPos += 40;
-//        contentRect = CGRectMake(_xPos, _yPos, 30, 30);
         UIImageView* spaceAddressIcon = [[UIImageView alloc] init];
         [spaceAddressIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
         [spaceAddressIcon setImage:[UIImage imageNamed:@"space_location"]];
@@ -178,68 +210,67 @@
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceAddressIcon
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeBottom
+                                                                       toItem:_spaceAddress
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceAddressIcon
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:10.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceAddressIcon
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceAddressIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceAddressIcon
                                                                     attribute:NSLayoutAttributeWidth
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeWidth
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-//        _xPos += 50;
-//        contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        _spaceAddress = [[AutoScrollLabel alloc] init];
-        [_spaceAddress setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_spaceAddress setLabelText:@""];
-        [_spaceAddress setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [_spaceAddress setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:_spaceAddress];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
-                                                                    attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
                                                                        toItem:spaceAddressIcon
-                                                                    attribute:NSLayoutAttributeRight
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:spaceAddressIcon
+                                                                    attribute:NSLayoutAttributeWidth
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:spaceNameIcon
+                                                                    attribute:NSLayoutAttributeWidth
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        
+        _spacePhone = [[UILabel alloc] init];
+        [_spacePhone setText:@""];
+        [_spacePhone setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:12]];
+        [_spacePhone setTextAlignment:NSTextAlignmentLeft];
+        [_spacePhone setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.pageScroll addSubview:_spacePhone];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
+                                                                    attribute:NSLayoutAttributeTop
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_spaceAddress
+                                                                    attribute:NSLayoutAttributeBottom
                                                                    multiplier:1.0
                                                                      constant:5.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
-                                                                    attribute:NSLayoutAttributeCenterY
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
+                                                                    attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceAddressIcon
-                                                                    attribute:NSLayoutAttributeCenterY
+                                                                       toItem:_spaceName
+                                                                    attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceAddressIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAddress
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
                                                                     attribute:NSLayoutAttributeRight
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
+                                                                       toItem:_spaceName
                                                                     attribute:NSLayoutAttributeRight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_spacePhone
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:30.0]];
+        
         UIImageView* phoneIcon = [[UIImageView alloc] init];
         [phoneIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
         [phoneIcon setImage:[UIImage imageNamed:@"space_phone"]];
@@ -247,21 +278,21 @@
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:phoneIcon
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceAddressIcon
-                                                                    attribute:NSLayoutAttributeBottom
-                                                                   multiplier:1.0
-                                                                     constant:10.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:phoneIcon
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
-                                                                    attribute:NSLayoutAttributeCenterX
+                                                                       toItem:_spacePhone
+                                                                    attribute:NSLayoutAttributeTop
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:phoneIcon
-                                                                    attribute:NSLayoutAttributeHeight
+                                                                    attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:spaceNameIcon
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                   multiplier:1.0
+                                                                     constant:10.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:phoneIcon
+                                                                    attribute:NSLayoutAttributeWidth
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:phoneIcon
                                                                     attribute:NSLayoutAttributeHeight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
@@ -273,72 +304,11 @@
                                                                    multiplier:1.0
                                                                      constant:0.0]];
 
-//        _xPos += 50;
-//        contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        _spacePhone = [[AutoScrollLabel alloc] init];
-        [_spacePhone setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_spacePhone setLabelText:@""];
-        [_spacePhone setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [_spacePhone setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:_spacePhone];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
-                                                                    attribute:NSLayoutAttributeLeft
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:phoneIcon
-                                                                    attribute:NSLayoutAttributeRight
-                                                                   multiplier:1.0
-                                                                     constant:5.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:phoneIcon
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:phoneIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spacePhone
-                                                                    attribute:NSLayoutAttributeRight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeRight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        
-//        _yPos += 50;
-//        contentRect = CGRectMake(10, _yPos, selfFrame.size.width, 30);
         UILabel* registerInfo = [[UILabel alloc] init];
-        [registerInfo setTranslatesAutoresizingMaskIntoConstraints:NO];
         [registerInfo setText:@"Thông tin đăng ký"];
-        [registerInfo setBackgroundColor:[UIColor LVL_colorWithHexString:@"ebeaf0" andAlpha:1.0]];
-        [registerInfo setTextColor:[UIColor LVL_colorWithHexString:@"355183" andAlpha:1.0]];
+        [registerInfo setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:18]];
+        [registerInfo setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.pageScroll addSubview:registerInfo];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:registerInfo
-                                                                    attribute:NSLayoutAttributeLeft
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeLeft
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:registerInfo
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:registerInfo
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:registerInfo
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
@@ -346,10 +316,63 @@
                                                                     attribute:NSLayoutAttributeBottom
                                                                    multiplier:1.0
                                                                      constant:5.0]];
-//
-//        _xPos = 20;
-//        _yPos += 40;
-//        contentRect = CGRectMake(_xPos, _yPos, 30, 30);
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:registerInfo
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:registerInfo
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:registerInfo
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        
+        _spaceAdmin = [[UILabel alloc] init];
+        [_spaceAdmin setText:@""];
+        [_spaceAdmin setFont:[UIFont fontWithName:@"AvenirNext-Medium" size:13]];
+        [_spaceAdmin setTextAlignment:NSTextAlignmentLeft];
+        [_spaceAdmin setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.pageScroll addSubview:_spaceAdmin];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
+                                                                    attribute:NSLayoutAttributeTop
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:registerInfo
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                   multiplier:1.0
+                                                                     constant:10.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
+                                                                    attribute:NSLayoutAttributeRight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.pageScroll
+                                                                    attribute:NSLayoutAttributeRight
+                                                                   multiplier:1.0
+                                                                     constant:-20.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:registerInfo
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                   multiplier:1.0
+                                                                     constant:40.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                       toItem:_spaceAdmin
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:30.0]];
+        
         UIImageView* adminIcon = [[UIImageView alloc] init];
         [adminIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
         [adminIcon setImage:[UIImage imageNamed:@"space_admin"]];
@@ -357,72 +380,67 @@
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:adminIcon
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
-                                                                    attribute:NSLayoutAttributeBottom
+                                                                       toItem:_spaceAdmin
+                                                                    attribute:NSLayoutAttributeTop
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:adminIcon
                                                                     attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
+                                                                       toItem:contactTitle
                                                                     attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:10.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:adminIcon
-                                                                    attribute:NSLayoutAttributeHeight
+                                                                    attribute:NSLayoutAttributeWidth
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
+                                                                       toItem:adminIcon
                                                                     attribute:NSLayoutAttributeHeight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:adminIcon
                                                                     attribute:NSLayoutAttributeWidth
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
-                                                                    attribute:NSLayoutAttributeHeight
+                                                                       toItem:spaceNameIcon
+                                                                    attribute:NSLayoutAttributeWidth
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         
-//        _xPos += 50;
-//        contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 40);
-        _spaceAdmin = [[AutoScrollLabel alloc] init];
-        [_spaceAdmin setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_spaceAdmin setLabelText:@""];
-        [_spaceAdmin setLabelFont:[UIFont boldSystemFontOfSize:13]];
-        [_spaceAdmin setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:_spaceAdmin];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
-                                                                    attribute:NSLayoutAttributeLeft
+        _spaceDocument = [[UILabel alloc] init];
+        [_spaceDocument setText:@""];
+        [_spaceDocument setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:12]];
+        [_spaceDocument setTextAlignment:NSTextAlignmentLeft];
+        [_spaceDocument setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.pageScroll addSubview:_spaceDocument];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
+                                                                    attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:adminIcon
-                                                                    attribute:NSLayoutAttributeRight
+                                                                       toItem:_spaceAdmin
+                                                                    attribute:NSLayoutAttributeBottom
                                                                    multiplier:1.0
                                                                      constant:5.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
-                                                                    attribute:NSLayoutAttributeCenterY
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
+                                                                    attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:adminIcon
-                                                                    attribute:NSLayoutAttributeCenterY
+                                                                       toItem:_spaceName
+                                                                    attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:adminIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceAdmin
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
                                                                     attribute:NSLayoutAttributeRight
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
+                                                                       toItem:_spaceName
                                                                     attribute:NSLayoutAttributeRight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-
-//        _xPos = 20;
-//        _yPos += 40;
-//        contentRect = CGRectMake(_xPos, _yPos, 30, 30);
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_spaceDocument
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:30.0]];
+        
         UIImageView* documentIcon = [[UIImageView alloc] init];
         [documentIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
         [documentIcon setImage:[UIImage imageNamed:@"space_document"]];
@@ -430,72 +448,66 @@
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:documentIcon
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:adminIcon
-                                                                    attribute:NSLayoutAttributeBottom
+                                                                       toItem:_spaceDocument
+                                                                    attribute:NSLayoutAttributeTop
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:documentIcon
                                                                     attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
+                                                                       toItem:contactTitle
                                                                     attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:10.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:documentIcon
-                                                                    attribute:NSLayoutAttributeHeight
+                                                                    attribute:NSLayoutAttributeWidth
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
+                                                                       toItem:documentIcon
                                                                     attribute:NSLayoutAttributeHeight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:documentIcon
                                                                     attribute:NSLayoutAttributeWidth
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
-                                                                    attribute:NSLayoutAttributeHeight
+                                                                       toItem:spaceNameIcon
+                                                                    attribute:NSLayoutAttributeWidth
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-//
-//        _xPos += 50;
-//        contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        _spaceDocument = [[AutoScrollLabel alloc] init];
-        [_spaceDocument setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_spaceDocument setLabelText:@""];
-        [_spaceDocument setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [_spaceDocument setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:_spaceDocument];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
-                                                                    attribute:NSLayoutAttributeLeft
+        
+        _spaceDate = [[UILabel alloc] init];
+        [_spaceDate setText:@""];
+        [_spaceDate setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:12]];
+        [_spaceDate setTextAlignment:NSTextAlignmentLeft];
+        [_spaceDate setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.pageScroll addSubview:_spaceDate];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
+                                                                    attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:documentIcon
-                                                                    attribute:NSLayoutAttributeRight
+                                                                       toItem:_spaceDocument
+                                                                    attribute:NSLayoutAttributeBottom
                                                                    multiplier:1.0
                                                                      constant:5.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
-                                                                    attribute:NSLayoutAttributeCenterY
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
+                                                                    attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:documentIcon
-                                                                    attribute:NSLayoutAttributeCenterY
+                                                                       toItem:_spaceName
+                                                                    attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:documentIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDocument
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
                                                                     attribute:NSLayoutAttributeRight
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
+                                                                       toItem:_spaceName
                                                                     attribute:NSLayoutAttributeRight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
-//
-//        _xPos = 20;
-//        _yPos += 30;
-//        contentRect = CGRectMake(_xPos, _yPos, 30, 30);
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_spaceDate
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:30.0]];
         UIImageView* dateIcon = [[UIImageView alloc] init];
         [dateIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
         [dateIcon setImage:[UIImage imageNamed:@"space_date"]];
@@ -503,135 +515,125 @@
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:dateIcon
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:documentIcon
-                                                                    attribute:NSLayoutAttributeBottom
+                                                                       toItem:_spaceDate
+                                                                    attribute:NSLayoutAttributeTop
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:dateIcon
                                                                     attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
+                                                                       toItem:contactTitle
                                                                     attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
                                                                      constant:10.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:dateIcon
-                                                                    attribute:NSLayoutAttributeHeight
+                                                                    attribute:NSLayoutAttributeWidth
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
+                                                                       toItem:dateIcon
                                                                     attribute:NSLayoutAttributeHeight
                                                                    multiplier:1.0
                                                                      constant:0.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:dateIcon
                                                                     attribute:NSLayoutAttributeWidth
                                                                     relatedBy:NSLayoutRelationEqual
-                                                                       toItem:registerInfo
-                                                                    attribute:NSLayoutAttributeHeight
+                                                                       toItem:spaceNameIcon
+                                                                    attribute:NSLayoutAttributeWidth
                                                                    multiplier:1.0
                                                                      constant:0.0]];
 
-//        _xPos += 50;
-//        contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-        _spaceDate = [[AutoScrollLabel alloc] init];
-        [_spaceDate setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_spaceDate setLabelText:@""];
-        [_spaceDate setLabelFont:[UIFont italicSystemFontOfSize:12]];
-        [_spaceDate setLabelTextAlignment:NSTextAlignmentLeft];
-        [self.pageScroll addSubview:_spaceDate];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
-                                                                    attribute:NSLayoutAttributeLeft
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:dateIcon
-                                                                    attribute:NSLayoutAttributeRight
-                                                                   multiplier:1.0
-                                                                     constant:5.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:dateIcon
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:dateIcon
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:_spaceDate
-                                                                    attribute:NSLayoutAttributeRight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeRight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-
-////        _yPos += 30;
-////        contentRect = CGRectMake(_xPos, _yPos, selfFrame.size.width-50, 30);
-////        AutoScrollLabel* spacePolice = [[AutoScrollLabel alloc] initWithFrame:contentRect];
-////        [spacePolice setLabelText:@"Ban Quản lý ATTP"];
-////        [spacePolice setLabelFont:[UIFont italicSystemFontOfSize:12]];
-////        [spacePolice setLabelTextAlignment:NSTextAlignmentLeft];
-////        [self.pageScroll addSubview:spacePolice];
-//        
-//        _yPos += 40;
-//        contentRect = CGRectMake(10, _yPos, selfFrame.size.width, 30);
         UILabel* checkingInfo = [[UILabel alloc] init];
+        [checkingInfo setText:@"Lịch sử kiểm tra"];
+        [checkingInfo setTextAlignment:NSTextAlignmentRight];
+        [checkingInfo setFont:[UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:13]];
+        [checkingInfo setTextColor:[UIColor LVL_colorWithHexString:@"B9531A" andAlpha:1.0]];
         [checkingInfo setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [checkingInfo setText:@"Lịch sử thanh tra/kiểm tra"];
-        [checkingInfo setBackgroundColor:[UIColor LVL_colorWithHexString:@"ebeaf0" andAlpha:1.0]];
-        [checkingInfo setTextColor:[UIColor LVL_colorWithHexString:@"355183" andAlpha:1.0]];
         [self.pageScroll addSubview:checkingInfo];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:checkingInfo
-                                                                    attribute:NSLayoutAttributeLeft
+                                                                    attribute:NSLayoutAttributeRight
                                                                     relatedBy:NSLayoutRelationEqual
                                                                        toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeLeft
+                                                                    attribute:NSLayoutAttributeRight
                                                                    multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:checkingInfo
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:checkingInfo
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:contactTitle
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
+                                                                     constant:-20.0]];
         [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:checkingInfo
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
                                                                        toItem:_spaceDate
                                                                     attribute:NSLayoutAttributeBottom
                                                                    multiplier:1.0
-                                                                     constant:5.0]];
+                                                                     constant:10.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:checkingInfo
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:contactTitle
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        UIView* line = [[UIView alloc] init];
+        [line setBackgroundColor:[UIColor LVL_colorWithHexString:@"B9531A" andAlpha:1.0]];
+        [line setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.pageScroll addSubview:line];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:line
+                                                                    attribute:NSLayoutAttributeTop
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:checkingInfo
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                   multiplier:1.0
+                                                                     constant:-3.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:line
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:checkingInfo
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:line
+                                                                    attribute:NSLayoutAttributeRight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:checkingInfo
+                                                                    attribute:NSLayoutAttributeRight
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:line
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:line
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:1.0]];
+        
+        [self.pageScroll addConstraint:[NSLayoutConstraint constraintWithItem:line
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.pageScroll
+                                                                    attribute:NSLayoutAttributeBottom
+                                                                   multiplier:1.0
+                                                                     constant:-50.0]];
+        
+        UIGestureRecognizer* tapgesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewHistoryCheck)];
+        [checkingInfo addGestureRecognizer:tapgesture];
+        
     }
     return self;
 }
 
--(void)setDataSource:(NSDictionary*)dataSource
+-(void)viewHistoryCheck {
+    if ([_delegate respondsToSelector:@selector(viewHistoryCheck)]) {
+        [_delegate viewHistoryCheck];
+    }
+}
+
+-(void)setDataSource:(SpaceDataSource*)dataSource
 {
-    [_spaceName setLabelText:[dataSource objectForKey:@"ten_cong_ty"]];
-    [_spaceAddress setLabelText:[NSString stringWithFormat:@"%@ - %@",[dataSource objectForKey:@"dia_chi"],[dataSource objectForKey:@"phuong_xa"]]];
-    [_spacePhone setLabelText:[dataSource objectForKey:@"di_dong"]];
-    [_spaceAdmin setLabelText:[dataSource objectForKey:@"dai_dien"]];
-    [_spaceDocument setLabelText:[dataSource objectForKey:@"giay_CN_ATTP"]];
+    [_spaceName setText:dataSource.tenCongty];
+    [_spaceAddress setText:[NSString stringWithFormat:@"%@ - %@",dataSource.diachi,dataSource.phuong]];
+    [_spacePhone setText:dataSource.diDong];
+    [_spaceAdmin setText:dataSource.daidien];
+    [_spaceDocument setText:dataSource.giayChungNhanATTP];
     
-    NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
-    [dateFormater setDateFormat:@"dd/MM/yyyy"];
-    NSDate* date = [dateFormater dateFromString:[dataSource objectForKey:@"ngay_cap"]];
-    NSString* dateString = [dateFormater stringFromDate:date]?[dateFormater stringFromDate:date]:@"";
-    
-    [_spaceDate setLabelText:[NSString stringWithFormat:@"%@  %@",dateString,[dataSource objectForKey:@"noi_cap"]]];
-    
-//    NSArray* listReview = [dataSource objectForKey:@"list_review"];
-//    NSArray* listReview = @[@"20/08/2018 - Cập nhật địa chỉ",@"20/08/2018 - Cập nhật thông tin giấy phép",@"20/08/2018 - Cập nhật tên cơ sở"];
-//    [self setReview:listReview];
+    NSDate* date = [NSDate dateFromString:dataSource.ngayCapGiayATTP];
+    NSString* dateString = [date stringFromDate]?[date stringFromDate]:@"";
+    [_spaceDate setText:[NSString stringWithFormat:@"%@  %@",dateString,dataSource.noiCapGiayATTP]];
 }
 
 -(void)setReview:(NSArray*)listReview
