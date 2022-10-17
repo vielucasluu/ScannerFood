@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TVC_MainPageDistrict : UITableViewController
+@interface TVC_MainPageDistrict : UIViewController
 
 @property (strong, nonatomic) NSString* keyString;
 

@@ -268,7 +268,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    TVC_MainPageDistrict* districtVC = [[TVC_MainPageDistrict alloc] initWithStyle:UITableViewStylePlain];
+    TVC_MainPageDistrict* districtVC = [[TVC_MainPageDistrict alloc] init];
     if (indexPath.row == 0) {
         [districtVC setTitle:@"Suất ăn sẵn"];
         [districtVC setKeyString:@"suat_an_san"];
@@ -367,7 +367,7 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-    TVC_MainPageDistrict* districtVC = [[TVC_MainPageDistrict alloc] initWithStyle:UITableViewStylePlain];
+    TVC_MainPageDistrict* districtVC = [[TVC_MainPageDistrict alloc] init];
     if (indexPath.row == 0) {
         [districtVC setTitle:@"Suất ăn sẵn"];
         [districtVC setKeyString:@"suat_an_san"];

@@ -6,19 +6,43 @@
 //  Copyright © 2018 Lucas Luu. All rights reserved.
 //
 
+#import <GoogleMaps/GoogleMaps.h>
 #import "TVC_MainPageDistrict.h"
 #import "TC_MainPageDistrictCell.h"
 
-@interface TVC_MainPageDistrict ()
+@interface TVC_MainPageDistrict () <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 {
     NSMutableArray*     _listSpace;
     NSMutableSet*       _collapsedSections;
+    
+    CLLocationManager*  _locationManager;
+    CLLocation*         _currentLocation;
 }
 @property (strong, nonatomic) FIRDatabaseReference* firebaseRef;
+@property (strong, nonatomic) GMSMapView*   mapView;
+@property (strong, nonatomic) UITableView*  tableView;
 
 @end
 
 @implementation TVC_MainPageDistrict
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        _locationManager = [[CLLocationManager alloc] init];
+        [_locationManager setDelegate:self];;
+        [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+            [_locationManager requestWhenInUseAuthorization];
+        }
+        else {
+            [_locationManager startUpdatingLocation];
+        }
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -38,6 +62,54 @@
     
     [self.tableView registerClass:[TC_MainPageDistrictCell class] forCellReuseIdentifier:@"districtCell"];
     
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
+                                                            longitude:151.20
+                                                                 zoom:10];
+    
+    CGRect frame = self.view.frame;
+    CGRect contentRect = CGRectMake(0, 0, frame.size.width, frame.size.width*9/16);
+    
+    _mapView = [GMSMapView mapWithFrame:contentRect camera:camera];
+    [_mapView setMyLocationEnabled:YES];
+    [_mapView.settings setMyLocationButton:YES];
+//    [_mapView setDelegate:self];
+    [self.view addSubview:_mapView];
+    
+    _tableView = [[UITableView alloc] init];
+    [_tableView setTranslatesAutoresizingMaskIntoConstraints:false];
+    [_tableView setDataSource:self];
+    [_tableView setDelegate:self];
+    [_tableView registerClass:[TC_MainPageDistrictCell class] forCellReuseIdentifier:@"districtCell"];
+    [self.view addSubview:_tableView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_mapView
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:10.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    
     _listSpace = [NSMutableArray new];
     _firebaseRef = FIRDatabase.database.reference;
     [[_firebaseRef child:_keyString] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
@@ -46,6 +118,15 @@
         if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
             NSDictionary* space_dict = (NSDictionary*)snapshot.value;
             SpaceDataSource* newSpaceData = [[SpaceDataSource alloc] initWithDict:space_dict];
+            
+            // Add map marker
+            if (![newSpaceData.location isEqualToString:@""]) {
+                NSString* destination = newSpaceData.location;
+                NSArray* elementLocation = [destination componentsSeparatedByString:@", "];
+                
+                GMSMarker* destinationMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake([elementLocation[0] doubleValue], [elementLocation[1] doubleValue])];
+                [destinationMarker setMap:self.mapView];
+            }
             
             BOOL isSameDict = NO;
             for (NSDictionary* quanDict in self->_listSpace) {
@@ -119,6 +200,39 @@
         [sender setBackgroundImage:[UIImage imageNamed:@"arrow_up"] forState:UIControlStateNormal];
     }
     [self.tableView endUpdates];
+}
+
+#pragma mark - CLLocationManagerDelegate
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    [manager stopUpdatingLocation];
+    _currentLocation = [locations lastObject];
+    if (_currentLocation) {
+        GMSCameraPosition* camera = [GMSCameraPosition cameraWithLatitude:_currentLocation.coordinate.latitude
+                                                               longitude:_currentLocation.coordinate.longitude
+                                                                    zoom:10];
+        if ([_mapView isHidden]) {
+            [_mapView setHidden:NO];
+            [_mapView setCamera:camera];
+        }
+        else
+        {
+            [_mapView animateToCameraPosition:camera];
+        }
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [manager startUpdatingLocation];
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [manager stopUpdatingLocation];
+    NSLog(@"Error: %@",error.localizedDescription);
 }
 
 #pragma mark - UITableViewDataSource
